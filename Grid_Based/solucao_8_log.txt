@@ -1,0 +1,76 @@
+
+Gurobi 12.0.2 (win64) logging started Sat Oct 18 17:34:21 2025
+
+Set parameter LogFile to value "solucao_8_log.txt"
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Optimize a model with 85 rows, 122 columns and 2428 nonzeros
+Model fingerprint: 0xb6b9f23a
+Variable types: 0 continuous, 122 integer (122 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [6e-02, 2e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+00]
+Found heuristic solution: objective 0.5557500
+Presolve removed 37 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 48 rows, 32 columns, 288 nonzeros
+Variable types: 0 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 7.290400e-01, 34 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       0.7290400    0.72904  0.00%     -    0s
+
+Explored 1 nodes (34 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 0.72904 0.55575 
+No other solutions better than 0.72904
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.290400000000e-01, best bound 7.290400000000e-01, gap 0.0000%
+
+Gurobi 12.0.2 (win64) logging started Sat Oct 18 17:50:00 2025
+
+Set parameter LogFile to value "solucao_8_log.txt"
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Optimize a model with 85 rows, 122 columns and 2428 nonzeros
+Model fingerprint: 0xb6b9f23a
+Variable types: 0 continuous, 122 integer (122 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [6e-02, 2e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+00]
+Found heuristic solution: objective 0.5557500
+Presolve removed 37 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 48 rows, 32 columns, 288 nonzeros
+Variable types: 0 continuous, 32 integer (32 binary)
+
+Root relaxation: objective 7.290400e-01, 34 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       0.7290400    0.72904  0.00%     -    0s
+
+Explored 1 nodes (34 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 0.72904 0.55575 
+No other solutions better than 0.72904
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.290400000000e-01, best bound 7.290400000000e-01, gap 0.0000%
