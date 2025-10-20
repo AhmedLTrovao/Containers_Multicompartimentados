@@ -1,5 +1,5 @@
 Status: 2
-Objetivo: 0.341616
+Objetivo: 0.718422
 Gap: 0.000000%
-Tempo de execução: 0.015000 s
-Nós explorados: 1.0
+Tempo de execução: 15.105000 s
+Nós explorados: 13107.0

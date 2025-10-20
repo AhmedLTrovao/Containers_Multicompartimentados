@@ -1,7 +1,7 @@
 def read_data(arquivo):
     instancias = []
     with open(arquivo, "r") as f:
-        linhas = [linha.strip() for linha in f if linha.strip() != ""]
+        linhas = [linha.strip() for linha in f if linha.strip()]
     
     i = 0
     while i < len(linhas):
