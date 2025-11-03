@@ -1,0 +1,95 @@
+
+Gurobi 12.0.2 (win64) logging started Sun Nov  2 14:20:53 2025
+
+Set parameter LogFile to value "resultados DATA_1_n20m05b2d1\instancia_4_log.txt"
+Set parameter TimeLimit to value 1800
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  1800
+
+Optimize a model with 1433 rows, 3492 columns and 231239 nonzeros
+Model fingerprint: 0xf3d4092a
+Variable types: 0 continuous, 3492 integer (3492 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [9e-03, 4e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+01]
+Found heuristic solution: objective 0.7897500
+Presolve removed 196 rows and 2108 columns
+Presolve time: 0.80s
+Presolved: 1237 rows, 1384 columns, 66096 nonzeros
+Found heuristic solution: objective 0.6007500
+Variable types: 0 continuous, 1384 integer (1384 binary)
+
+Root relaxation: objective 9.540000e-01, 6293 iterations, 1.86 seconds (1.42 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.95400    0  114    0.78975    0.95400  20.8%     -    2s
+H    0     0                       0.7920000    0.95400  20.5%     -    2s
+H    0     0                       0.8190000    0.95400  16.5%     -    3s
+H    0     0                       0.8550000    0.95400  11.6%     -    3s
+H    0     0                       0.8910000    0.95400  7.07%     -    3s
+H    0     0                       0.9180000    0.95400  3.92%     -    3s
+     0     0    0.95400    0  148    0.91800    0.95400  3.92%     -    3s
+H    0     0                       0.9360000    0.95400  1.92%     -    3s
+     0     0    0.95400    0  135    0.93600    0.95400  1.92%     -    3s
+     0     0    0.95400    0  104    0.93600    0.95400  1.92%     -    3s
+     0     0    0.95400    0  193    0.93600    0.95400  1.92%     -    4s
+     0     0    0.95400    0  150    0.93600    0.95400  1.92%     -    4s
+     0     0    0.95400    0  142    0.93600    0.95400  1.92%     -    4s
+     0     0    0.95400    0  152    0.93600    0.95400  1.92%     -    5s
+     0     0    0.95400    0  147    0.93600    0.95400  1.92%     -    5s
+     0     0    0.95400    0  126    0.93600    0.95400  1.92%     -    5s
+     0     0    0.95400    0  123    0.93600    0.95400  1.92%     -    5s
+     0     2    0.95400    0  123    0.93600    0.95400  1.92%     -    7s
+    28    25    0.95248    9  314    0.93600    0.95400  1.92%   630   10s
+    59    46    0.94528   18  377    0.93600    0.95400  1.92%   885   15s
+   191   153    0.95072    8  364    0.93600    0.95400  1.92%   441   20s
+   228   190    0.94442   29  440    0.93600    0.95400  1.92%   472   25s
+H  234   194                       0.9360000    0.95400  1.92%   490   26s
+   277   246    0.94122   42  371    0.93600    0.95400  1.92%   491   30s
+H  342   285                       0.9360000    0.95400  1.92%   428   33s
+   401   322    0.94418    3  106    0.93600    0.95272  1.79%   398   35s
+   498   385    0.94252    9  274    0.93600    0.95200  1.71%   394   40s
+   618   421    0.93976   20  364    0.93600    0.95072  1.57%   393   45s
+   701   448    0.94069    8   95    0.93600    0.94945  1.44%   391   50s
+   818   454    0.94275   26  113    0.93600    0.94794  1.28%   400   55s
+   938   468    0.94119    7  290    0.93600    0.94702  1.18%   399   60s
+  1017   509    0.94450   10  313    0.93600    0.94648  1.12%   408   65s
+  1180   512     cutoff   13         0.93600    0.94528  0.99%   399   71s
+  1230   501     cutoff   17         0.93600    0.94477  0.94%   415   75s
+  1336   510    0.93798   17  258    0.93600    0.94441  0.90%   417   80s
+  1430   498    0.93912   10  267    0.93600    0.94411  0.87%   416   85s
+  1557   518     cutoff   24         0.93600    0.94334  0.78%   411   91s
+  1709   489     cutoff   41         0.93600    0.94270  0.72%   410   97s
+  1786   467     cutoff   45         0.93600    0.94200  0.64%   410  101s
+  1814   456    0.93751   27  303    0.93600    0.94180  0.62%   416  105s
+  1882   426     cutoff   18         0.93600    0.94140  0.58%   431  113s
+  1923   401     cutoff   70         0.93600    0.94125  0.56%   440  116s
+  1948   375     cutoff   11         0.93600    0.94110  0.54%   449  120s
+  2030   306     cutoff   26         0.93600    0.94050  0.48%   464  127s
+  2106   258    0.93656   22   74    0.93600    0.93969  0.39%   470  131s
+  2164   207     cutoff   19         0.93600    0.93918  0.34%   476  135s
+H 2221   173                       0.9360000    0.93899  0.32%   481  139s
+  2261    98     cutoff   88         0.93600    0.93873  0.29%   486  143s
+  2355     0     cutoff   93         0.93600    0.93784  0.20%   489  145s
+
+Cutting planes:
+  Gomory: 8
+  Clique: 2
+  Zero half: 83
+
+Explored 2461 nodes (1190203 simplex iterations) in 145.65 seconds (227.25 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 10: 0.936 0.936 0.936 ... 0.78975
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.360000108885e-01, best bound 9.360000109830e-01, gap 0.0000%
