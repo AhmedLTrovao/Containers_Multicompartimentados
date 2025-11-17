@@ -4,10 +4,10 @@ from solver import resolver_instancia
 from compile_results import compilar_resultados
 
 # Caminho do arquivo de instâncias
-arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Grid_Based\DATA_1_m05b2d1\DATA_1_n10m05b2d1.dat"
+arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Grid_Based\DATA_1_m10b2d1\DATA_1_n20m10b2d1.dat"
 
 # Pasta onde todos os resultados serão salvos
-pasta_saida = "resultados DATA_1_n10m05b2d1"
+pasta_saida = "resultados DATA_1_n20m10b2d1"
 
 # Cria a pasta se não existir
 os.makedirs(pasta_saida, exist_ok=True)

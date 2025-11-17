@@ -1,15 +1,15 @@
 
-Gurobi 12.0.2 (win64) logging started Sun Nov  2 12:18:31 2025
+Gurobi 12.0.2 (win64) logging started Sun Nov  9 15:17:16 2025
 
 Set parameter LogFile to value "resultados DATA_1_n10m05b2d1\instancia_8_log.txt"
-Set parameter TimeLimit to value 1800
+Set parameter TimeLimit to value 3600
 Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
 
 CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
 Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
 
 Non-default parameters:
-TimeLimit  1800
+TimeLimit  3600
 
 Optimize a model with 405 rows, 1250 columns and 13758 nonzeros
 Model fingerprint: 0x882640b2
@@ -21,7 +21,7 @@ Coefficient statistics:
   RHS range        [1e+00, 4e+01]
 Found heuristic solution: objective 0.8600000
 Presolve removed 0 rows and 177 columns
-Presolve time: 0.04s
+Presolve time: 0.03s
 Presolved: 405 rows, 1073 columns, 11653 nonzeros
 Found heuristic solution: objective 0.6840000
 Variable types: 0 continuous, 1073 integer (1073 binary)

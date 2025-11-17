@@ -1,0 +1,56 @@
+
+Gurobi 12.0.2 (win64) logging started Mon Nov  3 17:48:10 2025
+
+Set parameter LogFile to value "resultados DATA_1_n30m05b2d2\instancia_10_log.txt"
+Set parameter TimeLimit to value 1800
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  1800
+
+Optimize a model with 293 rows, 386 columns and 12757 nonzeros
+Model fingerprint: 0x4a1154ca
+Variable types: 0 continuous, 386 integer (386 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [4e-02, 2e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Found heuristic solution: objective 0.3847037
+Presolve removed 30 rows and 296 columns
+Presolve time: 0.03s
+Presolved: 263 rows, 90 columns, 2906 nonzeros
+Found heuristic solution: objective 0.1334444
+Variable types: 0 continuous, 90 integer (90 binary)
+
+Root relaxation: objective 6.106296e-01, 58 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.61063    0    8    0.38470    0.61063  58.7%     -    0s
+H    0     0                       0.5071111    0.61063  20.4%     -    0s
+H    0     0                       0.5782222    0.61063  5.60%     -    0s
+H    0     0                       0.5807037    0.61063  5.15%     -    0s
+     0     0    0.61063    0   10    0.58070    0.61063  5.15%     -    0s
+     0     0    0.58863    0    8    0.58070    0.58863  1.36%     -    0s
+     0     0    0.58467    0    9    0.58070    0.58467  0.68%     -    0s
+     0     0     cutoff    0         0.58070    0.58070  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 5
+  Clique: 5
+  Relax-and-lift: 1
+
+Explored 1 nodes (89 simplex iterations) in 0.11 seconds (0.02 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 0.580704 0.578222 0.507111 ... 0.133444
+No other solutions better than 0.580704
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.807037037037e-01, best bound 5.807037037037e-01, gap 0.0000%

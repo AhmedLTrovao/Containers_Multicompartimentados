@@ -1,15 +1,15 @@
 
-Gurobi 12.0.2 (win64) logging started Sun Nov  2 14:23:33 2025
+Gurobi 12.0.2 (win64) logging started Sun Nov  9 16:13:25 2025
 
 Set parameter LogFile to value "resultados DATA_1_n20m05b2d1\instancia_5_log.txt"
-Set parameter TimeLimit to value 1800
+Set parameter TimeLimit to value 3600
 Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
 
 CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
 Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
 
 Non-default parameters:
-TimeLimit  1800
+TimeLimit  3600
 
 Optimize a model with 3533 rows, 9999 columns and 889365 nonzeros
 Model fingerprint: 0x57ccc02f
@@ -22,7 +22,7 @@ Coefficient statistics:
 Found heuristic solution: objective 0.7195000
 Presolve removed 314 rows and 3997 columns (presolve time = 5s)...
 Presolve removed 314 rows and 3997 columns
-Presolve time: 6.35s
+Presolve time: 5.43s
 Presolved: 3219 rows, 6002 columns, 488402 nonzeros
 Found heuristic solution: objective 0.6295000
 Variable types: 0 continuous, 6002 integer (6002 binary)
@@ -30,35 +30,35 @@ Variable types: 0 continuous, 6002 integer (6002 binary)
 Root simplex log...
 
 Iteration    Objective       Primal Inf.    Dual Inf.      Time
-       0    2.7748750e+01   1.461550e+05   0.000000e+00      7s
-    6759    7.7650000e-01   0.000000e+00   0.000000e+00     10s
+       0    2.7748750e+01   1.461550e+05   0.000000e+00      6s
+    6759    7.7650000e-01   0.000000e+00   0.000000e+00      9s
 
-Root relaxation: objective 7.765000e-01, 6759 iterations, 3.36 seconds (2.31 work units)
-Total elapsed time = 10.68s (DegenMoves)
+Root relaxation: objective 7.765000e-01, 6759 iterations, 2.95 seconds (2.31 work units)
+Total elapsed time = 10.11s (DegenMoves)
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-     0     0    0.77650    0   20    0.71950    0.77650  7.92%     -   12s
-H    0     0                       0.7720000    0.77650  0.58%     -   12s
-H    0     0                       0.7727500    0.77650  0.49%     -   12s
-     0     0    0.77650    0   28    0.77275    0.77650  0.49%     -   13s
-     0     0    0.77650    0   14    0.77275    0.77650  0.49%     -   18s
-     0     0    0.77650    0   16    0.77275    0.77650  0.49%     -   19s
+     0     0    0.77650    0   20    0.71950    0.77650  7.92%     -   10s
+H    0     0                       0.7720000    0.77650  0.58%     -   10s
+H    0     0                       0.7727500    0.77650  0.49%     -   10s
+     0     0    0.77650    0   28    0.77275    0.77650  0.49%     -   11s
+     0     0    0.77650    0   14    0.77275    0.77650  0.49%     -   17s
+     0     0    0.77650    0   16    0.77275    0.77650  0.49%     -   17s
+     0     0    0.77650    0   14    0.77275    0.77650  0.49%     -   20s
      0     0    0.77650    0   14    0.77275    0.77650  0.49%     -   21s
-     0     0    0.77650    0   14    0.77275    0.77650  0.49%     -   23s
-     0     0    0.77650    0   16    0.77275    0.77650  0.49%     -   24s
-H    0     0                       0.7760000    0.77650  0.06%     -   24s
-     0     0    0.77650    0   33    0.77600    0.77650  0.06%     -   24s
-     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   26s
-     0     0    0.77650    0   43    0.77600    0.77650  0.06%     -   26s
-     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   26s
-     0     0    0.77650    0   18    0.77600    0.77650  0.06%     -   26s
-     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   26s
-     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   26s
-     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   27s
-     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   27s
-     0     2    0.77650    0   14    0.77600    0.77650  0.06%     -   27s
+     0     0    0.77650    0   16    0.77275    0.77650  0.49%     -   23s
+H    0     0                       0.7760000    0.77650  0.06%     -   23s
+     0     0    0.77650    0   33    0.77600    0.77650  0.06%     -   23s
+     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   24s
+     0     0    0.77650    0   43    0.77600    0.77650  0.06%     -   25s
+     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   25s
+     0     0    0.77650    0   18    0.77600    0.77650  0.06%     -   25s
+     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   25s
+     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   25s
+     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   25s
+     0     0    0.77650    0   14    0.77600    0.77650  0.06%     -   25s
+     0     2    0.77650    0   14    0.77600    0.77650  0.06%     -   25s
 
 Cutting planes:
   Gomory: 1
@@ -67,7 +67,7 @@ Cutting planes:
   Mod-K: 9
   Relax-and-lift: 5
 
-Explored 203 nodes (57335 simplex iterations) in 28.64 seconds (18.86 work units)
+Explored 203 nodes (57335 simplex iterations) in 26.88 seconds (18.86 work units)
 Thread count was 4 (of 4 available processors)
 
 Solution count 7: 0.776 0.77275 0.77275 ... 0.6295

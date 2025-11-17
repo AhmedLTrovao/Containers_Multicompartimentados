@@ -61,7 +61,7 @@ def resolver_instancia(L, W, H, boxes, arquivo_saida):
     # Logs
     model.Params.LogFile = arquivo_saida.replace(".txt", "_log.txt")
 
-    model.Params.TimeLimit = 360*5
+    model.Params.TimeLimit = 3600
 
     model.optimize()
 

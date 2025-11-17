@@ -3,5 +3,5 @@ Objetivo final (ocupação): 0.901037
 Volume total carregado: 24328.00 unidades³ (90.10% do contêiner)
 Número total de caixas carregadas: 23
 Gap de otimalidade: 0.000000%
-Tempo de execução: 123.270000 segundos
+Tempo de execução: 180.335000 segundos
 Número de nós explorados: 521.0

@@ -1,0 +1,53 @@
+
+Gurobi 12.0.2 (win64) logging started Mon Nov  3 17:52:04 2025
+
+Set parameter LogFile to value "resultados DATA_1_n100m05b2d2\instancia_9_log.txt"
+Set parameter TimeLimit to value 1800
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  1800
+
+Optimize a model with 365 rows, 294 columns and 16318 nonzeros
+Model fingerprint: 0xaf89a1a9
+Variable types: 0 continuous, 294 integer (294 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [4e-02, 3e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Found heuristic solution: objective 0.4962360
+Presolve removed 41 rows and 192 columns
+Presolve time: 0.05s
+Presolved: 324 rows, 102 columns, 4252 nonzeros
+Found heuristic solution: objective 0.1632120
+Variable types: 0 continuous, 102 integer (102 binary)
+
+Root relaxation: objective 7.349520e-01, 157 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.73495    0   15    0.49624    0.73495  48.1%     -    0s
+H    0     0                       0.5046240    0.73495  45.6%     -    0s
+H    0     0                       0.6073230    0.73495  21.0%     -    0s
+H    0     0                       0.7143270    0.73495  2.89%     -    0s
+     0     0    0.72464    0   23    0.71433    0.72464  1.44%     -    0s
+     0     0    0.71477    0   26    0.71433    0.71477  0.06%     -    0s
+     0     0     cutoff    0         0.71433    0.71433  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 6
+  Zero half: 8
+
+Explored 1 nodes (284 simplex iterations) in 0.18 seconds (0.04 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 0.714327 0.607323 0.504624 ... 0.163212
+No other solutions better than 0.714327
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.143270000000e-01, best bound 7.143270000000e-01, gap 0.0000%
