@@ -1,0 +1,99 @@
+
+Gurobi 12.0.2 (win64) logging started Mon Nov 17 19:49:43 2025
+
+Set parameter LogFile to value "resultados DATA_1_n20m10b2d1\instancia_1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 5842 rows, 31715 columns and 3597744 nonzeros
+Model fingerprint: 0xf68ced94
+Variable types: 0 continuous, 31715 integer (31715 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [3e-03, 5e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+Found heuristic solution: objective 0.9817500
+Presolve removed 0 rows and 6034 columns (presolve time = 5s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 10s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 15s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 20s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 25s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 30s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 35s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 40s)...
+Presolve removed 0 rows and 6034 columns (presolve time = 45s)...
+Presolve removed 0 rows and 6034 columns
+Presolve time: 46.51s
+Presolved: 5842 rows, 25681 columns, 2837257 nonzeros
+Found heuristic solution: objective 0.9480000
+Variable types: 0 continuous, 25681 integer (25681 binary)
+Deterministic concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Ordering time: 0.04s
+
+Barrier statistics:
+ AA' NZ     : 2.307e+05
+ Factor NZ  : 2.669e+05 (roughly 4 MB of memory)
+ Factor Ops : 1.262e+08 (less than 1 second per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   7.74751943e+02  1.10637369e+00  2.74e+03 6.38e-04  1.13e-01    50s
+   1   3.63420375e+01  6.86692500e+00  1.35e+02 2.03e-03  6.66e-03    50s
+   2   6.92469742e+00  4.54376261e+00  2.17e+01 4.35e-04  1.44e-03    50s
+   3   3.24314265e+00  3.28039413e+00  8.23e+00 2.18e-04  6.66e-04    50s
+   4   2.30830084e+00  2.34925569e+00  4.90e+00 1.16e-04  4.07e-04    50s
+   5   1.69889214e+00  2.31805241e+00  2.65e+00 7.87e-05  3.00e-04    51s
+   6   9.63538563e-01  1.65030565e+00  4.73e-02 1.41e-05  9.60e-05    51s
+   7   9.84143316e-01  1.06868878e+00  2.36e-03 0.00e+00  1.12e-05    51s
+   8   9.97100069e-01  1.00811912e+00  5.18e-05 0.00e+00  1.44e-06    51s
+   9   9.98565899e-01  1.00364647e+00  0.00e+00 0.00e+00  6.61e-07    52s
+  10   9.99542743e-01  1.00238653e+00  0.00e+00 0.00e+00  3.67e-07    52s
+  11   9.99872148e-01  1.00113249e+00  0.00e+00 0.00e+00  1.63e-07    52s
+  12   9.99993450e-01  1.00015532e+00  0.00e+00 0.00e+00  2.09e-08    52s
+  13   9.99999967e-01  1.00000016e+00  0.00e+00 3.03e-16  2.45e-11    52s
+  14   1.00000000e+00  1.00000000e+00  0.00e+00 2.37e-16  2.45e-14    52s
+
+Barrier solved model in 14 iterations and 52.52 seconds (15.99 work units)
+Optimal objective 1.00000000e+00
+
+
+Root crossover log...
+
+      49 DPushes remaining with DInf 0.0000000e+00                53s
+       0 DPushes remaining with DInf 0.0000000e+00                53s
+
+    2781 PPushes remaining with PInf 0.0000000e+00                53s
+     870 PPushes remaining with PInf 0.0000000e+00                55s
+       0 PPushes remaining with PInf 0.0000000e+00                56s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.0769163e-14     56s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    2833    1.0000000e+00   0.000000e+00   0.000000e+00     56s
+Concurrent spin time: 0.02s
+
+Solved with barrier
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+    2853 variables added to crossover basis                       61s
+    3336 variables added to crossover basis                       65s
+    3667 variables added to crossover basis                       70s
+    3848 variables added to crossover basis                       75s
