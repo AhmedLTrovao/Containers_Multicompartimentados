@@ -1,0 +1,57 @@
+
+Gurobi 12.0.2 (win64) logging started Thu Nov 27 11:08:23 2025
+
+Set parameter LogFile to value "resultados DATA_1_n10m20b2d1\instancia_10_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1020 rows, 11959 columns and 186311 nonzeros
+Model fingerprint: 0xac6a7783
+Variable types: 0 continuous, 11959 integer (11959 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [4e-03, 5e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+Found heuristic solution: objective 1.0000000
+Presolve time: 0.41s
+Presolved: 1020 rows, 11959 columns, 186311 nonzeros
+Variable types: 0 continuous, 11959 integer (11959 binary)
+Deterministic concurrent LP optimizer: primal and dual simplex
+Showing primal log only...
+
+Concurrent spin time: 0.00s
+
+Solved with primal simplex
+Deterministic concurrent LP optimizer: primal and dual simplex
+Showing primal log only...
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    7944    1.0002520e+00   0.000000e+00   4.023580e+00      5s
+Concurrent spin time: 0.47s
+
+Solved with primal simplex
+
+Root relaxation: cutoff, 8316 iterations, 5.58 seconds (4.44 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0         1.00000    1.00000  0.00%     -    6s
+
+Explored 1 nodes (8316 simplex iterations) in 6.08 seconds (4.75 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 1 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%

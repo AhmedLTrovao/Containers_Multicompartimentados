@@ -58,7 +58,7 @@ def compilar_resultados(pasta_resultados):
     caminho_saida = os.path.join(pasta_resultados, "resultados_compilados.csv")
     df.to_csv(caminho_saida, index=False, sep=";", decimal=",")
     
-    print(f"✅ Resultados compilados salvos em: {caminho_saida}")
+    print(f"Resultados compilados salvos em: {caminho_saida}")
     print(df)
 
     return df
