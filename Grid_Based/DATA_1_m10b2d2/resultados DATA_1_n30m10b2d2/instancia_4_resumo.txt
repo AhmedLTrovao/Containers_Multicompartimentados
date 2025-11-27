@@ -1,0 +1,7 @@
+Status da solução: 2
+Objetivo final (ocupação): 0.826593
+Volume total carregado: 22318.00 unidades³ (82.66% do contêiner)
+Número total de caixas carregadas: 8
+Gap de otimalidade: 0.000000%
+Tempo de execução: 1.734000 segundos
+Número de nós explorados: 92.0
