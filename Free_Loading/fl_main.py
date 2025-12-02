@@ -1,5 +1,5 @@
-from read_data import read_data
-from solver import resolver_instancia_free_loading
+from fl_read_data import read_data
+from fl_solver import resolver_instancia_free_loading
 
 def main():
     instancias = read_data("instancias.txt")
