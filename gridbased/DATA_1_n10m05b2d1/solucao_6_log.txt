@@ -1,0 +1,48 @@
+
+Gurobi 12.0.2 (mac64[arm]) logging started Sun Nov  2 13:18:01 2025
+
+Set parameter LogFile to value "DATA_1_n10m05b2d1/solucao_6_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (mac64[arm] - Darwin 24.6.0 24G90)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1005 rows, 2753 columns and 48385 nonzeros
+Model fingerprint: 0xa071b55e
+Variable types: 0 continuous, 2753 integer (2753 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [3e-03, 6e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Found heuristic solution: objective 0.9400000
+Presolve removed 1 rows and 0 columns
+Presolve time: 0.03s
+Presolved: 1004 rows, 2753 columns, 48042 nonzeros
+Variable types: 0 continuous, 2753 integer (2753 binary)
+
+Root relaxation: objective 9.960000e-01, 17355 iterations, 2.19 seconds (5.27 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.99600    0   60    0.94000    0.99600  5.96%     -    4s
+H    0     0                       0.9710000    0.99600  2.57%     -    4s
+H    0     0                       0.9880000    0.99600  0.81%     -    4s
+H    0     0                       0.9890000    0.99600  0.71%     -    4s
+H    0     0                       0.9920000    0.99600  0.40%     -    4s
+H    0     0                       0.9960000    0.99600  0.00%     -    4s
+     0     0    0.99600    0   60    0.99600    0.99600  0.00%     -    4s
+
+Explored 1 nodes (29799 simplex iterations) in 4.15 seconds (9.99 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 0.996 0.992 0.989 ... 0.94
+No other solutions better than 0.996
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.960000000000e-01, best bound 9.960000000000e-01, gap 0.0000%

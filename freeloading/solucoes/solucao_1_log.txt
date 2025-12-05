@@ -1,0 +1,77 @@
+
+Gurobi 12.0.3 (mac64[arm]) logging started Sat Nov  1 16:34:03 2025
+
+Set parameter LogFile to value "solucoes/solucao_1_log.txt"
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (mac64[arm] - Darwin 24.6.0 24G90)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 93399 rows, 160066 columns and 345234 nonzeros
+Model fingerprint: 0xfb854ac8
+Variable types: 489 continuous, 159577 integer (159577 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [8e-03, 2e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Found heuristic solution: objective 0.0180000
+Presolve removed 0 rows and 80196 columns
+Presolve time: 0.64s
+Presolved: 93399 rows, 79870 columns, 345234 nonzeros
+Variable types: 489 continuous, 79381 integer (79381 binary)
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root relaxation: objective 2.280000e+00, 26429 iterations, 0.13 seconds (0.22 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    2.28000    0  348    0.01800    2.28000      -     -    2s
+H    0     0                       0.1460000    2.28000  1462%     -    3s
+H    0     0                       0.2480000    2.28000   819%     -    3s
+H    0     0                       0.2500000    2.28000   812%     -    3s
+H    0     0                       0.2580000    2.28000   784%     -    3s
+H    0     0                       0.2740000    2.28000   732%     -    3s
+H    0     0                       0.2860000    2.28000   697%     -    3s
+H    0     0                       0.2940000    2.28000   676%     -    3s
+H    0     0                       0.2960000    2.28000   670%     -    3s
+H    0     0                       0.3000000    2.28000   660%     -    3s
+H    0     0                       0.3240000    2.28000   604%     -    3s
+H    0     0                       0.3320000    2.28000   587%     -    3s
+H    0     0                       0.3400000    2.28000   571%     -    3s
+H    0     0                       0.6440000    2.28000   254%     -    4s
+     0     0    2.28000    0 2846    0.64400    2.28000   254%     -    6s
+H    0     0                       0.6880000    2.28000   231%     -    7s
+H    0     0                       0.7120000    2.28000   220%     -    7s
+     0     0    2.28000    0 2731    0.71200    2.28000   220%     -    8s
+H    0     0                       0.8700000    2.28000   162%     -   10s
+H    0     0                       0.8780000    2.28000   160%     -   14s
+     0     0    2.28000    0  372    0.87800    2.28000   160%     -   14s
+     0     0    2.28000    0 2688    0.87800    2.28000   160%     -   16s
+H    0     0                       0.9180000    2.28000   148%     -   18s
+H    0     0                       0.9260000    2.28000   146%     -   18s
+H    0     0                       0.9380000    2.28000   143%     -   21s
+     0     0    2.28000    0  365    0.93800    2.28000   143%     -   22s
+     0     0    2.28000    0 2014    0.93800    2.28000   143%     -   24s
+     0     0    2.28000    0  406    0.93800    2.28000   143%     -   29s
+     0     0    2.28000    0  370    0.93800    2.28000   143%     -   32s
+     0     2    2.28000    0  370    0.93800    2.28000   143%     -   36s
+    15    24    2.28000    4 4741    0.93800    2.28000   143%  4373   41s
+    23    73    2.28000    5 3854    0.93800    2.28000   143%  4522   46s
+H   51    73                       0.9460000    2.28000   141%  3814   46s
+    72   211    2.28000   11  572    0.94600    2.28000   141%  3609   54s
+   210   573    2.28000   21  542    0.94600    2.28000   141%  2196   75s
+   572   763    2.28000   43  602    0.94600    2.28000   141%  1568  117s
+   762  1693    2.28000   54  566    0.94600    2.28000   141%  1402  166s
+  1692  2458    2.28000  103  817    0.94600    2.28000   141%  1030  207s
+  2457  2640    2.28000  124  880    0.94600    2.28000   141%   907  235s
+  2639  3380    2.28000  124  515    0.94600    2.28000   141%   865  267s
+  3379  4201    2.28000  161  501    0.94600    2.28000   141%   797  295s
+  4200  4950    2.28000  225  585    0.94600    2.28000   141%   738  321s
+  4949  5618    2.28000  272  468    0.94600    2.28000   141%   704  342s
+  5618  5626    2.28000  325  900    0.94600    2.28000   141%   694  379s

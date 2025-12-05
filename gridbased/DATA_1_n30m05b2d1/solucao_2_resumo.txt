@@ -1,0 +1,5 @@
+Status da solução: 9
+Objetivo final: 0.890407
+Gap de otimalidade: 1.646525%
+Tempo de execução: 3600.058371 segundos
+Número de nós explorados: 35581.0

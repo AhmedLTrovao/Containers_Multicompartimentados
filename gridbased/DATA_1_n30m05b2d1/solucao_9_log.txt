@@ -1,0 +1,75 @@
+
+Gurobi 12.0.2 (mac64[arm]) logging started Sun Nov  2 23:04:36 2025
+
+Set parameter LogFile to value "DATA_1_n30m05b2d1/solucao_9_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (mac64[arm] - Darwin 24.6.0 24G90)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 4955 rows, 12764 columns and 1953368 nonzeros
+Model fingerprint: 0x208806b2
+Variable types: 0 continuous, 12764 integer (12764 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [6e-03, 6e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 0.8894815
+Presolve removed 151 rows and 4612 columns
+Presolve time: 3.74s
+Presolved: 4804 rows, 8152 columns, 1144923 nonzeros
+Found heuristic solution: objective 0.6783704
+Variable types: 0 continuous, 8152 integer (8152 binary)
+Found heuristic solution: objective 0.9005926
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    3198    1.0821401e+00   4.449018e+04   0.000000e+00      5s
+    8298    1.0106700e+00   1.563530e+04   0.000000e+00     10s
+   12808    9.9162251e-01   1.231446e+03   0.000000e+00     15s
+   16818    9.8366655e-01   3.222989e+03   0.000000e+00     20s
+   20718    9.7867857e-01   3.890197e+03   0.000000e+00     25s
+   24618    9.7565683e-01   6.767610e+02   0.000000e+00     30s
+   28628    9.7380793e-01   5.285269e+03   0.000000e+00     35s
+   33148    9.7287220e-01   1.748868e+02   0.000000e+00    965s
+   33688    9.7282408e-01   1.728820e+03   0.000000e+00    965s
+   38998    9.7247718e-01   6.667591e+02   0.000000e+00    970s
+   42254    9.7281484e-01   0.000000e+00   2.226167e-02    975s
+   43319    9.7281481e-01   0.000000e+00   0.000000e+00    978s
+
+Root relaxation: objective 9.728148e-01, 43319 iterations, 974.59 seconds (123.33 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.97281    0  179    0.90059    0.97281  8.02%     -  979s
+H    0     0                       0.9045926    0.97281  7.54%     -  979s
+H    0     0                       0.9068148    0.97281  7.28%     -  979s
+H    0     0                       0.9125926    0.97281  6.60%     -  979s
+H    0     0                       0.9129630    0.97281  6.56%     -  979s
+H    0     0                       0.9142963    0.97281  6.40%     -  979s
+H    0     0                       0.9337037    0.97281  4.19%     -  979s
+H    0     0                       0.9429630    0.97281  3.17%     -  979s
+H    0     0                       0.9471111    0.97281  2.71%     -  979s
+     0     0    0.97281    0  391    0.94711    0.97281  2.71%     - 1989s
+H    0     0                       0.9545185    0.97281  1.92%     - 1990s
+     0     0    0.97281    0  457    0.95452    0.97281  1.92%     - 3262s
+     0     0    0.97281    0  202    0.95452    0.97281  1.92%     - 3298s
+     0     0    0.97281    0  203    0.95452    0.97281  1.92%     - 3300s
+
+Cutting planes:
+  Zero half: 25
+
+Explored 1 nodes (114174 simplex iterations) in 4230.05 seconds (525.41 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 0.954519 0.947111 0.942963 ... 0.900593
+
+Time limit reached
+Best objective 9.545185185185e-01, best bound 9.728148148148e-01, gap 1.9168%

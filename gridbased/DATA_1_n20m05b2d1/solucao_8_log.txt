@@ -1,0 +1,96 @@
+
+Gurobi 12.0.2 (mac64[arm]) logging started Sun Nov  2 14:59:29 2025
+
+Set parameter LogFile to value "DATA_1_n20m05b2d1/solucao_8_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (mac64[arm] - Darwin 24.6.0 24G90)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 4217 rows, 13585 columns and 963586 nonzeros
+Model fingerprint: 0xdf984e44
+Variable types: 0 continuous, 13585 integer (13585 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e-03, 2e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+02]
+Found heuristic solution: objective 0.9445000
+Presolve removed 324 rows and 6237 columns
+Presolve time: 1.14s
+Presolved: 3893 rows, 7348 columns, 432060 nonzeros
+Found heuristic solution: objective 0.7945000
+Variable types: 0 continuous, 7348 integer (7348 binary)
+Found heuristic solution: objective 0.9565000
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   10991    1.0490341e+00   2.658042e+04   0.000000e+00      5s
+   18041    1.0217481e+00   3.810976e+03   0.000000e+00     10s
+   24361    1.0117552e+00   2.988646e+04   0.000000e+00     15s
+   29801    1.0065065e+00   1.059617e+04   0.000000e+00     20s
+   34911    1.0040884e+00   2.073156e+03   0.000000e+00     25s
+   39441    1.0026205e+00   3.909752e+04   0.000000e+00     30s
+   43951    1.0015777e+00   1.690474e+03   0.000000e+00     35s
+   48171    1.0009439e+00   6.438444e+04   0.000000e+00     40s
+   52131    1.0004864e+00   1.095162e+04   0.000000e+00     45s
+   55881    1.0001800e+00   1.499584e+05   0.000000e+00     50s
+   59471    9.9995846e-01   9.811870e+04   0.000000e+00     55s
+   63131    9.9982072e-01   8.700112e+03   0.000000e+00     60s
+   66701    9.9968956e-01   4.537565e+03   0.000000e+00     65s
+   70361    9.9958256e-01   1.540630e+03   0.000000e+00     70s
+   73961    9.9948850e-01   7.596475e+03   0.000000e+00     75s
+   77411    9.9940509e-01   4.277887e+03   0.000000e+00     80s
+   80901    9.9934409e-01   1.837805e+03   0.000000e+00     85s
+   84521    9.9929778e-01   1.214562e+03   0.000000e+00     90s
+   88081    9.9925054e-01   7.265041e+02   0.000000e+00     95s
+   91761    9.9921771e-01   3.912029e+02   0.000000e+00    100s
+   95341    9.9918734e-01   1.576097e+03   0.000000e+00    105s
+   98841    9.9916223e-01   3.027786e+02   0.000000e+00    110s
+  102401    9.9913561e-01   1.968098e+03   0.000000e+00    115s
+  105931    9.9911196e-01   6.800539e+02   0.000000e+00    120s
+  109261    9.9909359e-01   5.460097e+02   0.000000e+00    125s
+  112711    9.9907421e-01   1.864885e+03   0.000000e+00    130s
+  116061    9.9905814e-01   1.975041e+02   0.000000e+00    135s
+  119441    9.9904201e-01   6.615529e+03   0.000000e+00    140s
+  122741    9.9902744e-01   1.156258e+03   0.000000e+00    145s
+  126201    9.9901313e-01   6.105129e+02   0.000000e+00    150s
+  129501    9.9900142e-01   1.730386e+03   0.000000e+00    155s
+  132761    9.9899078e-01   9.910073e+02   0.000000e+00    160s
+  136011    9.9897963e-01   2.321122e+03   0.000000e+00    165s
+  139271    9.9896966e-01   2.665764e+02   0.000000e+00    170s
+  142321    9.9896000e-01   3.517893e+02   0.000000e+00    175s
+  145531    9.9895112e-01   3.717681e+02   0.000000e+00    180s
+  148621    9.9894256e-01   9.989751e+02   0.000000e+00    185s
+  151881    9.9893437e-01   1.384490e+02   0.000000e+00    190s
+  155121    9.9892641e-01   5.695262e+02   0.000000e+00    195s
+  158351    9.9891571e-01   4.037512e+02   0.000000e+00    200s
+  161641    9.9890785e-01   1.770776e+04   0.000000e+00    205s
+  164871    9.9890018e-01   1.364068e+02   0.000000e+00    210s
+  168191    9.9889290e-01   3.724388e+02   0.000000e+00    215s
+  171441    9.9888814e-01   4.193885e+02   0.000000e+00    220s
+  174475    1.0000000e+00   0.000000e+00   9.925555e-01    225s
+  175945    1.0000000e+00   0.000000e+00   3.484424e-02    230s
+  177455    1.0000000e+00   0.000000e+00   1.282644e-02    235s
+  177583    1.0000000e+00   0.000000e+00   0.000000e+00    236s
+
+Root relaxation: objective 1.000000e+00, 177583 iterations, 234.67 seconds (695.63 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       1.0000000    1.00000  0.00%     -  235s
+
+Explored 1 nodes (177583 simplex iterations) in 235.96 seconds (698.57 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 1 0.9565 0.9445 0.7945 
+No other solutions better than 1
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%

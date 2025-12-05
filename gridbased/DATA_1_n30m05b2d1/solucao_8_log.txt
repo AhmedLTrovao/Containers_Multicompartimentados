@@ -1,0 +1,89 @@
+
+Gurobi 12.0.2 (mac64[arm]) logging started Sun Nov  2 21:57:41 2025
+
+Set parameter LogFile to value "DATA_1_n30m05b2d1/solucao_8_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (mac64[arm] - Darwin 24.6.0 24G90)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 8213 rows, 24740 columns and 6322155 nonzeros
+Model fingerprint: 0x1300105e
+Variable types: 0 continuous, 24740 integer (24740 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [6e-03, 7e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 0.9011111
+Presolve removed 413 rows and 13594 columns (presolve time = 5s)...
+Presolve removed 413 rows and 13594 columns (presolve time = 10s)...
+Presolve removed 413 rows and 13594 columns (presolve time = 15s)...
+Presolve removed 413 rows and 13594 columns
+Presolve time: 19.69s
+Presolved: 7800 rows, 11146 columns, 2594145 nonzeros
+Found heuristic solution: objective 0.6061111
+Variable types: 0 continuous, 11146 integer (11146 binary)
+Deterministic concurrent LP optimizer: primal and dual simplex
+Showing primal log only...
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    8.1003704e-01   0.000000e+00   1.555636e+02     20s
+    1712    8.4375812e-01   0.000000e+00   1.525478e+03     25s
+    2672    8.4387333e-01   0.000000e+00   2.630484e+03    152s
+    3382    8.4399692e-01   0.000000e+00   1.875863e+03    155s
+    4582    8.4444785e-01   0.000000e+00   9.448694e+03   1086s
+    5582    8.4553683e-01   0.000000e+00   6.803912e+03   1090s
+    6382    8.4902511e-01   0.000000e+00   3.259525e+04   1095s
+    6982    8.7050061e-01   0.000000e+00   1.051961e+05   1101s
+    7622    8.9193082e-01   0.000000e+00   1.990594e+04   1106s
+    8152    9.0454181e-01   0.000000e+00   1.457064e+04   1110s
+    8822    9.2048233e-01   0.000000e+00   2.256708e+03   1116s
+    9402    9.3008755e-01   0.000000e+00   2.792663e+04   1121s
+    9972    9.3816145e-01   0.000000e+00   3.663876e+03   1126s
+   10522    9.4419854e-01   0.000000e+00   7.437894e+03   1130s
+   11262    9.5052814e-01   0.000000e+00   1.513318e+04   2061s
+   12222    9.5745479e-01   0.000000e+00   2.914095e+03   2065s
+   12942    9.6379837e-01   0.000000e+00   8.929632e+03   2071s
+   13462    9.6670353e-01   0.000000e+00   1.265139e+04   2076s
+   13882    9.6933871e-01   0.000000e+00   7.395689e+03   2080s
+   14382    9.7182749e-01   0.000000e+00   1.303599e+04   2085s
+   14892    9.7393806e-01   0.000000e+00   4.519299e+03   2091s
+   15392    9.7590527e-01   0.000000e+00   1.601016e+04   2096s
+   15852    9.7748671e-01   0.000000e+00   5.702440e+03   2101s
+   16302    9.7911189e-01   0.000000e+00   1.486811e+04   2105s
+   17252    9.8188946e-01   0.000000e+00   6.187155e+03   2111s
+   17752    9.8358537e-01   0.000000e+00   4.488874e+04   3039s
+   17952    9.8423092e-01   0.000000e+00   6.422229e+03   3040s
+   18752    9.8613992e-01   0.000000e+00   1.466078e+04   3046s
+   19152    9.8685668e-01   0.000000e+00   1.763972e+04   3050s
+   19552    9.8749383e-01   0.000000e+00   4.606670e+04   3055s
+   19952    9.8842530e-01   0.000000e+00   3.313627e+03   3060s
+   20352    9.8914643e-01   0.000000e+00   2.204086e+03   3066s
+   20752    9.8980598e-01   0.000000e+00   1.445460e+04   3071s
+   21152    9.9029032e-01   0.000000e+00   1.521844e+03   3076s
+   21472    9.9048198e-01   0.000000e+00   3.915154e+03   3080s
+   21972    9.9091316e-01   0.000000e+00   4.031231e+03   3086s
+
+
+Root relaxation: time limit, 22017 iterations, 3991.48 seconds (203.82 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0          -    0         0.90111  156.37363      -     - 4011s
+
+Explored 1 nodes (22017 simplex iterations) in 4011.53 seconds (227.24 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 0.901111 0.606111 
+
+Time limit reached
+Best objective 9.011111111111e-01, best bound 1.563736296296e+02, gap 17253.4238%

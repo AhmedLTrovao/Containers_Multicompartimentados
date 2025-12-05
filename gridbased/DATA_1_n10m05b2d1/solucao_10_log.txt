@@ -1,0 +1,40 @@
+
+Gurobi 12.0.2 (mac64[arm]) logging started Sun Nov  2 13:18:07 2025
+
+Set parameter LogFile to value "DATA_1_n10m05b2d1/solucao_10_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (mac64[arm] - Darwin 24.6.0 24G90)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1005 rows, 3160 columns and 46880 nonzeros
+Model fingerprint: 0x2627be78
+Variable types: 0 continuous, 3160 integer (3160 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e-03, 4e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+02]
+Found heuristic solution: objective 1.0000000
+Presolve time: 0.04s
+Presolved: 1005 rows, 3160 columns, 46880 nonzeros
+Variable types: 0 continuous, 3160 integer (3160 binary)
+
+Root relaxation: cutoff, 6639 iterations, 0.53 seconds (0.84 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0         1.00000    1.00000  0.00%     -    0s
+
+Explored 1 nodes (6639 simplex iterations) in 0.58 seconds (0.92 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 1 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%
