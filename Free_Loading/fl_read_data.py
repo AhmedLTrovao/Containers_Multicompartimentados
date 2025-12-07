@@ -1,17 +1,28 @@
-def read_data(arquivo_entrada):
+# read_data_free_loading.py
+def fl_read_data(arquivo):
     instancias = []
-    with open(arquivo_entrada,'r') as f:
+    with open(arquivo, "r") as f:
         linhas = [linha.strip() for linha in f if linha.strip()]
-    idx = 0
-    while idx < len(linhas):
-        partes = linhas[idx].split()
-        n_tipos, L, W, H = map(int, partes[:4])
-        idx += 1
+
+    i = 0
+    while i < len(linhas):
+
+        # Linha da instância
+        parts = linhas[i].split()
+        num_tipos, L, W, H = map(int, parts[:4])
+        i += 1
+
+        # Lê os tipos de caixa
         boxes = []
-        for _ in range(n_tipos):
-            partes = linhas[idx].split()
-            v_i, l_i, w_i, h_i, b_i = map(float, partes[:5])
+        for _ in range(num_tipos):
+            parts = linhas[i].split()
+            v_i, l_i, w_i, h_i, b_i = map(float, parts[:5])
             boxes.append((int(l_i), int(w_i), int(h_i), int(b_i)))
-            idx += 1
-        instancias.append({"L": int(L), "W": int(W), "H": int(H), "boxes": boxes})
+            i += 1
+
+        instancias.append({
+            "L": L, "W": W, "H": H,
+            "boxes": boxes
+        })
+
     return instancias

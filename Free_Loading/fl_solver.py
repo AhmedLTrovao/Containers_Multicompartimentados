@@ -1,7 +1,7 @@
 import gurobipy as gp
 from gurobipy import GRB
 
-def resolver_instancia_free_loading(L, W, H, boxes, arquivo_saida, tempo_limite=60
+def fl_solver(L, W, H, boxes, arquivo_saida, tempo_limite=3600
                                     ):
     # Expande cada tipo de caixa em unidades individuais
     boxes_expanded = []
@@ -78,7 +78,7 @@ def resolver_instancia_free_loading(L, W, H, boxes, arquivo_saida, tempo_limite=
         f.write(f"Status: {model.Status}\n")
         if model.SolCount > 0:
             f.write(f"Objetivo: {model.ObjVal:.6f}\n")
-            f.write(f"Gap: {model.MIPGap*100:.6f}%\n")
+            f.write(f"Gap: {model.MIPGap:.6f}%\n")
             f.write(f"Tempo de execução: {model.Runtime:.6f} s\n")
             f.write(f"Nós explorados: {model.NodeCount}\n")
         else:
