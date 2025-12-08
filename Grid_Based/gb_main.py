@@ -4,10 +4,10 @@ from gb_solver import resolver_instancia
 from gb_compile_results import compilar_resultados
 
 # Caminho do arquivo de instâncias
-arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Grid_Based\DATA_1_m20b2d2\DATA_1_n50m20b2d2.dat"
+arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Grid_Based\DATA_1_m20b2d2\DATA_1_n100m20b2d2.dat"
 
 # Pasta onde todos os resultados serão salvos
-pasta_saida = "resultados DATA_1_n50m20b2d2"
+pasta_saida = "resultados DATA_1_n100m20b2d2"
 
 # Cria a pasta se não existir
 os.makedirs(pasta_saida, exist_ok=True)

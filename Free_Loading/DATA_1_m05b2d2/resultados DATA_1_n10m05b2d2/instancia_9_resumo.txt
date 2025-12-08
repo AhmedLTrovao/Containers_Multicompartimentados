@@ -1,0 +1,5 @@
+Status: 9
+Objetivo: 0.870000
+Gap: 0.503448%
+Tempo de execução: 3600.146000 s
+Nós explorados: 317283.0
