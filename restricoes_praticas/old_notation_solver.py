@@ -97,65 +97,65 @@ def resolver_instancia(L, W, H, boxes, arquivo_saida, sigma, peso,tempo_limite=3
                        
     # Restrição de estabilidade horizontal no eixo X
     beta = 1.0
-    for i in range(m):
-        li, wi, hi, bi = boxes[i]
+    for j in range(m):
+        lj, wj, hj, bj = boxes[j]
         
-        X_i = [c for c in X_coords if c <= L - li]
-        Y_i = [c for c in Y_coords if c <= W - wi]
-        Z_i = [c for c in Z_coords if c <= H - hi]
-        for q in Y_i:
-            for r in Z_i:
-                for p in [c for c in X_i if c > 0]: # estável - encostado na parede do contêiner
+        X_j = [c for c in X_coords if c <= L - lj]
+        Y_j = [c for c in Y_coords if c <= W - wj]
+        Z_j = [c for c in Z_coords if c <= H - hj]
+        for q_linha in Y_j:
+            for r_linha in Z_j:
+                for p_linha in [p for p in X_j if p > 0]: # estável - encostado na parede do contêiner
                     lhs_x = gp.LinExpr()
                     
-                    for j in range(m):
-                        lj, wj, hj, bj = boxes[j]
-                        X_j = [c for c in X_coords if c <= L - lj]
-                        Y_j = [c for c in Y_coords if c <= W - wj]
-                        Z_j = [c for c in Z_coords if c <= H - hj]
+                    for i in range(m):
+                        li, wi, hi, bi = boxes[i]
+                        X_i = [c for c in X_coords if c <= L - li]
+                        Y_i = [c for c in Y_coords if c <= W - wi]
+                        Z_i = [c for c in Z_coords if c <= H - hi]
                         
-                        p_linha = p - lj
+                        p = p_linha - li
                         
-                        if p_linha in X_j:
-                            relevant_q_linha = [q_linha for q_linha in Y_j if (q - wj + 1 <= q_linha <= q + wi - 1)]
-                            relevant_r_linha = [r_linha for r_linha in Z_j if (r - hj + 1 <= r_linha <= r + hi - 1)]
-                            for q_linha in relevant_q_linha:
-                                for r_linha in relevant_r_linha:
+                        if p in X_i:
+                            relevant_q = [q for q in Y_i if (q_linha - wi + 1 <= q <= q_linha + wj - 1)]
+                            relevant_r = [r for r in Z_i if (r_linha - hi + 1 <= r <= r_linha + hj - 1)]
+                            for q in relevant_q:
+                                for r in relevant_r:
                                     W_ij = min(q + wi, q_linha + wj) - max(q, q_linha)
                                     H_ij = min(r + hi, r_linha + hj) - max(r, r_linha)
-                                    lhs_x += (W_ij * H_ij) * x[j, p_linha, q_linha, r_linha]
-                    model.addConstr(lhs_x >= beta * wi * hi * x[i, p, q, r])
+                                    lhs_x += (W_ij * H_ij) * x[i, p, q, r]
+                    model.addConstr(lhs_x >= beta * wi * hj * x[j, p_linha, q_linha, r_linha])
                             
                     
     # Restrição de estabilidade horizontal no eixo Y
     gamma = 1.0
-    for i in range(m):
-        li, wi, hi, bi = boxes[i]
+    for j in range(m):
+        lj, wj, hj, bj = boxes[j]
         
-        X_i = [c for c in X_coords if c <= L - li]
-        Y_i = [c for c in Y_coords if c <= W - wi]
-        Z_i = [c for c in Z_coords if c <= H - hi]
-        for p in X_i:
-            for r in Z_i:
-                for q in [c for c in Y_i if c > 0]:
+        X_j = [c for c in X_coords if c <= L - lj]
+        Y_j = [c for c in Y_coords if c <= W - wj]
+        Z_j = [c for c in Z_coords if c <= H - hj]
+        for p_linha in X_j:
+            for r_linha in Z_j:
+                for q_linha in [q for q in Y_j if q > 0]:
                     lhs_y = gp.LinExpr()
                     
-                    for j in range(m):
-                        lj, wj, hj, bj = boxes[j]
-                        X_j = [c for c in X_coords if c <= L - lj]
-                        Y_j = [c for c in Y_coords if c <= W - wj]
-                        Z_j = [c for c in Z_coords if c <= H - hj]
+                    for i in range(m):
+                        li, wi, hi, bi = boxes[i]
+                        X_i = [c for c in X_coords if c <= L - li]
+                        Y_i = [c for c in Y_coords if c <= W - wi]
+                        Z_i = [c for c in Z_coords if c <= H - hi]
                         
-                        q_linha = q - wj
-                        if q_linha in Y_j:
-                            relevant_p_linha = [p_linha for p_linha in X_j if (p - lj + 1 <= p_linha <= p + li - 1)]
-                            relevant_r_linha = [r_linha for r_linha in Z_j if (r - hj + 1 <= r_linha <= r + hi - 1)]
-                            for p_linha in relevant_p_linha:
-                                for r_linha in relevant_r_linha:
+                        q = q_linha - wi
+                        if q in Y_i:
+                            relevant_p = [p for p in X_i if (p_linha - li + 1 <= p <= p_linha + lj - 1)]
+                            relevant_r = [r for r in Z_i if (r_linha - hi + 1 <= r <= r_linha + hj - 1)]
+                            for p in relevant_p:
+                                for r in relevant_r:
                                     L_ij = min(p + li, p_linha + lj) - max(p, p_linha)
                                     H_ij = min(r + hi, r_linha + hj) - max(r, r_linha)
-                                    lhs_y += (L_ij * H_ij) * x[j, p_linha, q_linha, r_linha]
-                    model.addConstr(lhs_y >= gamma * li * hi * x[i, p, q, r])   
+                                    lhs_y += (L_ij * H_ij) * x[i, p, q, r]
+                    model.addConstr(lhs_y >= gamma * lj * hj * x[j, p_linha, q_linha, r_linha])   
                               
             
     # Restrição loadbearing
