@@ -4,7 +4,8 @@ if __name__ == "__main__":
 
     L, W, H = 12, 8, 8
 
-    num_walls = 3
+    # paredes FIXAS (você escolhe!)
+    walls = [2, 6]
 
     boxes_example = [
         (6, 3, 2, 4),
@@ -19,6 +20,6 @@ if __name__ == "__main__":
         W,
         H,
         boxes_example,
-        num_walls,
+        walls,
         "solucao_anteparos.txt"
     )

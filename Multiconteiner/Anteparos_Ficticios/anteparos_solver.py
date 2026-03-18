@@ -28,16 +28,16 @@ def gerar_coordenadas_normais(dimensao_maxima, dimensoes_caixas):
     coords_finais = [c for c in coordenadas if c <= dimensao_maxima - menor_dim]
 
     if 0 not in coords_finais:
-        coords_finais.insert(0,0)
+        coords_finais.insert(0, 0)
 
     return sorted(coords_finais)
 
 
-def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
+def resolver_anteparos(L, W, H, boxes, walls, arquivo_saida):
 
     m = len(boxes)
 
-    volume_container = L*W*H
+    volume_container = L * W * H
 
     v = [(l*w*h)/volume_container for (l,w,h,b) in boxes]
 
@@ -49,7 +49,7 @@ def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
     Y_coords = gerar_coordenadas_normais(W, all_widths)
     Z_coords = gerar_coordenadas_normais(H, all_heights)
 
-    model = gp.Model("SingleVehicleWithWalls")
+    model = gp.Model("SingleVehicleFixedWalls")
 
     # ------------------------
     # Variáveis
@@ -61,9 +61,9 @@ def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
 
         li, wi, hi, bi = boxes[i]
 
-        valid_p = [c for c in X_coords if c <= L-li]
-        valid_q = [c for c in Y_coords if c <= W-wi]
-        valid_r = [c for c in Z_coords if c <= H-hi]
+        valid_p = [c for c in X_coords if c <= L - li]
+        valid_q = [c for c in Y_coords if c <= W - wi]
+        valid_r = [c for c in Z_coords if c <= H - hi]
 
         for p in valid_p:
             for q in valid_q:
@@ -73,17 +73,6 @@ def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
                         vtype=GRB.BINARY,
                         name=f"x_{i}_{p}_{q}_{r}"
                     )
-
-    # paredes
-
-    y = {}
-
-    for p in X_coords:
-
-        y[p] = model.addVar(
-            vtype=GRB.BINARY,
-            name=f"wall_{p}"
-        )
 
     model.update()
 
@@ -116,9 +105,9 @@ def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
                     li, wi, hi, _ = boxes[i]
 
                     if (
-                        p <= xp < p+li and
-                        q <= yq < q+wi and
-                        r <= zr < r+hi
+                        p <= xp < p + li and
+                        q <= yq < q + wi and
+                        r <= zr < r + hi
                     ):
 
                         covering.append(x[i,p,q,r])
@@ -146,33 +135,19 @@ def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
         )
 
     # ------------------------
-    # Número de paredes
-    # ------------------------
-
-    model.addConstr(
-
-        gp.quicksum(y[p] for p in X_coords)
-
-        == num_walls
-
-    )
-
-    model.addConstr(y[0] == 0)
-
-    # ------------------------
-    # Caixa não pode cruzar parede
+    # NÃO cruzar paredes (fixas)
     # ------------------------
 
     for (i,p,q,r) in x:
 
         li, wi, hi, _ = boxes[i]
 
-        for w in X_coords:
+        for w in walls:
 
             if p < w < p + li:
 
                 model.addConstr(
-                    x[i,p,q,r] <= 1 - y[w]
+                    x[i,p,q,r] == 0
                 )
 
     # ------------------------
@@ -203,14 +178,12 @@ def resolver_anteparos(L, W, H, boxes, num_walls, arquivo_saida):
                     f"{p} {q} {r} {li} {wi} {hi} 0\n"
                 )
 
-        # paredes
+        # paredes fixas
 
-        for p in X_coords:
+        for w in walls:
 
-            if y[p].X > 0.5:
-
-                f.write(
-                    f"{p} 0 0 0.01 {W} {H} 1\n"
-                )
+            f.write(
+                f"{w} 0 0 0.01 {W} {H} 1\n"
+            )
 
     print("Solução salva em:", arquivo_saida)
