@@ -1,0 +1,7 @@
+Status da solução: 2
+Objetivo final: 0.6760330578512396
+Volume total carregado: 817.9999999999999
+Número total de caixas carregadas: 64
+Gap de otimalidade: 0.0%
+Tempo de execução: 4.182999849319458
+Número de nós explorados: 2662.0

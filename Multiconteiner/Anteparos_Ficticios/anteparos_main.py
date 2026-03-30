@@ -4,10 +4,11 @@ from anteparos_solver import resolver_instancia
 from anteparos_compile_results import compilar_resultados
 
 # Caminho do arquivo de instâncias
-arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Multiconteiner\Anteparos_Ficticios\DATA_1_m05b2d1\DATA_1_n10m05b2d1.dat"
+# arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Multiconteiner\Anteparos_Ficticios\DATA_1_m05b2d1\DATA_1_n10m05b2d1.dat"
+arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Multiconteiner\Anteparos_Ficticios\DATA_0\DATA_0_com_paredes.txt"
 
 # Pasta onde todos os resultados serão salvos
-pasta_saida = "resultados DATA_1_n10m05b2d1"
+pasta_saida = "resultados DATA_0"
 
 # Cria a pasta se não existir
 os.makedirs(pasta_saida, exist_ok=True)
@@ -21,7 +22,7 @@ for idx, inst in enumerate(instancias):
     nome_base = f"instancia_{idx+1}"
     arquivo_saida = os.path.join(pasta_saida, f"{nome_base}.txt")
     # Agora passamos inst["walls"] também
-    resolver_instancia(inst["L"], inst["W"], inst["H"], inst["boxes"], inst["wall"], arquivo_saida)
+    resolver_instancia(inst["L"], inst["W"], inst["H"], inst["boxes"], inst["walls"], arquivo_saida)
 
 print("\n Todas as instâncias foram resolvidas. Resultados em:", pasta_saida)
 
