@@ -20,35 +20,44 @@ def gerar_coordenadas_normais(dimensao_maxima, dimensoes_objetos):
 
 def resolver_instancia(L_orig, W_orig, H, boxes, walls_list, arquivo_saida):
     """
-    Solver Otimizado para Caminhões com Divisórias (Acessos Laterais).
-    - Ajusta o container dinamicamente.
-    - Estica as paredes transversais para não deixar buracos.
+    Solver Inteligente para Caminhões Multicompartimentados.
+    - Calcula o tamanho do container baseado em canais únicos de divisórias.
+    - Estica as paredes transversais para selar as baias laterais.
     """
     
-    # 1. Ajuste Dinâmico do Container (Lógica de Máximo, não Soma)
-    # Se houver várias paredes longitudinais em Y=5, o W só cresce a espessura de UMA.
-    extra_L = max([w['l'] for w in walls_list if w['l'] < w['w']], default=0)
-    extra_W = max([w['w'] for w in walls_list if w['w'] < w['l']], default=0)
+    # 1. Identificar Canais Únicos de Divisórias (Evita crescimento duplicado)
+    canais_X = set() # Onde existem paredes transversais (|)
+    canais_Y = set() # Onde existem paredes longitudinais (-)
+    
+    for w in walls_list:
+        if w['l'] < w['w']: # Transversal
+            canais_X.add(w['x'])
+        elif w['w'] < w['l']: # Longitudinal
+            # Aqui usamos o Y original do .dat para identificar o corredor
+            canais_Y.add(w['y'])
+    
+    # Cada canal único adiciona 1 unidade de espessura
+    extra_L = len(canais_X)
+    extra_W = len(canais_Y)
     
     L_total = L_orig + extra_L
     W_total = W_orig + extra_W
 
-    # 2. Unificar objetos e AJUSTAR DIMENSÕES das paredes
+    # 2. Unificar objetos e AJUSTAR DIMENSÕES das paredes (Auto-Stretch)
     all_objs = list(boxes)
     primeiro_idx_parede = len(all_objs)
     
     for w in walls_list:
-        # Se for Transversal (|): Forçamos a largura (W) a ser o W_total do caminhão
+        # SE FOR TRANSVERSAL (|): Estica para tocar as duas laterais do caminhão
         if w['l'] < w['w']:
             nova_parede = (w['l'], W_total, w['h'], w['b'])
-            px, py = w['x'], 0 # Força a começar encostada na lateral Y=0
+            px, py = w['x'], 0 # Começa na quina lateral
         else:
-            # Se for Longitudinal (-): Mantém as dimensões do .dat
+            # SE FOR LONGITUDINAL (-): Mantém o comprimento definido
             nova_parede = (w['l'], w['w'], w['h'], w['b'])
             px, py = w['x'], w['y']
             
         all_objs.append(nova_parede)
-        # Atualizamos os valores de x e y para a fixação posterior
         w['x_fix'], w['y_fix'] = px, py
 
     # 3. Gerar Grade de Coordenadas
@@ -60,16 +69,16 @@ def resolver_instancia(L_orig, W_orig, H, boxes, walls_list, arquivo_saida):
     Y_coords = gerar_coordenadas_normais(W_total, all_w)
     Z_coords = gerar_coordenadas_normais(H, all_h)
     
-    # Forçar as posições das paredes na grade
+    # Garantir que os pontos das paredes existam na grade
     for w in walls_list:
         if w['x_fix'] not in X_coords: X_coords.append(w['x_fix'])
         if w['y_fix'] not in Y_coords: Y_coords.append(w['y_fix'])
     X_coords.sort(); Y_coords.sort()
 
-    # 4. Inicializar Modelo
-    model = gp.Model("Caminhao_Acesso_Lateral")
+    # 4. Inicializar Modelo Gurobi
+    model = gp.Model("Caminhao_Multicompartimentado")
     model.Params.OutputFlag = 1
-    model.Params.TimeLimit = 3600
+    model.Params.TimeLimit = 120 # Limite de 2 minutos para testes
 
     # 5. Variáveis de Decisão
     x_var = {}
@@ -82,15 +91,15 @@ def resolver_instancia(L_orig, W_orig, H, boxes, walls_list, arquivo_saida):
                 for r in valid_r:
                     x_var[i, p, q, r] = model.addVar(vtype=GRB.BINARY)
 
-    # 6. Objetivo: Maximizar ocupação das caixas (ignora volume das paredes)
-    vol_util = L_total * W_total * H
+    # 6. Objetivo: Maximizar volume das CAIXAS (Paredes têm peso zero no objetivo)
+    vol_container = L_total * W_total * H
     model.setObjective(
-        gp.quicksum(((all_objs[i][0]*all_objs[i][1]*all_objs[i][2])/vol_util)*x_var[i,p,q,r]
+        gp.quicksum(((all_objs[i][0]*all_objs[i][1]*all_objs[i][2])/vol_container)*x_var[i,p,q,r]
                     for (i,p,q,r) in x_var if i < primeiro_idx_parede),
         GRB.MAXIMIZE
     )
 
-    # 7. Restrição: Não Sobreposição (Overlap)
+    # 7. Restrição de Não Sobreposição (Overlap)
     for xp in X_coords:
         for yq in Y_coords:
             for zr in Z_coords:
@@ -101,32 +110,35 @@ def resolver_instancia(L_orig, W_orig, H, boxes, walls_list, arquivo_saida):
                 if covering:
                     model.addConstr(gp.quicksum(covering) <= 1)
 
-    # 8. Restrição: Quantidade de Caixas
+    # 8. Restrição de Quantidade
     for i in range(len(all_objs)):
         model.addConstr(gp.quicksum(x_var[idx,p,q,r] for (idx,p,q,r) in x_var if idx==i) <= all_objs[i][3])
 
-    # 9. FIXAR TODAS AS PAREDES
+    # 9. Fixação Obrigatória das Paredes
     for idx, w in enumerate(walls_list):
         p_idx = primeiro_idx_parede + idx
         px, py = w['x_fix'], w['y_fix']
-        if (p_idx, px, py, 0) in x_var:
-            model.addConstr(x_var[p_idx, px, py, 0] == 1)
+        # Procura a variável correspondente à posição fixa da parede
+        key = (p_idx, px, py, 0)
+        if key in x_var:
+            model.addConstr(x_var[key] == 1)
         else:
-            print(f"ERRO: Parede {idx} fora da grade em ({px},{py})")
+            print(f"ERRO CRÍTICO: Posição da parede {idx} ({px},{py}) é inválida para a grade.")
             return
 
     # 10. Otimizar
     model.optimize()
 
-    # 11. Exportar Resultados
+    # 11. Salvar Resultados para o MATLAB
     if model.Status in [GRB.OPTIMAL, GRB.TIME_LIMIT] and model.SolCount > 0:
         with open(arquivo_saida, "w") as f:
+            # Cabeçalho com dimensões atualizadas
             f.write(f"{L_total} {W_total} {H}\n")
             for (i,p,q,r) in x_var:
                 if x_var[i,p,q,r].X > 0.5:
                     li, wi, hi, _ = all_objs[i]
                     tipo = 1 if i >= primeiro_idx_parede else 0
                     f.write(f"{p} {q} {r} {li} {wi} {hi} {tipo}\n")
-        print(f"Sucesso! Ocupação: {model.ObjVal*100:.2f}%")
+        print(f"Instância resolvida! Ocupação útil: {model.ObjVal*100:.2f}%")
     else:
-        print("Solução não encontrada.")
+        print("Não foi possível encontrar uma solução viável.")
