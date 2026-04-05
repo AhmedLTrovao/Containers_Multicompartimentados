@@ -1,5 +1,5 @@
 
-from multidrop_solver import resolver_instancia
+from IIPP.restricoes_praticas.multidrop.multidrop_solver import resolver_instancia
 import os
 
 def main():

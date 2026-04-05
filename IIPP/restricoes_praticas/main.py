@@ -1,5 +1,5 @@
 
-from solver import resolver_instancia
+from IIPP.restricoes_praticas.solver import resolver_instancia
 import os
 
 def main():

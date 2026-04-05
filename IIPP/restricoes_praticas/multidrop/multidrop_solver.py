@@ -1,6 +1,6 @@
 import gurobipy as gp
 from gurobipy import GRB
-import restr
+import IIPP.restricoes_praticas.multidrop.restr as restr
 
 def gerar_coordenadas_normais(dimensao_maxima, dimensoes_caixas):
     coordenadas = {0}

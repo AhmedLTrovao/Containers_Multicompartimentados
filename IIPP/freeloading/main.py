@@ -1,6 +1,6 @@
 
-from read_data import read_data
-from solver import resolver_instancia_free_loading
+from IIPP.freeloading.read_data import read_data
+from IIPP.freeloading.solver import resolver_instancia_free_loading
 import os
 
 def main():

@@ -1,6 +1,6 @@
 
-from read_data import read_data
-from solver import resolver_instancia
+from IIPP.gridbased.read_data import read_data
+from IIPP.gridbased.solver import resolver_instancia
 import os
 
 def main():
