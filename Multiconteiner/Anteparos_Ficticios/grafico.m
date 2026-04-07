@@ -41,7 +41,7 @@ while k < l
     type = data(k); k=k+1;
 
     if type == 1
-        color = [0.5 0.5 0.5]; % parede
+        color = [0.1 0.1 0.1]; % parede
     else
         color = rand(1,3); % caixa
     end

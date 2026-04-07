@@ -1,144 +1,128 @@
 import gurobipy as gp
 from gurobipy import GRB
+import os
 
-def gerar_coordenadas_normais(dimensao_maxima, dimensoes_objetos):
-    """Gera pontos de grade baseados nas dimensões das caixas."""
-    coordenadas = {0}
-    if not dimensoes_objetos: return [0]
-    for d in sorted(list(dimensoes_objetos)):
-        novas = set()
-        for c in coordenadas:
-            novo = c + d
-            while novo <= dimensao_maxima:
-                novas.add(novo)
-                novo += d
-        coordenadas.update(novas)
-    menor_dim = min(dimensoes_objetos)
-    coords_finais = [c for c in coordenadas if c <= dimensao_maxima - menor_dim]
-    if 0 not in coords_finais: coords_finais.insert(0, 0)
-    return sorted(coords_finais)
-
-def resolver_instancia(L_orig, W_orig, H, boxes, walls_list, arquivo_saida):
+def resolver_instancia(L, W, H, boxes, walls_list, arquivo_saida):
     """
-    Solver Inteligente para Caminhões Multicompartimentados.
-    - Calcula o tamanho do container baseado em canais únicos de divisórias.
-    - Estica as paredes transversais para selar as baias laterais.
+    Solver de Otimização 3D com Paredes de Espessura Zero.
+    - Lógica de Lâmina: Impede que caixas atravessem planos X ou Y.
+    - Exportação Dupla: Gera arquivo para MATLAB (.txt) e Resumo (.csv).
     """
     
-    # 1. Identificar Canais Únicos de Divisórias (Evita crescimento duplicado)
-    canais_X = set() # Onde existem paredes transversais (|)
-    canais_Y = set() # Onde existem paredes longitudinais (-)
-    
-    for w in walls_list:
-        if w['l'] < w['w']: # Transversal
-            canais_X.add(w['x'])
-        elif w['w'] < w['l']: # Longitudinal
-            # Aqui usamos o Y original do .dat para identificar o corredor
-            canais_Y.add(w['y'])
-    
-    # Cada canal único adiciona 1 unidade de espessura
-    extra_L = len(canais_X)
-    extra_W = len(canais_Y)
-    
-    L_total = L_orig + extra_L
-    W_total = W_orig + extra_W
-
-    # 2. Unificar objetos e AJUSTAR DIMENSÕES das paredes (Auto-Stretch)
-    all_objs = list(boxes)
-    primeiro_idx_parede = len(all_objs)
-    
-    for w in walls_list:
-        # SE FOR TRANSVERSAL (|): Estica para tocar as duas laterais do caminhão
-        if w['l'] < w['w']:
-            nova_parede = (w['l'], W_total, w['h'], w['b'])
-            px, py = w['x'], 0 # Começa na quina lateral
-        else:
-            # SE FOR LONGITUDINAL (-): Mantém o comprimento definido
-            nova_parede = (w['l'], w['w'], w['h'], w['b'])
-            px, py = w['x'], w['y']
-            
-        all_objs.append(nova_parede)
-        w['x_fix'], w['y_fix'] = px, py
-
-    # 3. Gerar Grade de Coordenadas
-    all_l = {b[0] for b in all_objs}
-    all_w = {b[1] for b in all_objs}
-    all_h = {b[2] for b in all_objs}
-    
-    X_coords = gerar_coordenadas_normais(L_total, all_l)
-    Y_coords = gerar_coordenadas_normais(W_total, all_w)
-    Z_coords = gerar_coordenadas_normais(H, all_h)
-    
-    # Garantir que os pontos das paredes existam na grade
-    for w in walls_list:
-        if w['x_fix'] not in X_coords: X_coords.append(w['x_fix'])
-        if w['y_fix'] not in Y_coords: Y_coords.append(w['y_fix'])
-    X_coords.sort(); Y_coords.sort()
-
-    # 4. Inicializar Modelo Gurobi
-    model = gp.Model("Caminhao_Multicompartimentado")
+    # 1. Inicializar Modelo
+    model = gp.Model("Solver_Espessura_Zero")
     model.Params.OutputFlag = 1
-    model.Params.TimeLimit = 120 # Limite de 2 minutos para testes
+    model.Params.TimeLimit = 300 # 5 minutos
 
-    # 5. Variáveis de Decisão
+    # 2. Gerar Grade de Coordenadas (Passo de 1 em 1 para precisão)
+    X_coords = list(range(L + 1))
+    Y_coords = list(range(W + 1))
+    Z_coords = list(range(H + 1))
+
+    # 3. Criar Variáveis de Decisão com Filtro de Parede
+    # x_var[i, p, q, r] = 1 se a caixa i for alocada na coordenada (p, q, r)
     x_var = {}
-    for i, (li, wi, hi, bi) in enumerate(all_objs):
-        valid_p = [p for p in X_coords if p <= L_total - li]
-        valid_q = [q for q in Y_coords if q <= W_total - wi]
-        valid_r = [r for r in Z_coords if r <= H - hi]
-        for p in valid_p:
-            for q in valid_q:
-                for r in valid_r:
-                    x_var[i, p, q, r] = model.addVar(vtype=GRB.BINARY)
+    
+    print("Filtrando posições válidas conforme anteparos...")
+    for i, (li, wi, hi, bi) in enumerate(boxes):
+        for p in [p for p in X_coords if p <= L - li]:
+            for q in [q for q in Y_coords if q <= W - wi]:
+                for r in [r for r in Z_coords if r <= H - hi]:
+                    
+                    atravessa = False
+                    for w in walls_list:
+                        # Bloqueio Transversal (Plano fixo em X)
+                        if w['l'] == 0:
+                            # Se a caixa começa antes e termina depois da coordenada X da parede
+                            if p < w['x'] < p + li:
+                                atravessa = True; break
+                        
+                        # Bloqueio Longitudinal (Plano fixo em Y)
+                        elif w['w'] == 0:
+                            # Se a caixa começa antes e termina depois da coordenada Y da parede
+                            if q < w['y'] < q + wi:
+                                atravessa = True; break
+                    
+                    if not atravessa:
+                        x_var[i, p, q, r] = model.addVar(vtype=GRB.BINARY, name=f"x_{i}_{p}_{q}_{r}")
 
-    # 6. Objetivo: Maximizar volume das CAIXAS (Paredes têm peso zero no objetivo)
-    vol_container = L_total * W_total * H
-    model.setObjective(
-        gp.quicksum(((all_objs[i][0]*all_objs[i][1]*all_objs[i][2])/vol_container)*x_var[i,p,q,r]
-                    for (i,p,q,r) in x_var if i < primeiro_idx_parede),
-        GRB.MAXIMIZE
-    )
+    model.update()
 
-    # 7. Restrição de Não Sobreposição (Overlap)
-    for xp in X_coords:
-        for yq in Y_coords:
-            for zr in Z_coords:
-                covering = [x_var[i,p,q,r] for (i,p,q,r) in x_var 
-                            if (p <= xp < p + all_objs[i][0] and 
-                                q <= yq < q + all_objs[i][1] and 
-                                r <= zr < r + all_objs[i][2])]
+    # 4. Função Objetivo: Maximizar Volume Total Carregado
+    vol_total_container = L * W * H
+    obj = gp.quicksum(((boxes[i][0] * boxes[i][1] * boxes[i][2]) / vol_total_container) * x_var[i, p, q, r]
+                     for (i, p, q, r) in x_var.keys())
+    model.setObjective(obj, GRB.MAXIMIZE)
+
+    # 5. Restrição de Não Sobreposição (Fórmula da Imagem)
+    # Garante que cada unidade de volume (s, t, u) tenha no máximo 1 objeto
+    print("Adicionando restrições de sobreposição...")
+    for s in range(L):
+        for t in range(W):
+            for u in range(H):
+                covering = [x_var[i, p, q, r] for (i, p, q, r) in x_var.keys()
+                            if (p <= s < p + boxes[i][0] and 
+                                q <= t < q + boxes[i][1] and 
+                                r <= u < r + boxes[i][2])]
                 if covering:
                     model.addConstr(gp.quicksum(covering) <= 1)
 
-    # 8. Restrição de Quantidade
-    for i in range(len(all_objs)):
-        model.addConstr(gp.quicksum(x_var[idx,p,q,r] for (idx,p,q,r) in x_var if idx==i) <= all_objs[i][3])
+    # 6. Restrição de Quantidade de Caixas
+    for i in range(len(boxes)):
+        qtd_max = boxes[i][3]
+        model.addConstr(gp.quicksum(x_var[idx, p, q, r] for (idx, p, q, r) in x_var.keys() if idx == i) <= qtd_max)
 
-    # 9. Fixação Obrigatória das Paredes
-    for idx, w in enumerate(walls_list):
-        p_idx = primeiro_idx_parede + idx
-        px, py = w['x_fix'], w['y_fix']
-        # Procura a variável correspondente à posição fixa da parede
-        key = (p_idx, px, py, 0)
-        if key in x_var:
-            model.addConstr(x_var[key] == 1)
-        else:
-            print(f"ERRO CRÍTICO: Posição da parede {idx} ({px},{py}) é inválida para a grade.")
-            return
-
-    # 10. Otimizar
+    # 7. Otimização
     model.optimize()
 
-    # 11. Salvar Resultados para o MATLAB
-    if model.Status in [GRB.OPTIMAL, GRB.TIME_LIMIT] and model.SolCount > 0:
-        with open(arquivo_saida, "w") as f:
-            # Cabeçalho com dimensões atualizadas
-            f.write(f"{L_total} {W_total} {H}\n")
-            for (i,p,q,r) in x_var:
-                if x_var[i,p,q,r].X > 0.5:
-                    li, wi, hi, _ = all_objs[i]
-                    tipo = 1 if i >= primeiro_idx_parede else 0
-                    f.write(f"{p} {q} {r} {li} {wi} {hi} {tipo}\n")
-        print(f"Instância resolvida! Ocupação útil: {model.ObjVal*100:.2f}%")
+    # 8. Exportação de Resultados
+    if model.SolCount > 0:
+        # --- ARQUIVO PARA MATLAB ---
+        try:
+            with open(arquivo_saida, "w") as f:
+                f.write(f"{L} {W} {H}\n") # Dimensões do container
+                
+                cont_caixas = 0
+                for chave in x_var.keys():
+                    if x_var[chave].X > 0.5:
+                        i, p, q, r = chave
+                        li, wi, hi, _ = boxes[i]
+                        f.write(f"{p} {q} {r} {li} {wi} {hi} 0\n")
+                        cont_caixas += 1
+                
+                # Paredes (Tipo 1)
+                for w in walls_list:
+                    lx_vis = 0.05 if w['l'] == 0 else w['l']
+                    wy_vis = 0.05 if w['w'] == 0 else w['w']
+                    f.write(f"{w['x']} {w['y']} 0 {lx_vis} {wy_vis} {H} 1\n")
+            
+            print(f"Arquivo MATLAB gerado com {cont_caixas} caixas.")
+            
+        except Exception as e:
+            print(f"Erro ao salvar arquivo MATLAB: {e}")
+
+        # --- ARQUIVO DE RESUMO PARA O COMPILE_RESULTS ---
+        try:
+            arquivo_resumo = arquivo_saida.replace(".txt", "_resumo.txt")
+            with open(arquivo_resumo, "w", encoding="utf-8") as f_res:
+                f_res.write(f"Status da solução: {model.Status}\n")
+                f_res.write(f"Objetivo final : {model.ObjVal}\n")
+                
+                vol_real = sum(boxes[c[0]][0]*boxes[c[0]][1]*boxes[c[0]][2] 
+                               for c, v in x_var.items() if v.X > 0.5)
+                f_res.write(f"Volume total carregado: {vol_real}\n")
+                
+                total_caixas = sum(1 for v in x_var.values() if v.X > 0.5)
+                f_res.write(f"Número total de caixas carregadas: {total_caixas}\n")
+                
+                f_res.write(f"Gap de otimalidade: {model.MIPGap * 100}%\n")
+                f_res.write(f"Tempo de execução: {model.Runtime}\n")
+                f_res.write(f"Número de nós explorados: {model.NodeCount}\n")
+            
+            print(f"Resumo salvo em: {arquivo_resumo}")
+
+        except Exception as e:
+            print(f"Erro ao salvar resumo: {e}")
+            
     else:
-        print("Não foi possível encontrar uma solução viável.")
+        print("Nenhuma solução ótima ou viável foi encontrada pelo Gurobi.")
