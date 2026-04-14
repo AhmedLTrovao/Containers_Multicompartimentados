@@ -3,5 +3,5 @@ Objetivo final : 1.0
 Volume total carregado: 2560
 Número total de caixas carregadas: 198
 Gap de otimalidade: 0.0%
-Tempo de execução: 0.500999927520752
+Tempo de execução: 0.19999980926513672
 Número de nós explorados: 1.0
