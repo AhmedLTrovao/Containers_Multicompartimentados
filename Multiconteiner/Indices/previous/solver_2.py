@@ -1,3 +1,7 @@
+'''
+A diferença desse solver e do solver antigo é que esse considera os compartimentos deslocados de Wk entre si -
+compartimentos iguais em tamanhos mas com posição relativa entre si
+'''
 import gurobipy as gp
 from gurobipy import GRB
 
@@ -9,7 +13,7 @@ def gerar_coordenadas_normais(dimensao_maxima, dimensoes_caixas):
             novo = c + d
             while novo <= dimensao_maxima:
                 novas.add(novo)
-                novo += d
+            novo += d
         coordenadas.update(novas)
     if not dimensoes_caixas:
         return [0]
@@ -21,42 +25,42 @@ def gerar_coordenadas_normais(dimensao_maxima, dimensoes_caixas):
 
 def resolver_multi_container(L, W, H, boxes, num_containers, arquivo_saida):
     """
-    Resolve o problema de empacotamento para múltiplos compartimentos idênticos
-    
-    Parâmetros:
-        L, W, H: dimensões dos contaîneres
-        boxes: lista de tuplas (l, w, h, quantidade).
-        num_containers: inteiro, número de contaîneres
-        arquivo_saida: nome de arquivo de output
+    Resolve o problema de empacotamento para múltiplos compartimentos idênticos,
+    alocando cada compartimento k sequencialmente no eixo Y (deslocamento k * W).
     """
     m = len(boxes)
-    
-    # volume total de um container
     vol_container = L * W * H 
     
-    # valor de cada caixa
+    # valor de cada caixa (relativo ao volume de um único compartimento)
     v = [(l*w*h)/vol_container for (l,w,h,b) in boxes]
     
     all_lengths = {l for (l,_,_,_) in boxes}
     all_widths  = {w for (_,w,_,_) in boxes}
     all_heights = {h for (_,_,h,_) in boxes}
 
+    # 1. Gera as coordenadas base como se fosse um único compartimento
     X_coords = gerar_coordenadas_normais(L, all_lengths)
-    Y_coords = gerar_coordenadas_normais(W, all_widths)
+    Y_coords_base = gerar_coordenadas_normais(W, all_widths)
     Z_coords = gerar_coordenadas_normais(H, all_heights)
 
-    model = gp.Model("MultiContainerGrid")
+    model = gp.Model("MultiContainerGrid_Deslocado")
+    model.Params.MIPFocus = 1
 
     # --- 1: Variáveis
-    # x[k, i, p, q, r] = 1 se caixa do tipo 'i' está no contaîner 'k' na coordenada (p,q,r)
+    # x[k, i, p, q, r] = 1 se caixa 'i' está no compartimento 'k'
+    # ATENÇÃO: a coordenada 'q' agora é GLOBAL (já inclui o deslocamento)
     x = {}
 
     for k in range(num_containers):
+        # Desloca o eixo Y para o compartimento k (k=0 -> 0, k=1 -> W, k=2 -> 2W...)
+        Y_coords_k = [q + (k * W) for q in Y_coords_base]
+        
         for i in range(m):
             li, wi, hi, bi = boxes[i]
-            # filtrando coordenadas válidas para o tamanho específico da caixa
+            
             valid_p = [c for c in X_coords if c <= L - li]
-            valid_q = [c for c in Y_coords if c <= W - wi]
+            # O limite máximo em Y para este compartimento é (k * W) + W - wi
+            valid_q = [c for c in Y_coords_k if c <= (k * W) + W - wi]
             valid_r = [c for c in Z_coords if c <= H - hi]
             
             for p in valid_p:
@@ -75,51 +79,44 @@ def resolver_multi_container(L, W, H, boxes, num_containers, arquivo_saida):
         GRB.MAXIMIZE
     )
 
-    # --- 3: Restrições de não sobreposição dentro de cada container
+    # --- 3: Restrições de não sobreposição
     print("Generating non-overlap constraints...")
-    # pra cada container e cada coordenada
+    
     for k in range(num_containers):
+        # Recupera as coordenadas Y específicas deste compartimento
+        Y_coords_k = [q + (k * W) for q in Y_coords_base]
+        
+        # Filtra as variáveis apenas do compartimento k (Otimização de performance)
+        vars_k = [(i, p, q, r) for (k_, i, p, q, r) in x if k_ == k]
+        
         for xp in X_coords:
-            for yq in Y_coords:
+            for yq in Y_coords_k:
                 for zr in Z_coords:
                     covering = []
-                    # filtro caixas que pertencem ao container k
-                    current_vars_k = [key for key in x.keys() if key[0] == k]
                     
-                    # e checo se elas podem estar na coordenada
-                    for (k_, i, p, q, r) in current_vars_k:
+                    for (i, p, q, r) in vars_k:
                         li, wi, hi, _ = boxes[i]
+                        # A verificação geométrica permanece idêntica, pois 'q' e 'yq' já estão no espaço global
                         if (p <= xp < p + li) and \
                            (q <= yq < q + wi) and \
                            (r <= zr < r + hi):
-                            covering.append(x[k_, i, p, q, r])
+                            covering.append(x[k, i, p, q, r])
                     
-                    # se há alguma caixa que possa ser colocada na coordenada, adiciona a restrição de que no máximo uma caixa pode estar nessa coordenada
                     if covering:
                         model.addConstr(gp.quicksum(covering) <= 1, name=f"no_overlap_k{k}_{xp}_{yq}_{zr}")
 
-    # --- 4: Restrição de quantidade de caixas
+    # --- 4: Restrição de quantidade de caixas (Inventário)
     for i in range(m):
-        # a quantidade de caixas do tipo i empacotadas tem que ser inferior ou i à quantidade disponivel de caixas do tipo i
+        # A soma de todas as posições em todos os compartimentos não pode exceder o estoque bi
         total_placed_i = gp.quicksum(x[k, i, p, q, r] for (k, i_, p, q, r) in x if i_ == i)
         model.addConstr(total_placed_i <= boxes[i][3], name=f"max_qty_type_{i}")
 
-    # --- 5: Quebra de simetria
-    # Since containers are identical, the solver might waste time swapping contents between Cont 1 and Cont 2.
-    # We force Container k to be "more full" or equal to Container k+1 based on index (rough heuristic).
-    # Ideally, we sort by volume, but simply ordering IDs helps.
-    # for k in range(num_containers - 1):
-    #     vol_k = gp.quicksum(v[i] * x[k,i,p,q,r] for (k_,i,p,q,r) in x if k_==k)
-    #     vol_k_next = gp.quicksum(v[i] * x[k+1,i,p,q,r] for (k_,i,p,q,r) in x if k_==k+1)
-    #     model.addConstr(vol_k >= vol_k_next)
 
-    # --- 6: Resolver
+    # --- 5: Resolver
     model.Params.TimeLimit = 3600
     model.optimize()
 
-    # --- 7. Output ---
-    
-    # Helper for box types output
+    # --- 6. Output ---
     tipo_dict = {}
     tipo_counter = 1
     for li, wi, hi, bi in boxes:
@@ -129,16 +126,17 @@ def resolver_multi_container(L, W, H, boxes, num_containers, arquivo_saida):
             tipo_counter += 1
 
     with open(arquivo_saida, "w") as f:
-        # Header: L W H num_containers
-        f.write(f"{L} {W} {H} {num_containers}\n")
+        # Header: O tamanho do Y global agora é W * num_containers
+        f.write(f"{L} {W * num_containers} {H} {num_containers}\n")
         
         for (k, i, p, q, r) in x:
             if x[k, i, p, q, r].X > 0.5:
                 li, wi, hi, bi = boxes[i]
                 tipo = tipo_dict[(li, wi, hi)]
                 cliente = 1 # Placeholder
-                # Added 'k' (container index) to the end of the line
-                # Format: x y z l w h type client container_id
+                
+                # Como 'q' já é global (ex: se k=1 e W=10, q já começa de 10), 
+                # não precisamos somar nada na hora de imprimir!
                 f.write(f"{p} {q} {r} {li} {wi} {hi} {tipo} {cliente} {k}\n")
 
     # Resumo
@@ -147,9 +145,8 @@ def resolver_multi_container(L, W, H, boxes, num_containers, arquivo_saida):
         f.write(f"Status da solução: {model.Status}\n")
         if model.SolCount > 0:
             num_caixas = sum(1 for (k,i,p,q,r) in x if x[k,i,p,q,r].X > 0.5)
-            # Total volume available across ALL containers
             total_capacity = (L * W * H) * num_containers
-            volume_packed = model.ObjVal * (L * W * H) # ObjVal is sum of relative volumes
+            volume_packed = model.ObjVal * (L * W * H) 
             
             ocupacao_global = (volume_packed / total_capacity) * 100
 
@@ -161,7 +158,6 @@ def resolver_multi_container(L, W, H, boxes, num_containers, arquivo_saida):
             f.write(f"Gap: {model.MIPGap*100:.6f}%\n")
             f.write(f"Tempo: {model.Runtime:.6f} s\n")
             
-            # Per container stats
             f.write("\n--- Detalhes por Container ---\n")
             for k in range(num_containers):
                 vol_k = sum(boxes[i][0]*boxes[i][1]*boxes[i][2] for (k_,i,p,q,r) in x 
