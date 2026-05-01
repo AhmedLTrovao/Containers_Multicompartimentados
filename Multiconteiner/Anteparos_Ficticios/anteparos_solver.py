@@ -101,19 +101,35 @@ def resolver_instancia(L, W, H, boxes, walls_list, arquivo_saida):
     # 7. Otimização
     model.optimize()
 
-    # 8. Exportação (Simplificada para exemplo)
+    # 8. Exportação e Geração de Resumo
     if model.SolCount > 0:
+        # Gera o arquivo para o MATLAB (coordenadas)
         with open(arquivo_saida, "w") as f:
             f.write(f"{L} {W} {H}\n")
             for (i, p, q, r), var in x_var.items():
                 if var.X > 0.5:
                     li, wi, hi, _ = boxes[i]
                     f.write(f"{p} {q} {r} {li} {wi} {hi} 0\n")
-            # Adicionar paredes no output para o MATLAB
             for w in walls_list:
                 lx = 0.1 if w['l'] == 0 else w['l']
                 wy = 0.1 if w['w'] == 0 else w['w']
                 f.write(f"{w['x']} {w['y']} 0 {lx} {wy} {H} 1\n")
-        print(f"Sucesso! Resultado em {arquivo_saida}")
+        
+        #  GERAÇÃO DO RESUMO PARA O COMPILADOR 
+        arquivo_resumo = arquivo_saida.replace(".txt", "_resumo.txt")
+        vol_total_carregado = sum(boxes[i][0] * boxes[i][1] * boxes[i][2] 
+                                  for (i, p, q, r), var in x_var.items() if var.X > 0.5)
+        n_caixas = sum(1 for var in x_var.values() if var.X > 0.5)
+        
+        with open(arquivo_resumo, "w", encoding="utf-8") as f:
+            f.write(f"Status da solução: {model.Status}\n")
+            f.write(f"Objetivo final : {model.ObjVal}\n")
+            f.write(f"Volume total carregado: {vol_total_carregado}\n")
+            f.write(f"Número total de caixas carregadas: {n_caixas}\n")
+            f.write(f"Gap de otimalidade: {model.MIPGap * 100}%\n")
+            f.write(f"Tempo de execução: {model.Runtime}\n")
+            f.write(f"Número de nós explorados: {model.NodeCount}\n")
+        
+        print(f"Sucesso! Resultado em {arquivo_saida} e resumo em {arquivo_resumo}")
     else:
         print("Nenhuma solução encontrada.")
