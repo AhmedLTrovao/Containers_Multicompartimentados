@@ -1,0 +1,7 @@
+Status da solução: 2
+Objetivo final : -0.0
+Volume total carregado: 0
+Número total de caixas carregadas: 0
+Gap de otimalidade: N/A
+Tempo de execução: 0.0
+Número de nós explorados: 0.0

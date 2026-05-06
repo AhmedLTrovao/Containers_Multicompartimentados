@@ -115,7 +115,7 @@ def resolver_instancia(L, W, H, boxes, walls_list, arquivo_saida):
                 wy = 0.1 if w['w'] == 0 else w['w']
                 f.write(f"{w['x']} {w['y']} 0 {lx} {wy} {H} 1\n")
         
-        #  GERAÇÃO DO RESUMO PARA O COMPILADOR 
+        # --- GERAÇÃO DO RESUMO PARA O COMPILADOR ---
         arquivo_resumo = arquivo_saida.replace(".txt", "_resumo.txt")
         vol_total_carregado = sum(boxes[i][0] * boxes[i][1] * boxes[i][2] 
                                   for (i, p, q, r), var in x_var.items() if var.X > 0.5)
@@ -126,10 +126,16 @@ def resolver_instancia(L, W, H, boxes, walls_list, arquivo_saida):
             f.write(f"Objetivo final : {model.ObjVal}\n")
             f.write(f"Volume total carregado: {vol_total_carregado}\n")
             f.write(f"Número total de caixas carregadas: {n_caixas}\n")
-            f.write(f"Gap de otimalidade: {model.MIPGap * 100}%\n")
+            
+            # --- CORREÇÃO AQUI: VERIFICAÇÃO DO GAP ---
+            if model.IsMIP and model.SolCount > 0:
+                try:
+                    gap_val = model.MIPGap * 100
+                    f.write(f"Gap de otimalidade: {gap_val:.2f}%\n")
+                except AttributeError:
+                    f.write("Gap de otimalidade: 0.00% (Resolvido no Presolve)\n")
+            else:
+                f.write("Gap de otimalidade: N/A\n")
+            
             f.write(f"Tempo de execução: {model.Runtime}\n")
             f.write(f"Número de nós explorados: {model.NodeCount}\n")
-        
-        print(f"Sucesso! Resultado em {arquivo_saida} e resumo em {arquivo_resumo}")
-    else:
-        print("Nenhuma solução encontrada.")
