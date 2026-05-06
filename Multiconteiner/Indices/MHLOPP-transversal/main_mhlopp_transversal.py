@@ -7,11 +7,11 @@ from compile_results import compilar_resultados
 if __name__ == "__main__":
     # 1. Configurações de Caminhos
     # Use o r"" para evitar problemas com as barras invertidas do Windows
-    #arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices\MHLOPP-transversal\DATA_1_m05b2d1\DATA_1_n30m05b2d1.dat"
-    arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices\MHLOPP-transversal\DATA_0\Data_1_com_paredes.txt"
+    arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices\MHLOPP-transversal\DATA_1_m05b2d1\DATA_1_n10m05b2d1.dat"
+    # arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices\MHLOPP-transversal\DATA_0\Data_1_com_paredes.txt"
     
     # Pasta onde todos os resultados (txt e resumo) serão salvos
-    pasta_saida = "resultados DATA_0"
+    pasta_saida = "resultados DATA_1_n10m05b2d1"
     os.makedirs(pasta_saida, exist_ok=True)
 
     start_time_geral = time.time()
