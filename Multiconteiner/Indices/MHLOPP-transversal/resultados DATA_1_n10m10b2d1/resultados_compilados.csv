@@ -1,0 +1,11 @@
+Instância;Status;Objetivo (Ocupação);Volume Total;Nº Caixas;Gap (%);Tempo (s)
+instancia_1;2;0,996;996,0;214;0,0;0,197
+instancia_2;2;0,992;992,0;210;0,0;0,807
+instancia_3;2;1,0;1000,0;509;0,0;0,517
+instancia_4;2;0,996;996,0;147;0,0;0,368
+instancia_5;2;0,984;984,0;155;0,0;21,628
+instancia_6;2;1,0;1000,0;624;0,0;0,12
+instancia_7;2;0,988;988,0;114;0,0;0,109
+instancia_8;2;1,0;1000,0;267;0,0;1,0
+instancia_9;2;0,961;961,0;167;0,0;0,384
+instancia_10;2;0,9;900,0;152;0,0;0,063

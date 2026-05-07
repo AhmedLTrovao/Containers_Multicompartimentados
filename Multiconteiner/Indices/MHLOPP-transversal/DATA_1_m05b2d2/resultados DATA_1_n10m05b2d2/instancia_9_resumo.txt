@@ -1,0 +1,14 @@
+Status da solucao: 2
+Objetivo final (Soma v_i): 0.576000
+Volume total carregado: 576.00
+Capacidade Total (4 compartimentos): 1000
+Ocupação Global: 57.60%
+Número total de caixas: 39
+Gap: 0.000000%
+Tempo: 0.003000 s
+
+--- Detalhes por Compartimento ---
+Compartimento 0: 144.00 vol (57.6%)
+Compartimento 1: 144.00 vol (57.6%)
+Compartimento 2: 144.00 vol (57.6%)
+Compartimento 3: 144.00 vol (57.6%)
