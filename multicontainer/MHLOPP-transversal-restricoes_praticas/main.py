@@ -11,24 +11,20 @@ if __name__ == "__main__":
         (8, 12, 8), # Compartimento 0
         (8, 12, 8), # Compartimento 1
         (8, 8, 8),  # Compartimento 2
-        (8, 8, 8),  # Compartimento 3
-        (8, 12, 8), # Compartimento 4
-        (8, 12, 8), # Compartimento 5
-        (8, 8, 8),  # Compartimento 6
-        (8, 8, 8),  # Compartimento 7
+        (8, 8, 8)  # Compartimento 3
     ]
     
     # Lista de caixas: (Comprimento, Largura, Altura, Quantidade)
     boxes_example = [
-        (6, 3, 2, 20), 
-        (6, 4, 3, 20), 
-        (8, 3, 2, 20),
-        (4, 3, 2, 20),
-        (4, 4, 3, 20)
+        (6, 3, 2, 10), 
+        (6, 4, 3, 10), 
+        (8, 3, 2, 10),
+        (4, 3, 2, 10),
+        (4, 4, 3, 10)
     ]
     
     # Adicionando parâmetros práticos (sigma e peso)
-    Sigma = [0, 3, 5, 0, 3]
+    Sigma = [0, 0, 0, 0, 100]
     Peso = [l*w*h for (l, w, h, b) in boxes_example]
     print(f"Pesos calculados: {Peso}")
     
