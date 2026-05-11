@@ -18,7 +18,7 @@ def gerar_coordenadas_normais(dimensao_maxima, dimensoes_caixas):
     if 0 not in finais: finais.insert(0, 0)
     return sorted(finais)
 
-def resolver_multi_multidrop_pratico(compartimentos, clientes_boxes, arquivo_saida, sigma, peso):
+def resolver_multi_multidrop_pratico(compartimentos, clientes_boxes, arquivo_saida, sigma, peso, alpha, beta, gamma, prioridade):
     num_compartimentos = len(compartimentos)
     num_clientes = len(clientes_boxes)
     
@@ -68,9 +68,17 @@ def resolver_multi_multidrop_pratico(compartimentos, clientes_boxes, arquivo_sai
 
     model.update()
 
-    # --- 2: Função Objetivo ---
-    model.setObjective(gp.quicksum(v for v in x.values()), GRB.MAXIMIZE)
 
+   # --- 2: Função Objetivo (Testes com Prioridade/Lucro) ---
+    obj_expr = gp.LinExpr()
+    for (k, c, i, p, q, r), var in x.items():
+        li, wi, hi, _ = clientes_boxes[c][i]
+        volume_caixa = li * wi * hi
+        # Multiplica o volume pelo peso/prioridade daquele cliente
+        obj_expr += (volume_caixa * prioridade[c][i]) * var
+        
+        
+    model.setObjective(obj_expr, GRB.MAXIMIZE)
  # --- 3: Restrições de Fronteira Multidrop LATERAL (Eixo X) ---
     for k, (L_k, W_k, H_k) in enumerate(compartimentos):
         O_X_k, O_Y_k, X_k, Y_k, Z_k = Info_K[k]
@@ -133,7 +141,7 @@ def resolver_multi_multidrop_pratico(compartimentos, clientes_boxes, arquivo_sai
 
     # --- 6: Restrições Práticas (Estabilidades e Empilhamento) ---
     print("Gerando restrições de estabilidade e loadbearing...")
-    alpha, beta, gamma = 1.0, 1.0, 1.0
+    # alpha, beta, gamma = 1.0, 1.0, 1.0
     
     # 6.1 Estabilidade Vertical (Z)
     for (k, c, i, p, q, r), var in x.items():
@@ -245,11 +253,11 @@ def resolver_multi_multidrop_pratico(compartimentos, clientes_boxes, arquivo_sai
     tipo_dict = {}
     tipo_counter = 1
     for c in range(num_clientes):
-        for li, wi, hi, _ in clientes_boxes[c]:
-            dims = (li, wi, hi)
-            if dims not in tipo_dict:
-                tipo_dict[dims] = tipo_counter
-                tipo_counter += 1
+        for i, (li, wi, hi, _) in enumerate(clientes_boxes[c]):
+            # A chave agora é o cliente e o índice da caixa (c, i)
+            # Isso garante que caixas idênticas em tamanho, mas com sigmas diferentes, ganhem IDs únicos!
+            tipo_dict[(c, i)] = tipo_counter
+            tipo_counter += 1
 
     with open(arquivo_saida, "w") as f:
         f.write(f"{num_compartimentos}\n")
@@ -260,7 +268,7 @@ def resolver_multi_multidrop_pratico(compartimentos, clientes_boxes, arquivo_sai
             for (k, c, i, p, q, r) in x:
                 if x[k, c, i, p, q, r].X > 0.5:
                     li, wi, hi, _ = clientes_boxes[c][i]
-                    tipo = tipo_dict[(li, wi, hi)]
-                    # Substituímos o "1" estático pelo ID real do cliente!
+                    # Busca o tipo pela chave exata (c, i)
+                    tipo = tipo_dict[(c, i)]
                     cliente_id = c 
                     f.write(f"{p} {q} {r} {li} {wi} {hi} {tipo} {cliente_id} {k}\n")

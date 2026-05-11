@@ -6,34 +6,93 @@ if __name__ == "__main__":
     start_time = time.time()
     path = os.path.dirname(os.path.realpath(__file__))
     
-    # 1. Compartimentos (L, W, H) - Dispostos em 2 colunas (pares esquerda, ímpares direita)
-    containers_example = [
-        (10, 10, 10), (10, 10, 10), # Linha 1 (Frente)
-        (10, 10, 10),  (10, 10, 10),  # Linha 2
-    ]
+    teste = "multidrop2"
     
-    # 2. Caixas separadas por Cliente (Ordem de entrega: c=0 primeiro, c=1 segundo)
-    boxes_por_cliente = [
-        # Cliente 0
-        [(3, 3, 2, 4)], 
-        # Cliente 1
-        [(3, 4, 3, 10), (4, 3, 2, 10)],
-        # Cliente 2
-        [(4, 4, 3, 10)]
-    ]
-    
-    # 3. Resistência (Sigma) de cada tipo de caixa, mapeado por cliente
-    sigma_por_cliente = [
-        [0],    # Sigma caixas do Cliente 0
-        [100, 100],    # Sigma caixas do Cliente 1
-        [100]        # Sigma caixas do Cliente 2
-    ]
-    
-    # 4. Peso de cada tipo de caixa, mapeado por cliente (usando volume como proxy)
-    peso_por_cliente = [
-        [l*w*h for (l,w,h,q) in c_boxes] for c_boxes in boxes_por_cliente
-    ]
-    
+    if teste == "loadbearing1":
+        containers_example = [
+            (10, 10, 10)
+        ]
+        boxes_por_cliente = [
+            # Cliente 0
+            [(5, 5, 5, 4), (5, 5, 5, 4)],
+        ]
+        sigma_por_cliente = [
+            [100, 0],    # Sigma caixas do Cliente -
+        ]
+        peso_por_cliente = [
+            [l*w*h for (l,w,h,q) in c_boxes] for c_boxes in boxes_por_cliente
+        ]
+        alpha =beta =gamma = 0
+    elif teste == "loadbearing2":
+        containers_example = [
+            (10, 10, 10)
+        ]
+        boxes_por_cliente = [
+            # Cliente 0
+            [(5, 5, 5, 0), (5, 5, 5, 8)],
+        ]
+        sigma_por_cliente = [
+            [100, 0],    # Sigma caixas do Cliente -
+        ]
+        peso_por_cliente = [
+            [l*w*h for (l,w,h,q) in c_boxes] for c_boxes in boxes_por_cliente
+        ]
+        alpha =beta =gamma = 0
+    elif teste == "estabilidade":
+        containers_example = [
+            (10, 10, 10)
+        ]
+        boxes_por_cliente = [
+            # Cliente 0
+            [(6, 6, 5, 4)],
+        ]
+        sigma_por_cliente = [
+            [1000],    # Sigma caixas do Cliente -
+        ]
+        peso_por_cliente = [
+            [l*w*h for (l,w,h,q) in c_boxes] for c_boxes in boxes_por_cliente
+        ]
+        alpha =beta =gamma=1
+    elif teste == "multidrop":
+        containers_example = [
+            (10, 10, 10),
+            (10, 10, 10)
+        ]
+        boxes_por_cliente = [
+            # Cliente 0
+            [(5, 10, 5, 4)],
+            # cliente 1
+            [(5, 10, 5, 4)],
+            
+        ]
+        sigma_por_cliente = [
+            [1000], [1000]   # Sigma caixas do Cliente -
+        ]
+        peso_por_cliente = [
+            [l*w*h for (l,w,h,q) in c_boxes] for c_boxes in boxes_por_cliente
+        ]
+        alpha =beta =gamma=0
+    elif teste == "multidrop2":
+        containers_example = [
+            (10, 10, 10),
+            (10, 10, 10)
+        ]
+        boxes_por_cliente = [
+            # Cliente 0
+            [(5, 10, 10, 1)],
+            # cliente 1
+            [(5, 10, 5, 3)],
+            # cliente 2
+            [(5, 10, 5, 4)],
+        ]
+        sigma_por_cliente = [
+            [100000], [100000], [100000]   # Sigma caixas do Cliente -
+        ]
+        peso_por_cliente = [
+            [l*w*h for (l,w,h,q) in c_boxes] for c_boxes in boxes_por_cliente
+        ]
+        prioridade = [[1],[1],[1]]
+        alpha =beta =gamma=0
     arquivo_saida = "solucao_multidrop_multi_pratico.txt"
     arquivo_saida = os.path.join(path, arquivo_saida)
     
@@ -43,7 +102,8 @@ if __name__ == "__main__":
         boxes_por_cliente, 
         arquivo_saida, 
         sigma_por_cliente, 
-        peso_por_cliente
+        peso_por_cliente,
+        alpha, beta, gamma, prioridade
     )
     
     end_time = time.time()
