@@ -13,13 +13,13 @@ def main():
     # Cada caixa já contém seu peso, sigma e o delta_x (margem de alcance lateral).
     clientes = [
         {
-            "id_cliente": 0,
+            "id_cliente": 1,
             "itens": [
                 {"dims": (4, 4, 8), "qtd": 7, "peso": 27, "sigma": 100, "delta_x": 4},
             ]
         },
         {
-            "id_cliente": 1,
+            "id_cliente": 0,
             "itens": [
                 {"dims": (4, 4, 8), "qtd": 1, "peso": 27, "sigma": 100, "delta_x": 4}, 
             ]
