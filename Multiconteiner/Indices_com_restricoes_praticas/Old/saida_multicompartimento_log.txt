@@ -1,0 +1,1021 @@
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 20:43:32 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 10
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  10
+
+Optimize a model with 676 rows, 341 columns and 3066 nonzeros (Max)
+Model fingerprint: 0x91fef232
+Model has 338 linear objective coefficients
+Variable types: 3 continuous, 338 integer (338 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 536 rows and 66 columns
+Presolve time: 0.02s
+Presolved: 140 rows, 275 columns, 1836 nonzeros
+Variable types: 0 continuous, 275 integer (273 binary)
+Found heuristic solution: objective 300.0000000
+
+Root relaxation: objective 7.020000e+02, 290 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  702.00000    0   54  300.00000  702.00000   134%     -    0s
+H    0     0                     372.0000000  702.00000  88.7%     -    0s
+H    0     0                     516.0000000  702.00000  36.0%     -    0s
+     0     0  700.54054    0   62  516.00000  700.54054  35.8%     -    0s
+H    0     0                     540.0000000  700.54054  29.7%     -    0s
+     0     0  672.00000    0   65  540.00000  672.00000  24.4%     -    0s
+H    0     0                     564.0000000  672.00000  19.1%     -    0s
+     0     0  672.00000    0   65  564.00000  672.00000  19.1%     -    0s
+     0     0  672.00000    0   48  564.00000  672.00000  19.1%     -    0s
+     0     2  672.00000    0   47  564.00000  672.00000  19.1%     -    0s
+
+Cutting planes:
+  Learned: 16
+  Gomory: 11
+  Cover: 80
+  Clique: 16
+  MIR: 1
+  GUB cover: 8
+  Zero half: 4
+  RLT: 2
+  Relax-and-lift: 6
+  BQP: 2
+
+Explored 1420 nodes (17616 simplex iterations) in 0.29 seconds (0.30 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 564 540 516 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.640000000000e+02, best bound 5.640000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:01:25 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 10
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  10
+
+Optimize a model with 676 rows, 341 columns and 3066 nonzeros (Max)
+Model fingerprint: 0x91fef232
+Model has 338 linear objective coefficients
+Variable types: 3 continuous, 338 integer (338 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 536 rows and 66 columns
+Presolve time: 0.02s
+Presolved: 140 rows, 275 columns, 1836 nonzeros
+Variable types: 0 continuous, 275 integer (273 binary)
+Found heuristic solution: objective 300.0000000
+
+Root relaxation: objective 7.020000e+02, 290 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  702.00000    0   54  300.00000  702.00000   134%     -    0s
+H    0     0                     372.0000000  702.00000  88.7%     -    0s
+H    0     0                     516.0000000  702.00000  36.0%     -    0s
+     0     0  700.54054    0   62  516.00000  700.54054  35.8%     -    0s
+H    0     0                     540.0000000  700.54054  29.7%     -    0s
+     0     0  672.00000    0   65  540.00000  672.00000  24.4%     -    0s
+H    0     0                     564.0000000  672.00000  19.1%     -    0s
+     0     0  672.00000    0   65  564.00000  672.00000  19.1%     -    0s
+     0     0  672.00000    0   48  564.00000  672.00000  19.1%     -    0s
+     0     2  672.00000    0   47  564.00000  672.00000  19.1%     -    0s
+
+Cutting planes:
+  Learned: 16
+  Gomory: 11
+  Cover: 80
+  Clique: 16
+  MIR: 1
+  GUB cover: 8
+  Zero half: 4
+  RLT: 2
+  Relax-and-lift: 6
+  BQP: 2
+
+Explored 1420 nodes (17616 simplex iterations) in 0.28 seconds (0.30 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 564 540 516 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.640000000000e+02, best bound 5.640000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:01:47 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 10
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  10
+
+Optimize a model with 676 rows, 341 columns and 3066 nonzeros (Max)
+Model fingerprint: 0x91fef232
+Model has 338 linear objective coefficients
+Variable types: 3 continuous, 338 integer (338 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 536 rows and 66 columns
+Presolve time: 0.03s
+Presolved: 140 rows, 275 columns, 1836 nonzeros
+Variable types: 0 continuous, 275 integer (273 binary)
+Found heuristic solution: objective 300.0000000
+
+Root relaxation: objective 7.020000e+02, 290 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  702.00000    0   54  300.00000  702.00000   134%     -    0s
+H    0     0                     372.0000000  702.00000  88.7%     -    0s
+H    0     0                     516.0000000  702.00000  36.0%     -    0s
+     0     0  700.54054    0   62  516.00000  700.54054  35.8%     -    0s
+H    0     0                     540.0000000  700.54054  29.7%     -    0s
+     0     0  672.00000    0   65  540.00000  672.00000  24.4%     -    0s
+H    0     0                     564.0000000  672.00000  19.1%     -    0s
+     0     0  672.00000    0   65  564.00000  672.00000  19.1%     -    0s
+     0     0  672.00000    0   48  564.00000  672.00000  19.1%     -    0s
+     0     2  672.00000    0   47  564.00000  672.00000  19.1%     -    0s
+
+Cutting planes:
+  Learned: 16
+  Gomory: 11
+  Cover: 80
+  Clique: 16
+  MIR: 1
+  GUB cover: 8
+  Zero half: 4
+  RLT: 2
+  Relax-and-lift: 6
+  BQP: 2
+
+Explored 1420 nodes (17616 simplex iterations) in 0.31 seconds (0.30 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 564 540 516 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.640000000000e+02, best bound 5.640000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:15:47 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 304 rows, 145 columns and 1136 nonzeros (Max)
+Model fingerprint: 0x33fcd7dc
+Model has 142 linear objective coefficients
+Variable types: 3 continuous, 142 integer (142 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 219 rows and 18 columns
+Presolve time: 0.01s
+Presolved: 85 rows, 127 columns, 736 nonzeros
+Variable types: 0 continuous, 127 integer (126 binary)
+Found heuristic solution: objective 300.0000000
+
+Root relaxation: objective 4.200000e+02, 70 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  420.00000    0   18  300.00000  420.00000  40.0%     -    0s
+H    0     0                     312.0000000  420.00000  34.6%     -    0s
+     0     0  420.00000    0   29  312.00000  420.00000  34.6%     -    0s
+     0     0  420.00000    0   40  312.00000  420.00000  34.6%     -    0s
+     0     0  408.00000    0   32  312.00000  408.00000  30.8%     -    0s
+     0     0  408.00000    0   23  312.00000  408.00000  30.8%     -    0s
+     0     0  408.00000    0   34  312.00000  408.00000  30.8%     -    0s
+H    0     0                     324.0000000  408.00000  25.9%     -    0s
+     0     0  408.00000    0   35  324.00000  408.00000  25.9%     -    0s
+     0     0  408.00000    0   21  324.00000  408.00000  25.9%     -    0s
+     0     0  408.00000    0   35  324.00000  408.00000  25.9%     -    0s
+     0     0  408.00000    0   28  324.00000  408.00000  25.9%     -    0s
+     0     0  407.29412    0   28  324.00000  407.29412  25.7%     -    0s
+     0     0  407.29412    0   28  324.00000  407.29412  25.7%     -    0s
+     0     2  407.29412    0   28  324.00000  407.29412  25.7%     -    0s
+
+Cutting planes:
+  Learned: 77
+  Gomory: 1
+  Cover: 16
+  Implied bound: 5
+  Clique: 18
+  MIR: 3
+  StrongCG: 1
+  GUB cover: 8
+  Zero half: 11
+  RLT: 2
+  Relax-and-lift: 13
+
+Explored 269 nodes (4893 simplex iterations) in 0.14 seconds (0.13 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 324 312 300 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.240000000000e+02, best bound 3.240000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:19:39 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 59 rows, 27 columns and 138 nonzeros (Max)
+Model fingerprint: 0xb6d79a24
+Model has 24 linear objective coefficients
+Variable types: 3 continuous, 24 integer (24 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 31 rows and 1 columns
+Presolve time: 0.01s
+Presolved: 28 rows, 26 columns, 82 nonzeros
+Variable types: 0 continuous, 26 integer (26 binary)
+Found heuristic solution: objective 162.0000000
+
+Root relaxation: cutoff, 13 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0       162.00000  162.00000  0.00%     -    0s
+
+Explored 1 nodes (13 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 162 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.620000000000e+02, best bound 1.620000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:26:33 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1935 rows, 1026 columns and 14034 nonzeros (Max)
+Model fingerprint: 0x84d9750f
+Model has 1023 linear objective coefficients
+Variable types: 3 continuous, 1023 integer (1023 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [8e+00, 3e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 1698 rows and 364 columns
+Presolve time: 0.05s
+Presolved: 237 rows, 662 columns, 6936 nonzeros
+Variable types: 0 continuous, 662 integer (660 binary)
+Found heuristic solution: objective 51.0000000
+
+Root relaxation: objective 1.050000e+02, 70 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                     105.0000000  105.00000  0.00%     -    0s
+     0     0  105.00000    0   10  105.00000  105.00000  0.00%     -    0s
+
+Explored 1 nodes (70 simplex iterations) in 0.06 seconds (0.09 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 105 51 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.050000000000e+02, best bound 1.050000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:31:54 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xd4ddd864
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 24 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 20 rows, 18 columns, 58 nonzeros
+Found heuristic solution: objective 640.0000000
+Variable types: 0 continuous, 18 integer (16 binary)
+
+Root relaxation: cutoff, 4 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0       640.00000  640.00000  0.00%     -    0s
+
+Explored 1 nodes (4 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 640 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.400000000000e+02, best bound 6.400000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:32:17 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xd4ddd864
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 24 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 20 rows, 18 columns, 58 nonzeros
+Found heuristic solution: objective 640.0000000
+Variable types: 0 continuous, 18 integer (16 binary)
+
+Root relaxation: cutoff, 4 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0       640.00000  640.00000  0.00%     -    0s
+
+Explored 1 nodes (4 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 640 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.400000000000e+02, best bound 6.400000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:44:04 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xd435e38e
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 24 rows and 2 columns
+Presolve time: 0.01s
+Presolved: 20 rows, 18 columns, 58 nonzeros
+Found heuristic solution: objective 640.0000000
+Variable types: 0 continuous, 18 integer (16 binary)
+
+Root relaxation: cutoff, 4 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0       640.00000  640.00000  0.00%     -    0s
+
+Explored 1 nodes (4 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 640 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.400000000000e+02, best bound 6.400000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:45:10 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xb076b3cd
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 18 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 26 rows, 18 columns, 72 nonzeros
+Variable types: 0 continuous, 18 integer (16 binary)
+Found heuristic solution: objective 1024.0000000
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1024 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:45:23 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0x2ba19e02
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 24 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 20 rows, 18 columns, 58 nonzeros
+Found heuristic solution: objective 640.0000000
+Variable types: 0 continuous, 18 integer (16 binary)
+
+Root relaxation: objective 1.024000e+03, 4 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1024.00000    0    4  640.00000 1024.00000  60.0%     -    0s
+H    0     0                     896.0000000 1024.00000  14.3%     -    0s
+
+Cutting planes:
+  Learned: 2
+
+Explored 1 nodes (4 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 896 640 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.960000000000e+02, best bound 8.960000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:45:35 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe000ab74
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 768.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 768 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:47:59 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe000ab74
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 768.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 768 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:50:14 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe000ab74
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 768.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 768 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:52:53 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe000ab74
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 768.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 768 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 21:54:44 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0x97f333ad
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 26 rows and 4 columns
+Presolve time: 0.00s
+Presolved: 18 rows, 16 columns, 48 nonzeros
+Variable types: 0 continuous, 16 integer (16 binary)
+Found heuristic solution: objective 1024.0000000
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1024 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:01:52 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0x97f333ad
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 26 rows and 4 columns
+Presolve time: 0.00s
+Presolved: 18 rows, 16 columns, 48 nonzeros
+Variable types: 0 continuous, 16 integer (16 binary)
+Found heuristic solution: objective 1024.0000000
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1024 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:03:04 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0x97f333ad
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 26 rows and 4 columns
+Presolve time: 0.01s
+Presolved: 18 rows, 16 columns, 48 nonzeros
+Variable types: 0 continuous, 16 integer (16 binary)
+Found heuristic solution: objective 1024.0000000
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1024 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:05:37 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe000ab74
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 768.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 768 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:08:08 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 133 rows, 68 columns and 364 nonzeros (Max)
+Model fingerprint: 0xd8bbc631
+Model has 64 linear objective coefficients
+Variable types: 4 continuous, 64 integer (64 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [3e+01, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 80 rows and 2 columns
+Presolve time: 0.00s
+Presolved: 53 rows, 66 columns, 238 nonzeros
+Found heuristic solution: objective 576.0000000
+Variable types: 0 continuous, 66 integer (66 binary)
+Found heuristic solution: objective 768.0000000
+
+Root relaxation: objective 1.024000e+03, 12 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1024.00000    0    8  768.00000 1024.00000  33.3%     -    0s
+H    0     0                     896.0000000 1024.00000  14.3%     -    0s
+H    0     0                    1024.0000000 1024.00000  0.00%     -    0s
+     0     0 1024.00000    0    8 1024.00000 1024.00000  0.00%     -    0s
+
+Explored 1 nodes (12 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 1024 896 768 ... 512
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:08:27 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 133 rows, 68 columns and 364 nonzeros (Max)
+Model fingerprint: 0xf6ae53f0
+Model has 64 linear objective coefficients
+Variable types: 4 continuous, 64 integer (64 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [3e+01, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 320.0000000
+Presolve removed 80 rows and 2 columns
+Presolve time: 0.01s
+Presolved: 53 rows, 66 columns, 238 nonzeros
+Found heuristic solution: objective 384.0000000
+Variable types: 0 continuous, 66 integer (66 binary)
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 384 320 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.840000000000e+02, best bound 3.840000000000e+02, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:10:06 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe000ab74
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 512.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 768.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 768 512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
+
+Gurobi 13.0.0 (mac64[arm]) logging started Mon May 18 22:11:35 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/testando/__pycache__/saida_multicompartimento_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 44 rows, 20 columns and 92 nonzeros (Max)
+Model fingerprint: 0xe1b16837
+Model has 16 linear objective coefficients
+Variable types: 4 continuous, 16 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+Found heuristic solution: objective 256.0000000
+Presolve removed 38 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 8 columns, 16 nonzeros
+Found heuristic solution: objective 512.0000000
+Variable types: 0 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1024.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 1024 512 256 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.024000000000e+03, best bound 1.024000000000e+03, gap 0.0000%
