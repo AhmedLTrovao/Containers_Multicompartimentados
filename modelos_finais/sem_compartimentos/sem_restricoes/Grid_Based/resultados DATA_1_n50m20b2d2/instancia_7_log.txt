@@ -1,0 +1,133 @@
+
+Gurobi 12.0.2 (win64) logging started Sun Dec  7 11:23:02 2025
+
+Set parameter LogFile to value "resultados DATA_1_n50m20b2d2\instancia_7_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 7500 rows, 18779 columns and 25651243 nonzeros
+Model fingerprint: 0x25fbbf89
+Variable types: 0 continuous, 18779 integer (18779 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [3e-02, 2e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+01]
+Found heuristic solution: objective 0.7563040
+Presolve removed 0 rows and 0 columns (presolve time = 6s)...
+Presolve removed 0 rows and 0 columns (presolve time = 10s)...
+Presolve removed 0 rows and 1670 columns (presolve time = 15s)...
+Presolve removed 0 rows and 11213 columns (presolve time = 20s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 25s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 30s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 35s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 40s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 45s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 50s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 55s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 60s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 65s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 70s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 75s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 80s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 85s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 90s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 95s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 100s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 105s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 110s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 115s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 120s)...
+Presolve removed 24 rows and 17275 columns (presolve time = 125s)...
+Sparsify removed 1320155 nonzeros (87%)
+Presolve removed 1117 rows and 13269 columns
+Presolve time: 126.31s
+Presolved: 6383 rows, 5510 columns, 195914 nonzeros
+Found heuristic solution: objective 0.3226400
+Variable types: 3122 continuous, 2388 integer (1530 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8432816e+01   1.116863e+04   0.000000e+00    128s
+    3983    1.0899935e+00   5.005281e+03   0.000000e+00    130s
+    8377    9.3778593e-01   0.000000e+00   0.000000e+00    134s
+
+Root relaxation: objective 9.377859e-01, 8377 iterations, 5.60 seconds (3.59 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.93779    0  871    0.75630    0.93779  24.0%     -  135s
+     0     0    0.93779    0  910    0.75630    0.93779  24.0%     -  137s
+     0     0    0.93779    0  884    0.75630    0.93779  24.0%     -  139s
+     0     0    0.93779    0  894    0.75630    0.93779  24.0%     -  140s
+     0     0    0.93779    0  878    0.75630    0.93779  24.0%     -  142s
+     0     0    0.93779    0  884    0.75630    0.93779  24.0%     -  143s
+     0     0    0.93778    0  895    0.75630    0.93778  24.0%     -  144s
+     0     0    0.93777    0  894    0.75630    0.93777  24.0%     -  145s
+     0     0    0.93777    0  895    0.75630    0.93777  24.0%     -  146s
+     0     0    0.93777    0  893    0.75630    0.93777  24.0%     -  148s
+H    0     0                       0.8215360    0.93777  14.1%     -  149s
+     0     2    0.93777    0  892    0.82154    0.93777  14.1%     -  150s
+H   12    15                       0.8522400    0.93671  9.91%   557  154s
+    18    23    0.86921    7  656    0.85224    0.93671  9.91%   510  155s
+    64    58    0.93075    4  865    0.85224    0.93249  9.42%   244  160s
+H   79    71                       0.8527360    0.93249  9.35%   234  162s
+*  104    94              46       0.8600800    0.93249  8.42%   210  164s
+   105    95    0.91034    9  539    0.86008    0.93249  8.42%   210  165s
+*  108    95              47       0.8618080    0.93128  8.06%   207  165s
+   136   119    0.88552   21  607    0.86181    0.93128  8.06%   217  170s
+*  168   125              45       0.8699200    0.93081  7.00%   188  172s
+*  179   114              12       0.8972160    0.93081  3.74%   189  173s
+   196   112    0.91993    8  722    0.89722    0.93077  3.74%   189  175s
+   222   117    0.90564   19  845    0.89722    0.93077  3.74%   199  180s
+   273   118    0.91452   10  722    0.89722    0.92734  3.36%   189  185s
+   323   133    0.92303    9  818    0.89722    0.92536  3.14%   193  190s
+   372   165    0.89954   17  386    0.89722    0.92517  3.12%   197  196s
+   430   179     cutoff   11         0.89722    0.92446  3.04%   192  201s
+   502   178    0.90212    8  799    0.89722    0.92178  2.74%   185  207s
+   564   190    0.91472    9  626    0.89722    0.92025  2.57%   179  211s
+   623   188     cutoff   12         0.89722    0.91985  2.52%   175  216s
+   691   204    0.90547   10  610    0.89722    0.91930  2.46%   171  221s
+   770   211     cutoff   13         0.89722    0.91828  2.35%   165  225s
+   827   208     cutoff   12         0.89722    0.91744  2.25%   165  232s
+   865   212     cutoff    8         0.89722    0.91743  2.25%   163  235s
+   929   220     cutoff   16         0.89722    0.91710  2.22%   163  243s
+   948   228     cutoff   13         0.89722    0.91706  2.21%   162  246s
+  1011   232    0.90544   12  604    0.89722    0.91683  2.19%   158  250s
+  1098   242    0.90165   11  416    0.89722    0.91642  2.14%   157  257s
+  1153   250    0.90872   12  869    0.89722    0.91560  2.05%   155  260s
+  1249   248     cutoff   15         0.89722    0.91495  1.98%   154  268s
+  1310   247    0.90010   12  529    0.89722    0.91423  1.90%   153  272s
+  1383   247    0.89948   11  506    0.89722    0.91381  1.85%   151  278s
+  1446   237     cutoff   15         0.89722    0.91329  1.79%   149  283s
+  1508   219    0.90713   11  689    0.89722    0.91288  1.75%   148  289s
+  1560   219    0.90387   12  827    0.89722    0.91183  1.63%   149  295s
+  1627   217     cutoff    7         0.89722    0.91105  1.54%   147  302s
+  1645   212    0.89767    7  669    0.89722    0.91102  1.54%   147  308s
+  1652   205     cutoff    7         0.89722    0.91066  1.50%   147  314s
+  1677   201    0.89742   13  728    0.89722    0.90995  1.42%   147  320s
+  1746   186 infeasible   11         0.89722    0.90972  1.39%   145  326s
+  1850   152     cutoff   13         0.89722    0.90831  1.24%   143  333s
+  1966   110     cutoff    7         0.89722    0.90688  1.08%   140  339s
+  2080     6     cutoff   16         0.89722    0.90551  0.92%   138  346s
+
+Cutting planes:
+  Zero half: 3
+  RLT: 17
+
+Explored 2262 nodes (307462 simplex iterations) in 346.74 seconds (227.05 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 9: 0.897216 0.86992 0.861808 ... 0.32264
+No other solutions better than 0.897216
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.972160000000e-01, best bound 8.972160000000e-01, gap 0.0000%

@@ -1,0 +1,52 @@
+
+Gurobi 12.0.2 (win64) logging started Mon Nov  3 17:52:03 2025
+
+Set parameter LogFile to value "resultados DATA_1_n100m05b2d2\instancia_6_log.txt"
+Set parameter TimeLimit to value 1800
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  1800
+
+Optimize a model with 383 rows, 224 columns and 13895 nonzeros
+Model fingerprint: 0xd584d31c
+Variable types: 0 continuous, 224 integer (224 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-02, 3e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 7e+00]
+Found heuristic solution: objective 0.5208340
+Presolve removed 60 rows and 144 columns
+Presolve time: 0.05s
+Presolved: 323 rows, 80 columns, 3768 nonzeros
+Found heuristic solution: objective 0.3112200
+Variable types: 0 continuous, 80 integer (80 binary)
+
+Root relaxation: objective 7.139407e-01, 105 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.71394    0    9    0.52083    0.71394  37.1%     -    0s
+H    0     0                       0.6658600    0.71394  7.22%     -    0s
+     0     0    0.67895    0   17    0.66586    0.67895  1.97%     -    0s
+     0     0    0.67895    0   23    0.66586    0.67895  1.97%     -    0s
+*    0     0               0       0.6716740    0.67167  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 1
+  Zero half: 10
+
+Explored 1 nodes (203 simplex iterations) in 0.14 seconds (0.03 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 0.671674 0.66586 0.520834 0.31122 
+No other solutions better than 0.671674
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.716740000000e-01, best bound 6.716740000000e-01, gap 0.0000%

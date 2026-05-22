@@ -1,0 +1,43 @@
+
+Gurobi 12.0.2 (win64) logging started Sat Dec  6 17:26:06 2025
+
+Set parameter LogFile to value "resultados DATA_1_n10m20b2d2\instancia_9_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 10.0 (19045.2))
+
+CPU model: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 532 rows, 5422 columns and 141916 nonzeros
+Model fingerprint: 0xbec4bc3d
+Variable types: 0 continuous, 5422 integer (5422 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [8e-03, 2e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 7e+01]
+Found heuristic solution: objective 0.9200000
+Presolve removed 2 rows and 2133 columns
+Presolve time: 0.32s
+Presolved: 530 rows, 3289 columns, 75965 nonzeros
+Found heuristic solution: objective 0.6800000
+Variable types: 0 continuous, 3289 integer (3289 binary)
+
+Root relaxation: objective 1.000000e+00, 8791 iterations, 2.85 seconds (2.33 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       1.0000000    1.00000  0.00%     -    3s
+
+Explored 1 nodes (8791 simplex iterations) in 3.23 seconds (2.51 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 1 0.92 0.68 
+No other solutions better than 1
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%

@@ -1,0 +1,11 @@
+Instância;Status;Objetivo;Gap (%);Tempo (s);Nós
+instancia_1;2;;0,0;3,322;
+instancia_10;9;;0,741176;11202,785;
+instancia_2;9;;0,711559;3600,109;
+instancia_3;9;;0,050526;3600,03;
+instancia_4;2;;0,0;294,597;
+instancia_5;9;;0,804054;3600,043;
+instancia_6;9;;0,606911;5913,195;
+instancia_7;9;;1,158837;3600,275;
+instancia_8;9;;0,046632;3600,078;
+instancia_9;9;;0,503448;3600,146;

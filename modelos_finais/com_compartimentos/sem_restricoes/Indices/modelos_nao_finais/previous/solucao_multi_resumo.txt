@@ -1,0 +1,12 @@
+Status da solução: 2
+Objetivo final (Soma v_i): 1.828125
+Volume total carregado: 1404.00
+Capacidade Total (2 containers): 1536
+Ocupação Global: 91.41%
+Número total de caixas: 27
+Gap: 0.000000%
+Tempo: 0.007676 s
+
+--- Detalhes por Container ---
+Container 0: 684.00 vol (89.1%)
+Container 1: 720.00 vol (93.8%)
