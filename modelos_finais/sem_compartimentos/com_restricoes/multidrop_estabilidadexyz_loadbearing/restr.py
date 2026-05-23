@@ -113,7 +113,7 @@ def addStabZ(model, boxes, L, W, H, m, n, X_coords, Y_coords, Z_coords, x, alpha
                         model.addConstr(lhs >= beta * wi * hi * x[i,k, p, q, r], 
                                     name=f"EstabilidadeX_{i}_,{k}_{p}_{q}_{r}")
 ''' 
-def addStabX(model, boxes, L, W, H, m, n, X_coords, Y_coords, Z_coords, x, beta=1.0):
+def addStabX(model, boxes, L, W, H, m, n, X_coords, Y_coords, Z_coords, x, beta=0.0):
     for i in range(m):
         for k in range(n):
             li, wi, hi = boxes[i] # para cada cliente k precisamos entregar b_ik caixas do tipo i
@@ -185,7 +185,7 @@ def addStabX(model, boxes, L, W, H, m, n, X_coords, Y_coords, Z_coords, x, beta=
                         model.addConstr(lhs >= gamma * li * hi * x[i,k, p, q, r], 
                                     name=f"EstabilidadeY_{i}_,{k}_{p}_{q}_{r}")
                                     '''
-def addStabY(model, boxes, L, W, H, m, n, X_coords, Y_coords, Z_coords, x, gamma=1.0):
+def addStabY(model, boxes, L, W, H, m, n, X_coords, Y_coords, Z_coords, x, gamma=0.0):
     for i in range(m):
         for k in range(n):
             li, wi, hi = boxes[i] # para cada cliente k precisamos entregar b_ik caixas do tipo i

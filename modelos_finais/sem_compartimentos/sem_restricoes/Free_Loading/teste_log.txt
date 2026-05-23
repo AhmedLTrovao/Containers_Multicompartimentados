@@ -1,0 +1,573 @@
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:00:20 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 375 rows, 640 columns and 1290 nonzeros (Max)
+Model fingerprint: 0xfa50dace
+Model has 10 linear objective coefficients
+Variable types: 30 continuous, 610 integer (610 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e-01, 1e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.1250000
+Presolve removed 30 rows and 330 columns
+Presolve time: 0.01s
+Presolved: 345 rows, 310 columns, 1230 nonzeros
+Variable types: 30 continuous, 280 integer (280 binary)
+
+Root relaxation: objective 1.250000e+00, 94 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    1.25000    0    4    0.12500    1.25000   900%     -    0s
+H    0     0                       0.3750000    1.25000   233%     -    0s
+H    0     0                       0.8750000    1.25000  42.9%     -    0s
+H    0     0                       1.0000000    1.25000  25.0%     -    0s
+     0     0    1.25000    0   32    1.00000    1.25000  25.0%     -    0s
+     0     0    1.25000    0    4    1.00000    1.25000  25.0%     -    0s
+     0     0    1.25000    0    4    1.00000    1.25000  25.0%     -    0s
+     0     2    1.25000    0    4    1.00000    1.25000  25.0%     -    0s
+ 62706  1890 infeasible   46         1.00000    1.25000  25.0%  11.0    5s
+
+Cutting planes:
+  Gomory: 1
+  Lift-and-project: 4
+  Cover: 27
+  Implied bound: 35
+  Clique: 32
+  MIR: 2
+  Flow cover: 91
+  RLT: 19
+  Relax-and-lift: 29
+  PSD: 14
+
+Explored 78548 nodes (905753 simplex iterations) in 5.98 seconds (7.26 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 1 0.875 0.375 0.125 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:01:17 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 0 rows, 0 columns and 0 nonzeros (Max)
+Model fingerprint: 0xbd26a89a
+Model has 0 linear objective coefficients
+Coefficient statistics:
+  Matrix range     [0e+00, 0e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [0e+00, 0e+00]
+
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0   -0.0000000e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.01 seconds (0.00 work units)
+Optimal objective -0.000000000e+00
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:01:24 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 19 rows, 32 columns and 50 nonzeros (Max)
+Model fingerprint: 0x3d9d69b2
+Model has 2 linear objective coefficients
+Variable types: 6 continuous, 26 integer (26 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e-01, 1e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.1250000
+Presolve removed 6 rows and 18 columns
+Presolve time: 0.00s
+Presolved: 13 rows, 14 columns, 38 nonzeros
+Variable types: 6 continuous, 8 integer (8 binary)
+
+Root relaxation: objective 2.500000e-01, 2 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.25000    0    2    0.12500    0.25000   100%     -    0s
+H    0     0                       0.2500000    0.25000  0.00%     -    0s
+     0     0    0.25000    0    2    0.25000    0.25000  0.00%     -    0s
+
+Explored 1 nodes (2 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 0.25 0.125 
+No other solutions better than 0.25
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.500000000000e-01, best bound 2.500000000000e-01, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:03:34 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 306 rows, 522 columns and 1044 nonzeros (Max)
+Model fingerprint: 0x9ac95da9
+Model has 9 linear objective coefficients
+Variable types: 27 continuous, 495 integer (495 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [6e-03, 4e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.0120000
+Presolve removed 27 rows and 270 columns
+Presolve time: 0.01s
+Presolved: 279 rows, 252 columns, 990 nonzeros
+Variable types: 27 continuous, 225 integer (225 binary)
+
+Root relaxation: objective 1.320000e-01, 73 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                       0.1320000    0.13200  0.00%     -    0s
+     0     0    0.13200    0   66    0.13200    0.13200  0.00%     -    0s
+
+Explored 1 nodes (73 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 0.132 0.012 
+No other solutions better than 0.132
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.320000000000e-01, best bound 1.320000000000e-01, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:04:04 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 721 rows, 1232 columns and 2534 nonzeros (Max)
+Model fingerprint: 0x6b53af4d
+Model has 14 linear objective coefficients
+Variable types: 42 continuous, 1190 integer (1190 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [6e-03, 5e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.0120000
+Presolve removed 42 rows and 630 columns
+Presolve time: 0.01s
+Presolved: 679 rows, 602 columns, 2450 nonzeros
+Variable types: 42 continuous, 560 integer (560 binary)
+
+Root relaxation: objective 3.720000e-01, 183 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                       0.3720000    0.37200  0.00%     -    0s
+     0     0    0.37200    0  182    0.37200    0.37200  0.00%     -    0s
+
+Explored 1 nodes (183 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 0.372 0.012 
+No other solutions better than 0.372
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.720000000000e-01, best bound 3.720000000000e-01, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:04:18 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 721 rows, 1232 columns and 2534 nonzeros (Max)
+Model fingerprint: 0x34aa71fc
+Model has 14 linear objective coefficients
+Variable types: 42 continuous, 1190 integer (1190 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [8e-03, 6e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.0156250
+Presolve removed 42 rows and 630 columns
+Presolve time: 0.01s
+Presolved: 679 rows, 602 columns, 2450 nonzeros
+Variable types: 42 continuous, 560 integer (560 binary)
+
+Root relaxation: objective 4.843750e-01, 183 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                       0.4843750    0.48438  0.00%     -    0s
+     0     0    0.48438    0  182    0.48438    0.48438  0.00%     -    0s
+
+Explored 1 nodes (183 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 0.484375 0.015625 
+No other solutions better than 0.484375
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.843750000000e-01, best bound 4.843750000000e-01, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:04:28 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1450 rows, 2480 columns and 5180 nonzeros (Max)
+Model fingerprint: 0x6096f2a5
+Model has 20 linear objective coefficients
+Variable types: 60 continuous, 2420 integer (2420 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [5e-03, 6e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.0156250
+Presolve removed 60 rows and 1260 columns
+Presolve time: 0.01s
+Presolved: 1390 rows, 1220 columns, 5060 nonzeros
+Variable types: 60 continuous, 1160 integer (1160 binary)
+
+Root relaxation: objective 5.052083e-01, 358 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                       0.5052083    0.50521  0.00%     -    0s
+     0     0    0.50521    0  290    0.50521    0.50521  0.00%     -    0s
+
+Explored 1 nodes (358 simplex iterations) in 0.02 seconds (0.02 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 0.505208 0.015625 
+No other solutions better than 0.505208
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.052083333333e-01, best bound 5.052083333333e-01, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:04:36 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1909 rows, 3266 columns and 6854 nonzeros (Max)
+Model fingerprint: 0x5d2e2e6c
+Model has 23 linear objective coefficients
+Variable types: 69 continuous, 3197 integer (3197 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [5e-03, 6e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.0156250
+Presolve removed 69 rows and 1656 columns
+Presolve time: 0.01s
+Presolved: 1840 rows, 1610 columns, 6716 nonzeros
+Variable types: 69 continuous, 1541 integer (1541 binary)
+
+Root relaxation: objective 6.145833e-01, 490 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.61458    0    2    0.01563    0.61458  3833%     -    0s
+H    0     0                       0.1927083    0.61458   219%     -    0s
+H    0     0                       0.2552083    0.61458   141%     -    0s
+H    0     0                       0.6145833    0.61458  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 2
+  RLT: 2
+  Relax-and-lift: 4
+
+Explored 1 nodes (942 simplex iterations) in 0.04 seconds (0.05 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 0.614583 0.255208 0.192708 0.015625 
+No other solutions better than 0.614583
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.145833333333e-01, best bound 6.145833333333e-01, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 14:07:11 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/sem_compartimentos/sem_restricoes/Free_Loading/teste_log.txt"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 825 rows, 1410 columns and 2910 nonzeros (Max)
+Model fingerprint: 0x4c7ea32f
+Model has 15 linear objective coefficients
+Variable types: 45 continuous, 1365 integer (1365 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e-02, 9e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 0.0468750
+Presolve removed 93 rows and 768 columns
+Presolve time: 0.01s
+Presolved: 732 rows, 642 columns, 2628 nonzeros
+Variable types: 45 continuous, 597 integer (597 binary)
+
+Root relaxation: objective 1.000000e+00, 217 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    1.00000    0    6    0.04688    1.00000  2033%     -    0s
+H    0     0                       0.2968750    1.00000   237%     -    0s
+H    0     0                       0.3125000    1.00000   220%     -    0s
+H    0     0                       0.7500000    1.00000  33.3%     -    0s
+H    0     0                       0.7968750    1.00000  25.5%     -    0s
+     0     0    1.00000    0   22    0.79688    1.00000  25.5%     -    0s
+     0     0    1.00000    0   21    0.79688    1.00000  25.5%     -    0s
+H    0     0                       0.8125000    1.00000  23.1%     -    0s
+H    0     0                       0.8437500    1.00000  18.5%     -    0s
+     0     0    1.00000    0   51    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0    6    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0   19    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0    6    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0   14    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0   39    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0    6    0.84375    1.00000  18.5%     -    0s
+     0     0    1.00000    0    6    0.84375    1.00000  18.5%     -    0s
+     0     2    1.00000    0    6    0.84375    1.00000  18.5%     -    0s
+H 5033  1834                       0.8593750    1.00000  16.4%  10.3    1s
+* 6010  1879              38       0.8750000    1.00000  14.3%  11.3    1s
+H 6098  1875                       0.8906250    1.00000  12.3%  11.4    1s
+ 19859  6003 infeasible   42         0.89063    1.00000  12.3%  14.8    5s
+ 32150  8014    0.98438   56   15    0.89063    1.00000  12.3%  16.3   10s
+ 59351 12897 infeasible   50         0.89063    1.00000  12.3%  17.4   15s
+ 87555 17187 infeasible   57         0.89063    1.00000  12.3%  18.1   20s
+ 112277 21696    1.00000   66   25    0.89063    1.00000  12.3%  18.0   25s
+ 143887 30124    1.00000   44   42    0.89063    1.00000  12.3%  17.8   30s
+ 187465 37814 infeasible   64         0.89063    1.00000  12.3%  17.3   35s
+ 227596 43997 infeasible   51         0.89063    1.00000  12.3%  17.0   40s
+ 258852 49000    1.00000   51   21    0.89063    1.00000  12.3%  17.0   45s
+ 287155 53592 infeasible   46         0.89063    1.00000  12.3%  17.0   50s
+ 314544 57252    0.93750   45   28    0.89063    1.00000  12.3%  17.0   55s
+ 337400 60529    1.00000   51   26    0.89063    1.00000  12.3%  17.1   60s
+ 348366 62722    1.00000   48   28    0.89063    1.00000  12.3%  17.1   65s
+ 368421 66179    0.90625   53   21    0.89063    1.00000  12.3%  17.1   70s
+ 392328 68284    0.90625   42    8    0.89063    1.00000  12.3%  17.1   75s
+ 410421 69902    1.00000   51   29    0.89063    1.00000  12.3%  17.1   80s
+ 433023 72177 infeasible   48         0.89063    1.00000  12.3%  17.1   85s
+ 460929 75159 infeasible   60         0.89063    1.00000  12.3%  17.1   90s
+ 485709 78101 infeasible   51         0.89063    1.00000  12.3%  17.1   95s
+ 513899 81750 infeasible   51         0.89063    1.00000  12.3%  17.1  100s
+ 539955 84791 infeasible   45         0.89063    1.00000  12.3%  17.1  105s
+ 562496 88299    1.00000   60   30    0.89063    1.00000  12.3%  17.0  110s
+ 580015 89979    0.95313   58   12    0.89063    1.00000  12.3%  17.0  115s
+ 608450 93467    1.00000   51   20    0.89063    1.00000  12.3%  17.0  120s
+ 636540 96791    0.93750   54   18    0.89063    1.00000  12.3%  16.9  125s
+ 661605 99250    0.93750   57   16    0.89063    1.00000  12.3%  16.9  130s
+ 687610 102732    1.00000   50   37    0.89063    1.00000  12.3%  16.9  135s
+ 709403 108215    1.00000   76   25    0.89063    1.00000  12.3%  16.9  140s
+ 735476 110253    0.93750   50   24    0.89063    1.00000  12.3%  16.9  145s
+ 764079 114710    1.00000   48   21    0.89063    1.00000  12.3%  16.9  150s
+ 788878 120516    0.92188   56    2    0.89063    1.00000  12.3%  16.9  155s
+ 822795 126623    1.00000   54   36    0.89063    1.00000  12.3%  16.8  160s
+ 843760 129894    1.00000   59   16    0.89063    1.00000  12.3%  16.7  165s
+ 860333 131784    1.00000   59   32    0.89063    1.00000  12.3%  16.8  170s
+ 880407 133958    0.93750   50    8    0.89063    1.00000  12.3%  16.8  175s
+ 896224 136355    1.00000   58   32    0.89063    1.00000  12.3%  16.8  180s
+ 922714 142923 infeasible   55         0.89063    1.00000  12.3%  16.8  185s
+ 952327 147763    0.90625   56   14    0.89063    1.00000  12.3%  16.8  190s
+ 979084 153185 infeasible   52         0.89063    1.00000  12.3%  16.7  195s
+ 1004860 160301 infeasible   60         0.89063    1.00000  12.3%  16.7  200s
+ 1031336 165877    0.92188   72    2    0.89063    1.00000  12.3%  16.7  205s
+ 1056701 170737    1.00000   56   24    0.89063    1.00000  12.3%  16.6  210s
+ 1077679 174425 infeasible   55         0.89063    1.00000  12.3%  16.6  215s
+ 1101808 177899 infeasible   61         0.89063    1.00000  12.3%  16.6  220s
+ 1131416 184501    0.93750   51    8    0.89063    1.00000  12.3%  16.6  225s
+ 1158854 191614 infeasible   57         0.89063    1.00000  12.3%  16.5  230s
+ 1183239 196729 infeasible   69         0.89063    1.00000  12.3%  16.5  235s
+ 1204517 200789    1.00000   67   18    0.89063    1.00000  12.3%  16.5  240s
+ 1230529 206581    1.00000   40   28    0.89063    1.00000  12.3%  16.5  245s
+ 1257034 211766 infeasible   52         0.89063    1.00000  12.3%  16.5  250s
+ 1285785 217046    0.95313   56   17    0.89063    1.00000  12.3%  16.5  255s
+ 1311888 221789    1.00000   63   24    0.89063    1.00000  12.3%  16.5  260s
+ 1333558 226057 infeasible   56         0.89063    1.00000  12.3%  16.5  265s
+ 1359388 230524    0.93750   53   10    0.89063    1.00000  12.3%  16.5  270s
+ 1389146 235649    1.00000   65   40    0.89063    1.00000  12.3%  16.5  275s
+ 1415287 240314    0.93750   45   10    0.89063    1.00000  12.3%  16.5  280s
+ 1445802 245129 infeasible   60         0.89063    1.00000  12.3%  16.5  285s
+ 1467790 248840 infeasible   46         0.89063    1.00000  12.3%  16.5  291s
+ 1493575 252474 infeasible   73         0.89063    1.00000  12.3%  16.5  295s
+ 1519970 256706    1.00000   46   46    0.89063    1.00000  12.3%  16.5  300s
+ 1541689 259277    0.95313   55   45    0.89063    1.00000  12.3%  16.5  305s
+ 1567798 263332 infeasible   67         0.89063    1.00000  12.3%  16.5  310s
+ 1595829 267620    0.90625   65    6    0.89063    1.00000  12.3%  16.5  315s
+ 1622928 272886 infeasible   42         0.89063    1.00000  12.3%  16.5  320s
+ 1650114 278285    1.00000   50   29    0.89063    1.00000  12.3%  16.5  325s
+ 1673378 281938    0.93750   72   12    0.89063    1.00000  12.3%  16.5  330s
+ 1701850 288826 infeasible   45         0.89063    1.00000  12.3%  16.5  335s
+ 1722944 292852    0.93750   49   14    0.89063    1.00000  12.3%  16.5  340s
+ 1744775 296588 infeasible   50         0.89063    1.00000  12.3%  16.5  345s
+ 1764893 299982    0.93750   54   14    0.89063    1.00000  12.3%  16.5  350s
+ 1782026 302524    0.93750   48   14    0.89063    1.00000  12.3%  16.6  355s
+ 1797643 304181    0.93750   54   18    0.89063    1.00000  12.3%  16.6  360s
+ 1814334 306370    0.93750   47   26    0.89063    1.00000  12.3%  16.6  365s
+ 1835360 309770    0.95313   45   29    0.89063    1.00000  12.3%  16.6  370s
+ 1855634 314158 infeasible   47         0.89063    1.00000  12.3%  16.6  375s
+ 1866570 316829 infeasible   52         0.89063    1.00000  12.3%  16.6  380s
+ 1882200 320129    0.90625   51   11    0.89063    1.00000  12.3%  16.6  385s
+ 1901152 322839 infeasible   69         0.89063    1.00000  12.3%  16.6  390s
+ 1926559 327942 infeasible   58         0.89063    1.00000  12.3%  16.6  395s
+ 1949986 331646    0.93750   46   18    0.89063    1.00000  12.3%  16.6  400s
+ 1972813 334583 infeasible   46         0.89063    1.00000  12.3%  16.6  405s
+ 2001438 341871    0.95313   52   11    0.89063    1.00000  12.3%  16.6  410s
+ 2032426 350841    1.00000   55   20    0.89063    1.00000  12.3%  16.6  415s
+ 2058984 355509 infeasible   61         0.89063    1.00000  12.3%  16.6  420s
+ 2081804 359728    1.00000   54   15    0.89063    1.00000  12.3%  16.6  425s
+ 2107173 364321     cutoff   53         0.89063    1.00000  12.3%  16.6  430s
+ 2120121 368738    0.90625   46   12    0.89063    1.00000  12.3%  16.6  435s
+ 2151353 373035    0.93750   57    8    0.89063    1.00000  12.3%  16.6  440s
+ 2178966 378642    1.00000   57   29    0.89063    1.00000  12.3%  16.6  445s
+ 2209699 387774 infeasible   69         0.89063    1.00000  12.3%  16.6  450s
+ 2232978 392236    0.93750   51   11    0.89063    1.00000  12.3%  16.6  455s
+ 2260034 396359    1.00000   49   33    0.89063    1.00000  12.3%  16.6  460s
+ 2285612 399998     cutoff   44         0.89063    1.00000  12.3%  16.6  465s
+ 2310555 404255    1.00000   56   36    0.89063    1.00000  12.3%  16.6  470s
+ 2336414 409751     cutoff   63         0.89063    1.00000  12.3%  16.6  475s
+ 2359481 413819    0.93750   43   18    0.89063    1.00000  12.3%  16.6  480s
+ 2379931 416854    0.93750   50   22    0.89063    1.00000  12.3%  16.6  485s
+ 2399760 421057    1.00000   38   20    0.89063    1.00000  12.3%  16.6  490s
+ 2418879 425850    1.00000   48   25    0.89063    1.00000  12.3%  16.6  495s
+ 2445816 432244    0.90625   62   15    0.89063    1.00000  12.3%  16.6  500s
+ 2469424 437522 infeasible   65         0.89063    1.00000  12.3%  16.6  505s
+ 2489130 442009 infeasible   61         0.89063    1.00000  12.3%  16.6  510s
+ 2516716 449411    0.95313   53   10    0.89063    1.00000  12.3%  16.6  515s
+ 2538630 455632 infeasible   47         0.89063    1.00000  12.3%  16.5  520s
+ 2563211 461064    0.95313   64   11    0.89063    1.00000  12.3%  16.5  525s
+ 2593809 468840    0.93750   64    8    0.89063    1.00000  12.3%  16.5  530s
+ 2621062 475100    0.92188   81    2    0.89063    1.00000  12.3%  16.5  535s
+ 2657906 488699 infeasible   73         0.89063    1.00000  12.3%  16.5  540s
+ 2691619 500537    1.00000   38   26    0.89063    1.00000  12.3%  16.5  545s
+ 2719567 508114    0.90625   67    8    0.89063    1.00000  12.3%  16.5  550s
+ 2740719 513706    0.93750   46   20    0.89063    1.00000  12.3%  16.5  555s
+ 2763301 519579 infeasible   63         0.89063    1.00000  12.3%  16.5  560s
+ 2786332 525196 infeasible   43         0.89063    1.00000  12.3%  16.5  565s
+ 2806735 530701 infeasible   63         0.89063    1.00000  12.3%  16.5  570s
+ 2834987 536641    0.95313   49   19    0.89063    1.00000  12.3%  16.6  575s
+ 2851432 539655 infeasible   58         0.89063    1.00000  12.3%  16.6  580s
+ 2868515 542487 infeasible   54         0.89063    1.00000  12.3%  16.6  585s
+ 2884415 544690    0.93750   57    8    0.89063    1.00000  12.3%  16.6  590s
+ 2899240 546756    0.93750   44   20    0.89063    1.00000  12.3%  16.6  595s
+ 2910684 548544    0.93750   46   16    0.89063    1.00000  12.3%  16.6  600s
+ 2922321 550255 infeasible   54         0.89063    1.00000  12.3%  16.6  605s
+ 2933338 552112 infeasible   59         0.89063    1.00000  12.3%  16.6  610s
+ 2948643 554768    0.90625   34   16    0.89063    1.00000  12.3%  16.6  615s
+ 2966045 558755    0.93750   36   12    0.89063    1.00000  12.3%  16.6  620s
+ 2982659 563791    0.93750   43   22    0.89063    1.00000  12.3%  16.6  626s
+ 3001692 566405    0.93750   50    9    0.89063    1.00000  12.3%  16.6  630s
+ 3026378 574810    0.90625   62    2    0.89063    1.00000  12.3%  16.6  635s
+ 3049301 581098 infeasible   36         0.89063    1.00000  12.3%  16.6  640s
+ 3063670 584054    0.93750   59    8    0.89063    1.00000  12.3%  16.6  645s
+ 3074932 585878 infeasible   54         0.89063    1.00000  12.3%  16.6  650s
+ 3090142 587882    0.93750   48   23    0.89063    1.00000  12.3%  16.6  655s
+ 3108416 590850    0.90625   53   12    0.89063    1.00000  12.3%  16.6  660s
+ 3120778 593576    0.95313   61    4    0.89063    1.00000  12.3%  16.6  665s
+ 3133684 596478    1.00000   46   46    0.89063    1.00000  12.3%  16.6  670s
+ 3153030 599909    1.00000   35   42    0.89063    1.00000  12.3%  16.6  675s
+ 3174688 604612    0.95313   40   13    0.89063    1.00000  12.3%  16.6  680s
+
+Cutting planes:
+  Gomory: 9
+  Lift-and-project: 2
+  Cover: 80
+  Implied bound: 39
+  Clique: 41
+  MIR: 9
+  Flow cover: 89
+  RLT: 35
+  Relax-and-lift: 40
+  PSD: 27
+
+Explored 3181775 nodes (52913521 simplex iterations) in 682.28 seconds (654.44 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 0.890625 0.875 0.859375 ... 0.046875
+
+Solve interrupted
+Best objective 8.906250000000e-01, best bound 1.000000000000e+00, gap 12.2807%

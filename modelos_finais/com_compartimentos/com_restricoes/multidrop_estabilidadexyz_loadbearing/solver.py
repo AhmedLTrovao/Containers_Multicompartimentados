@@ -51,6 +51,7 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
             demanda[c][i] = demanda[c].get(i, 0) + item["qtd"]
             deltas[c][i] = item["delta_x"]
             
+    print(demanda)
     num_clientes = len(clientes)
     num_compartimentos = len(compartimentos)
     
@@ -198,7 +199,6 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
 
     resumo_arquivo = arquivo_saida.replace(".txt", "_resumo.txt")
     volume_total = sum([l*w*h for (l,w,h) in compartimentos])
-    print('AAAAA ', volume_total)
     with open(resumo_arquivo, "w") as f:
         f.write(f"Status da solução: {model.Status}\n")
         if model.SolCount > 0:

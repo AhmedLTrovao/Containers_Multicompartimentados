@@ -1,0 +1,456 @@
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:18:07 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1397 rows, 777 columns and 8536 nonzeros (Max)
+Model fingerprint: 0x6e764bd6
+Model has 774 linear objective coefficients
+Variable types: 3 continuous, 774 integer (774 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 1131 rows and 451 columns
+Presolve time: 0.03s
+Presolved: 266 rows, 326 columns, 3096 nonzeros
+Variable types: 0 continuous, 326 integer (325 binary)
+Found heuristic solution: objective 252.0000000
+
+Root relaxation: objective 6.582528e+02, 480 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  658.25275    0   70  252.00000  658.25275   161%     -    0s
+H    0     0                     264.0000000  658.25275   149%     -    0s
+H    0     0                     276.0000000  658.25275   138%     -    0s
+H    0     0                     300.0000000  658.25275   119%     -    0s
+H    0     0                     348.0000000  658.25275  89.2%     -    0s
+H    0     0                     396.0000000  537.50000  35.7%     -    0s
+     0     0  537.50000    0   43  396.00000  537.50000  35.7%     -    0s
+     0     0  396.00000    0   19  396.00000  396.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 25
+  Gomory: 36
+  Cover: 2
+  Implied bound: 3
+  Clique: 20
+  Zero half: 38
+  RLT: 6
+  Relax-and-lift: 4
+  BQP: 14
+
+Explored 1 nodes (883 simplex iterations) in 0.24 seconds (0.15 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 396 348 300 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.960000000000e+02, best bound 3.960000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:24:59 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1397 rows, 777 columns and 8536 nonzeros (Max)
+Model fingerprint: 0xc9cff729
+Model has 774 linear objective coefficients
+Variable types: 3 continuous, 774 integer (774 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 1251 rows and 525 columns
+Presolve time: 0.03s
+Presolved: 146 rows, 252 columns, 1872 nonzeros
+Variable types: 0 continuous, 252 integer (251 binary)
+Found heuristic solution: objective 348.0000000
+
+Root relaxation: objective 6.600000e+02, 283 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  660.00000    0   33  348.00000  660.00000  89.7%     -    0s
+H    0     0                     480.0000000  660.00000  37.5%     -    0s
+H    0     0                     564.0000000  660.00000  17.0%     -    0s
+     0     0  660.00000    0   43  564.00000  660.00000  17.0%     -    0s
+     0     0  656.91801    0   78  564.00000  656.91801  16.5%     -    0s
+     0     0  656.91801    0   74  564.00000  656.91801  16.5%     -    0s
+     0     0  656.79547    0   71  564.00000  656.79547  16.5%     -    0s
+     0     0  656.79547    0   73  564.00000  656.79547  16.5%     -    0s
+     0     0  628.00000    0   72  564.00000  628.00000  11.3%     -    0s
+     0     0  622.10526    0   72  564.00000  622.10526  10.3%     -    0s
+     0     0  622.10526    0   72  564.00000  622.10526  10.3%     -    0s
+     0     2  622.10526    0   72  564.00000  622.10526  10.3%     -    0s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 7
+  Implied bound: 3
+  Clique: 10
+  MIR: 6
+  GUB cover: 9
+  Zero half: 8
+  Relax-and-lift: 1
+
+Explored 166 nodes (4156 simplex iterations) in 0.33 seconds (0.21 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 4: 564 480 348 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.640000000000e+02, best bound 5.640000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:25:24 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1430 rows, 804 columns and 8296 nonzeros (Max)
+Model fingerprint: 0x19a44d0a
+Model has 801 linear objective coefficients
+Variable types: 3 continuous, 801 integer (801 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 1288 rows and 540 columns
+Presolve time: 0.03s
+Presolved: 142 rows, 264 columns, 1831 nonzeros
+Variable types: 0 continuous, 264 integer (262 binary)
+Found heuristic solution: objective 348.0000000
+
+Root relaxation: objective 7.020000e+02, 358 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  702.00000    0   44  348.00000  702.00000   102%     -    0s
+H    0     0                     420.0000000  702.00000  67.1%     -    0s
+H    0     0                     612.0000000  702.00000  14.7%     -    0s
+H    0     0                     624.0000000  702.00000  12.5%     -    0s
+H    0     0                     648.0000000  702.00000  8.33%     -    0s
+H    0     0                     660.0000000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   42  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   36  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   42  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   47  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   48  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   49  660.00000  702.00000  6.36%     -    0s
+     0     0  696.00000    0   42  660.00000  696.00000  5.45%     -    0s
+     0     0  696.00000    0   35  660.00000  696.00000  5.45%     -    0s
+     0     0  680.00000    0   25  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   14  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   16  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   33  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   37  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   38  660.00000  680.00000  3.03%     -    0s
+     0     0  678.00000    0   33  660.00000  678.00000  2.73%     -    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 1
+  Cover: 1
+  Clique: 3
+  GUB cover: 2
+  Zero half: 6
+  Relax-and-lift: 3
+
+Explored 1 nodes (1073 simplex iterations) in 0.16 seconds (0.10 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 660 648 624 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.600000000000e+02, best bound 6.600000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:29:26 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 644 rows, 354 columns and 3031 nonzeros (Max)
+Model fingerprint: 0x05311f43
+Model has 351 linear objective coefficients
+Variable types: 3 continuous, 351 integer (351 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 572 rows and 228 columns
+Presolve time: 0.01s
+Presolved: 72 rows, 126 columns, 656 nonzeros
+Variable types: 0 continuous, 126 integer (125 binary)
+Found heuristic solution: objective 348.0000000
+
+Root relaxation: objective 4.200000e+02, 73 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  420.00000    0   12  348.00000  420.00000  20.7%     -    0s
+H    0     0                     360.0000000  420.00000  16.7%     -    0s
+H    0     0                     396.0000000  420.00000  6.06%     -    0s
+H    0     0                     408.0000000  408.00000  0.00%     -    0s
+     0     0  408.00000    0   16  408.00000  408.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 9
+  Gomory: 2
+  Cover: 1
+  Clique: 6
+  MIR: 2
+  Zero half: 1
+  RLT: 2
+  Relax-and-lift: 6
+
+Explored 1 nodes (136 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 408 396 360 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.080000000000e+02, best bound 4.080000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:32:48 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 644 rows, 354 columns and 3031 nonzeros (Max)
+Model fingerprint: 0x05311f43
+Model has 351 linear objective coefficients
+Variable types: 3 continuous, 351 integer (351 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 572 rows and 228 columns
+Presolve time: 0.01s
+Presolved: 72 rows, 126 columns, 656 nonzeros
+Variable types: 0 continuous, 126 integer (125 binary)
+Found heuristic solution: objective 348.0000000
+
+Root relaxation: objective 4.200000e+02, 73 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  420.00000    0   12  348.00000  420.00000  20.7%     -    0s
+H    0     0                     360.0000000  420.00000  16.7%     -    0s
+H    0     0                     396.0000000  420.00000  6.06%     -    0s
+H    0     0                     408.0000000  408.00000  0.00%     -    0s
+     0     0  408.00000    0   16  408.00000  408.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 9
+  Gomory: 2
+  Cover: 1
+  Clique: 6
+  MIR: 2
+  Zero half: 1
+  RLT: 2
+  Relax-and-lift: 6
+
+Explored 1 nodes (136 simplex iterations) in 0.03 seconds (0.01 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 408 396 360 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.080000000000e+02, best bound 4.080000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:35:02 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1430 rows, 804 columns and 8296 nonzeros (Max)
+Model fingerprint: 0x19a44d0a
+Model has 801 linear objective coefficients
+Variable types: 3 continuous, 801 integer (801 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 1288 rows and 540 columns
+Presolve time: 0.03s
+Presolved: 142 rows, 264 columns, 1831 nonzeros
+Variable types: 0 continuous, 264 integer (262 binary)
+Found heuristic solution: objective 348.0000000
+
+Root relaxation: objective 7.020000e+02, 358 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  702.00000    0   44  348.00000  702.00000   102%     -    0s
+H    0     0                     420.0000000  702.00000  67.1%     -    0s
+H    0     0                     612.0000000  702.00000  14.7%     -    0s
+H    0     0                     624.0000000  702.00000  12.5%     -    0s
+H    0     0                     648.0000000  702.00000  8.33%     -    0s
+H    0     0                     660.0000000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   42  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   36  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   42  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   47  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   48  660.00000  702.00000  6.36%     -    0s
+     0     0  702.00000    0   49  660.00000  702.00000  6.36%     -    0s
+     0     0  696.00000    0   42  660.00000  696.00000  5.45%     -    0s
+     0     0  696.00000    0   35  660.00000  696.00000  5.45%     -    0s
+     0     0  680.00000    0   25  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   14  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   16  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   33  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   37  660.00000  680.00000  3.03%     -    0s
+     0     0  680.00000    0   38  660.00000  680.00000  3.03%     -    0s
+     0     0  678.00000    0   33  660.00000  678.00000  2.73%     -    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 1
+  Cover: 1
+  Clique: 3
+  GUB cover: 2
+  Zero half: 6
+  Relax-and-lift: 3
+
+Explored 1 nodes (1073 simplex iterations) in 0.26 seconds (0.10 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 660 648 624 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.600000000000e+02, best bound 6.600000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (mac64[arm]) logging started Fri May 22 21:36:03 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop_estabilidadexyz_loadbearing/teste1_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.3.0 25D2128)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 644 rows, 354 columns and 3031 nonzeros (Max)
+Model fingerprint: 0x6f6e74bb
+Model has 351 linear objective coefficients
+Variable types: 3 continuous, 351 integer (351 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [2e+01, 7e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+01]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 556 rows and 227 columns
+Presolve time: 0.02s
+Presolved: 88 rows, 127 columns, 752 nonzeros
+Variable types: 0 continuous, 127 integer (126 binary)
+Found heuristic solution: objective 252.0000000
+
+Root relaxation: objective 4.200000e+02, 87 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  420.00000    0   24  252.00000  420.00000  66.7%     -    0s
+H    0     0                     264.0000000  420.00000  59.1%     -    0s
+H    0     0                     312.0000000  420.00000  34.6%     -    0s
+H    0     0                     324.0000000  420.00000  29.6%     -    0s
+     0     0  420.00000    0   38  324.00000  420.00000  29.6%     -    0s
+     0     0  420.00000    0   39  324.00000  420.00000  29.6%     -    0s
+     0     0  420.00000    0   45  324.00000  420.00000  29.6%     -    0s
+     0     0  420.00000    0   42  324.00000  420.00000  29.6%     -    0s
+     0     0  408.00000    0   19  324.00000  408.00000  25.9%     -    0s
+     0     0  372.00000    0   49  324.00000  372.00000  14.8%     -    0s
+     0     0  372.00000    0   48  324.00000  372.00000  14.8%     -    0s
+     0     0  360.00000    0   48  324.00000  360.00000  11.1%     -    0s
+     0     0  360.00000    0   47  324.00000  360.00000  11.1%     -    0s
+     0     2  360.00000    0   47  324.00000  360.00000  11.1%     -    0s
+
+Cutting planes:
+  Learned: 33
+  Gomory: 2
+  Cover: 7
+  Implied bound: 4
+  Clique: 3
+  MIR: 2
+  GUB cover: 4
+  Relax-and-lift: 11
+
+Explored 128 nodes (2399 simplex iterations) in 0.15 seconds (0.09 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 324 312 264 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.240000000000e+02, best bound 3.240000000000e+02, gap 0.0000%

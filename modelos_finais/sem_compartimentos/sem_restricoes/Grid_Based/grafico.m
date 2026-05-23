@@ -1,4 +1,4 @@
-function grafico2(file,step_by_step)
+function grafico(file,step_by_step)
 
 % le o arquivo de dados para construir o grafico 3d
 fid=fopen(file,'r');

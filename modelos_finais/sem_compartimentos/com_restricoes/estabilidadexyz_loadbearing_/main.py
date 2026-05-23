@@ -1,5 +1,5 @@
-
-from IIPP.restricoes_praticas.solver import resolver_instancia
+# use this main for example solutions
+from solver import resolver_instancia
 import os
 
 def main():
@@ -10,7 +10,7 @@ def main():
     print(Peso)
     
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    resolver_instancia(L, W, H, boxes, os.path.join( dir_path ,'saida.txt'), Sigma, Peso)
+    resolver_instancia(L, W, H, boxes, os.path.join( dir_path ,'teste.txt'), Sigma, Peso)
 
 if __name__ == "__main__":
     main()
