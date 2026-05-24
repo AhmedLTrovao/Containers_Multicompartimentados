@@ -180,6 +180,96 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
                         # Cliente c termina antes do limite esquerdo de c-1 (permitindo delta)
                         if c > 0:
                             model.addConstr((p + li) * var_x <= L_vars[k, c-1] + delta_val + M * (1 - var_x))
+    if stabv:
+        alpha = 1.0 # Fator de estabilidade vertical
+        print("Gerando restrições de Estabilidade Vertical (Z)...")
+        for (k, c, i, p, q, r), var in x.items():
+            if r == 0: 
+                continue # Apoiada no chão do caminhão
+                
+            li, wi, hi = tipos_caixas[i]["dims"]
+            lhs_z = gp.LinExpr()
+            
+            # Procura caixas de qualquer cliente (c_) que estejam no mesmo compartimento (k) 
+            # e exatamente abaixo (r_ == r - hj)
+            for (k_, c_, j, p_, q_, r_), var_ in x.items():
+                if k_ == k:
+                    lj, wj, hj = tipos_caixas[j]["dims"]
+                    if r_ == r - hj:
+                        # Intersecção das bases
+                        L_ij = max(0, min(p + li, p_ + lj) - max(p, p_))
+                        W_ij = max(0, min(q + wi, q_ + wj) - max(q, q_))
+                        
+                        if L_ij > 0 and W_ij > 0:
+                            lhs_z += (L_ij * W_ij) * var_
+                            
+            model.addConstr(lhs_z >= alpha * li * wi * var, name=f"StabZ_k{k}_c{c}_i{i}_{p}_{q}_{r}")
+
+    if stabh:
+        beta = 1.0  # Fator de estabilidade horizontal (X)
+        gamma = 1.0 # Fator de estabilidade horizontal (Y)
+        print("Gerando restrições de Estabilidade Horizontal (X e Y)...")
+        
+        for (k, c, i, p, q, r), var in x.items():
+            li, wi, hi = tipos_caixas[i]["dims"]
+            
+            # --- Estabilidade X ---
+            # Só exige apoio se não estiver encostada na parede esquerda do seu compartimento
+            if p > O_X[k]:
+                lhs_x = gp.LinExpr()
+                for (k_, c_, j, p_, q_, r_), var_ in x.items():
+                    if k_ == k:
+                        lj, wj, hj = tipos_caixas[j]["dims"]
+                        if p_ == p - lj: # Caixa j está exatamente à esquerda
+                            W_ij = max(0, min(q + wi, q_ + wj) - max(q, q_))
+                            H_ij = max(0, min(r + hi, r_ + hj) - max(r, r_))
+                            if W_ij > 0 and H_ij > 0:
+                                lhs_x += (W_ij * H_ij) * var_
+                model.addConstr(lhs_x >= beta * wi * hi * var, name=f"StabX_k{k}_c{c}_i{i}_{p}_{q}_{r}")
+                
+            # --- Estabilidade Y ---
+            # Só exige apoio se não estiver encostada na parede frontal do seu compartimento
+            if q > O_Y[k]:
+                lhs_y = gp.LinExpr()
+                for (k_, c_, j, p_, q_, r_), var_ in x.items():
+                    if k_ == k:
+                        lj, wj, hj = tipos_caixas[j]["dims"]
+                        if q_ == q - wj: # Caixa j está exatamente à frente
+                            L_ij = max(0, min(p + li, p_ + lj) - max(p, p_))
+                            H_ij = max(0, min(r + hi, r_ + hj) - max(r, r_))
+                            if L_ij > 0 and H_ij > 0:
+                                lhs_y += (L_ij * H_ij) * var_
+                model.addConstr(lhs_y >= gamma * li * hi * var, name=f"StabY_k{k}_c{c}_i{i}_{p}_{q}_{r}")
+
+    if loadbearing:
+        print("Gerando restrições de Loadbearing (Resistência ao Esmagamento)...")
+        for k in range(num_compartimentos):
+            # Para evitar varrer o caminhão inteiro, limitamos a busca aos voxels deste compartimento
+            for s in X_coords_comp[k]:
+                for t in Y_coords_comp[k]:
+                    for u in Z_coords_comp[k]:
+                        lhs_pressao = gp.LinExpr()
+                        rhs_resistencia = gp.LinExpr()
+                        
+                        # Filtramos apenas as variáveis que pertencem a este compartimento
+                        vars_k = [(key, var) for key, var in x.items() if key[0] == k]
+                        
+                        for (k_, c, j, p, q, r), var in vars_k:
+                            lj, wj, hj = tipos_caixas[j]["dims"]
+                            peso_j = tipos_caixas[j]["peso"]
+                            sigma_j = tipos_caixas[j]["sigma"]
+                            
+                            # Se a caixa cobre as coordenadas X e Y do voxel (s, t)
+                            if p <= s < p + lj and q <= t < q + wj:
+                                # Pressão: a caixa está acima do voxel u
+                                if r > u:
+                                    lhs_pressao += (peso_j / (lj * wj)) * var
+                                # Resistência: a caixa ocupa o voxel u
+                                if r <= u < r + hj:
+                                    rhs_resistencia += sigma_j * var
+                                    
+                        if lhs_pressao.size() > 0 or rhs_resistencia.size() > 0:
+                            model.addConstr(lhs_pressao <= rhs_resistencia, name=f"Load_k{k}_{s}_{t}_{u}")
 
     model.Params.LogFile = arquivo_saida.replace(".txt", "_log.txt")
     model.Params.TimeLimit = tempo_limite
