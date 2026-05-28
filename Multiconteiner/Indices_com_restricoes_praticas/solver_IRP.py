@@ -176,16 +176,19 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
                 model.addConstr(gp.quicksum(demand_vars) <= demanda[c][i], name=f"Demanda_c{c}_i{i}")
 
     # =========================================================================
-    # 5. Restrições de Multidrop Lateral Espelhado (Eixo X)
+    # 5. Restrições de Multidrop Lateral Espelhado (Eixo X) - CORRIGIDO
     # =========================================================================
     for k, (L_k, W_k, H_k) in enumerate(compartimentos):
         is_even = (k % 2 == 0)
+        
+        # Big-M calibrado especificamente para o TAMANHO DESTE COMPARTIMENTO
+        M_local = L_k + 5 
         
         for idx_c, c in enumerate(lista_id_clientes):
             model.addConstr(L_vars[k, c] >= O_X[k])
             model.addConstr(L_vars[k, c] <= O_X[k] + L_k)
             
-            # Vinculação sequencial da rota de entrega dos clientes (Precedência)
+            # Vinculação sequencial da rota de entrega (Precedência das barreiras)
             if idx_c > 0:
                 c_anterior = lista_id_clientes[idx_c - 1]
                 if is_even: 
@@ -202,17 +205,18 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
                 for (p, q, r) in vars_caixa:
                     var_x = x[k, c, i, p, q, r]
                     if is_even:
-                        # Lado Esquerdo: Inequações corrigidas que permitem uso seguro da origem (p=0)
-                        model.addConstr((p + li) * var_x <= L_vars[k, c] + M * (1 - var_x))
+                        # Lado Esquerdo: Garante que a caixa fique ANTES da barreira do seu cliente
+                        model.addConstr((p + li) <= L_vars[k, c] + M_local * (1 - var_x))
+                        # Garante que ela fique DEPOIS da barreira do cliente anterior (com a folga delta)
                         if idx_c > 0:
                             c_anterior = lista_id_clientes[idx_c - 1]
-                            model.addConstr(L_vars[k, c_anterior] - delta_val <= p + M * (1 - var_x))
+                            model.addConstr(p >= L_vars[k, c_anterior] + delta_val - M_local * (1 - var_x))
                     else:
                         # Lado Direito: Espelhamento matemático invertido
-                        model.addConstr(L_vars[k, c] <= p + M * (1 - var_x))
+                        model.addConstr(p >= L_vars[k, c] - M_local * (1 - var_x))
                         if idx_c > 0:
                             c_anterior = lista_id_clientes[idx_c - 1]
-                            model.addConstr((p + li) * var_x <= L_vars[k, c_anterior] + delta_val + M * (1 - var_x))
+                            model.addConstr((p + li) <= L_vars[k, c_anterior] - delta_val + M_local * (1 - var_x))
 
     # =========================================================================
     # 6. Restrições Práticas e de Engenharia de Carga

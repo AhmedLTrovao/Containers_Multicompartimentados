@@ -1,5 +1,5 @@
 Status da solucao: 2
-Objetivo final : 0.092000
-Gap de otimalidade: 0.000924%
+Objetivo final : 0.050000
+Gap de otimalidade: 0.000180%
 Tempo de execucao: 0.002000
 Numero de nos explorados: 1.0
