@@ -1,5 +1,5 @@
 import os
-from solver import resolver_instancia
+from modelos_finais.com_compartimentos.com_restricoes.old.multidrop_estabilidadexyz_loadbearing.solver import resolver_instancia
 
 def main():
     teste = 1
