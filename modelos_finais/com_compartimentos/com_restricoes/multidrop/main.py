@@ -6,7 +6,7 @@ from testes import *
 
 def main():
     
-    (compartimentos_t, clientes_t, arquivo_saida_t, stabv_t, stabh_t, loadbearing_t, tempo_limite_t) = teste_unicompartimentado()
+    (compartimentos_t, clientes_t, arquivo_saida_t, stabv_t, stabh_t, loadbearing_t, tempo_limite_t) = validacao_multidrop2()
 
     resolver_instancia(
         compartimentos=compartimentos_t, 

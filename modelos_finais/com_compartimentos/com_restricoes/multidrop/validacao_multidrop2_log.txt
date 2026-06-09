@@ -1,0 +1,40 @@
+
+Gurobi 13.0.1 (mac64[arm]) logging started Mon Jun  8 21:35:33 2026
+
+Set parameter LogFile to value "/Users/marianarocha/Documents/tcc/1sem/Containers_Multicompartimentados/modelos_finais/com_compartimentos/com_restricoes/multidrop/validacao_multidrop2_log.txt"
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (mac64[arm] - Darwin 25.5.0 25F71)
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  30
+
+Optimize a model with 71 rows, 26 columns and 156 nonzeros (Max)
+Model fingerprint: 0x22d9ab9a
+Model has 20 linear objective coefficients
+Variable types: 6 continuous, 20 integer (20 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e+02, 5e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+
+Found heuristic solution: objective 750.0000000
+Presolve removed 58 rows and 14 columns
+Presolve time: 0.00s
+Presolved: 13 rows, 12 columns, 34 nonzeros
+Found heuristic solution: objective 1000.0000000
+Variable types: 0 continuous, 12 integer (12 binary)
+Found heuristic solution: objective 2000.0000000
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 2000 1000 750 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+03, best bound 2.000000000000e+03, gap 0.0000%
