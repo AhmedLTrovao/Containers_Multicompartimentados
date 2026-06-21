@@ -1,0 +1,52 @@
+
+Gurobi 12.0.2 (win64) logging started Mon Jun 15 21:00:33 2026
+
+Set parameter LogFile to value "resultados DATA_1_n10m05b2d1\instancia_9_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 4737 rows, 2216 columns and 28480 nonzeros
+Model fingerprint: 0x8553fcf7
+Variable types: 16 continuous, 2200 integer (2200 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e+00, 2e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Found heuristic solution: objective 746.0000000
+Presolve removed 3498 rows and 300 columns
+Presolve time: 0.06s
+Presolved: 1239 rows, 1916 columns, 18788 nonzeros
+Variable types: 0 continuous, 1916 integer (1916 binary)
+
+Root relaxation: objective 1.000000e+03, 4605 iterations, 0.17 seconds (0.25 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1000.00000    0   88  746.00000 1000.00000  34.0%     -    0s
+H    0     0                     940.0000000 1000.00000  6.38%     -    0s
+H    0     0                     988.0000000 1000.00000  1.21%     -    0s
+H    0     0                     998.0000000 1000.00000  0.20%     -    0s
+H    0     0                    1000.0000000 1000.00000  0.00%     -    0s
+     0     0 1000.00000    0   97 1000.00000 1000.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 9
+  Zero half: 39
+  RLT: 9
+  BQP: 11
+
+Explored 1 nodes (10228 simplex iterations) in 0.54 seconds (0.72 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 5: 1000 998 988 ... 746
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+03, best bound 1.000000000000e+03, gap 0.0000%
