@@ -40,7 +40,7 @@ if __name__ == "__main__":
                 arquivo_saida=caminho_arquivo_saida,
                 tempo_limite=3600,
                 stabv=True,         # Estabilidade Vertical ativada
-                stabh=True,         # Estabilidade Horizontal ativada
+                stabh=False,         # Estabilidade Horizontal ativada
                 loadbearing=False    # Capacidade de carga/esmagamento ativada
             )
         except Exception as e:
