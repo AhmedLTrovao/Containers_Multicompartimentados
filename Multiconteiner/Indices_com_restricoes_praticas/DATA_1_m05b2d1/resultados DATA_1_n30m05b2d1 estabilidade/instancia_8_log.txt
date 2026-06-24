@@ -1,0 +1,52 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 09:45:30 2026
+
+Set parameter LogFile to value "resultados DATA_1_n30m05b2d1 estabilidade\instancia_8_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 18633 rows, 6136 columns and 921440 nonzeros
+Model fingerprint: 0x00fae7c5
+Variable types: 20 continuous, 6116 integer (6116 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [2e+02, 2e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 21175.000000
+Presolve removed 8513 rows and 3128 columns
+Presolve time: 3.23s
+Presolved: 10120 rows, 3008 columns, 287860 nonzeros
+Variable types: 0 continuous, 3008 integer (3008 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    5710    2.6549997e+04   4.891798e+03   0.000000e+00      5s
+    5731    2.6550000e+04   0.000000e+00   0.000000e+00      5s
+
+Root relaxation: objective 2.655000e+04, 5731 iterations, 1.70 seconds (1.70 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 26550.0000    0   81 21175.0000 26550.0000  25.4%     -    5s
+H    0     0                    24000.000000 26550.0000  10.6%     -    5s
+H    0     0                    25800.000000 26550.0000  2.91%     -    5s
+H    0     0                    25875.000000 26550.0000  2.61%     -    5s
+H    0     0                    26550.000000 26550.0000  0.00%     -    5s
+     0     0 26550.0000    0   81 26550.0000 26550.0000  0.00%     -    5s
+
+Explored 1 nodes (5918 simplex iterations) in 5.49 seconds (6.75 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 5: 26550 25875 25800 ... 21175
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.655000000000e+04, best bound 2.655000000000e+04, gap 0.0000%

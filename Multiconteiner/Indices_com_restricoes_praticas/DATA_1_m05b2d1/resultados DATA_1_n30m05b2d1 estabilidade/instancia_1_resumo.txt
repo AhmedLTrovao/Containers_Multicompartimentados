@@ -1,0 +1,6 @@
+Status da solucao: 9
+Objetivo final : 0.935185
+Numero de caixas : 138
+Gap de otimalidade: 1.825743%
+Tempo de execucao: 3600.404000 segundos
+Numero de nos explorados: 326.0

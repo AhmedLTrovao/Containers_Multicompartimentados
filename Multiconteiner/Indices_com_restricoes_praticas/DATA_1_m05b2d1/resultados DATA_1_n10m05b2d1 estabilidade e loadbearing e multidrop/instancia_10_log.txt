@@ -1,0 +1,48 @@
+
+Gurobi 12.0.2 (win64) logging started Mon Jun 22 20:07:10 2026
+
+Set parameter LogFile to value "resultados DATA_1_n10m05b2d1 estabilidade e loadbearing e multidrop\instancia_10_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 11229 rows, 2276 columns and 169816 nonzeros
+Model fingerprint: 0x1c418c43
+Variable types: 16 continuous, 2260 integer (2260 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 4e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Found heuristic solution: objective 560.0000000
+Presolve removed 5261 rows and 460 columns
+Presolve time: 1.09s
+Presolved: 5968 rows, 1816 columns, 93516 nonzeros
+Variable types: 0 continuous, 1816 integer (1796 binary)
+Found heuristic solution: objective 632.0000000
+
+Root relaxation: objective 1.000000e+03, 6604 iterations, 0.95 seconds (0.87 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1000.00000    0   54  632.00000 1000.00000  58.2%     -    2s
+H    0     0                     859.0000000 1000.00000  16.4%     -    2s
+H    0     0                     873.0000000 1000.00000  14.5%     -    2s
+H    0     0                     975.0000000 1000.00000  2.56%     -    2s
+H    0     0                     997.0000000 1000.00000  0.30%     -    2s
+H    0     0                    1000.0000000 1000.00000  0.00%     -    2s
+     0     0 1000.00000    0   54 1000.00000 1000.00000  0.00%     -    2s
+
+Explored 1 nodes (7416 simplex iterations) in 2.35 seconds (2.32 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 7: 1000 997 975 ... 560
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+03, best bound 1.000000000000e+03, gap 0.0000%

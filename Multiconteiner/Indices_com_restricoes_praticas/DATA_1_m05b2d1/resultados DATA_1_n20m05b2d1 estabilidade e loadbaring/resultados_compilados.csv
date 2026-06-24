@@ -1,0 +1,11 @@
+Instância;Status;Ocupação (%);Nº Caixas;Gap (%);Tempo (s);Nós Explorados
+instancia_1;2;98,3;165;0,0;151,272;5382
+instancia_2;2;90,0;127;0,0;4,168;1
+instancia_3;2;60,0;46;0,0;0,631;1
+instancia_4;2;83,25;25;0,0;0,143;1
+instancia_5;2;73,8;97;0,0;1,175;1
+instancia_6;2;80,0;144;0,0;17,148;233
+instancia_7;2;90,8;98;0,0;2,589;1
+instancia_8;2;100,0;416;0,0;30,938;1
+instancia_9;2;88,5;70;0,0;3,115;29
+instancia_10;2;81,0;44;0,0;0,471;1

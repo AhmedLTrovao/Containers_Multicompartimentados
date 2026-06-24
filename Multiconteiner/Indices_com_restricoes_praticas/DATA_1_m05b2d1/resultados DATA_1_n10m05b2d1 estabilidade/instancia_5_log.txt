@@ -1,0 +1,91 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 08:36:46 2026
+
+Set parameter LogFile to value "resultados DATA_1_n10m05b2d1 estabilidade\instancia_5_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 1037 rows, 544 columns and 10084 nonzeros
+Model fingerprint: 0xbf739f84
+Variable types: 12 continuous, 532 integer (532 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+01, 6e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 680.0000000
+Found heuristic solution: objective 704.0000000
+Presolve removed 271 rows and 160 columns
+Presolve time: 0.03s
+Presolved: 766 rows, 384 columns, 5780 nonzeros
+Variable types: 0 continuous, 384 integer (384 binary)
+
+Root relaxation: objective 7.952530e+02, 695 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  795.25301    0  126  704.00000  795.25301  13.0%     -    0s
+H    0     0                     708.0000000  795.25301  12.3%     -    0s
+H    0     0                     760.0000000  795.25301  4.64%     -    0s
+     0     0  793.97469    0  132  760.00000  793.97469  4.47%     -    0s
+     0     0  793.68713    0  132  760.00000  793.68713  4.43%     -    0s
+     0     0  793.52051    0  124  760.00000  793.52051  4.41%     -    0s
+     0     0  793.52051    0  127  760.00000  793.52051  4.41%     -    0s
+     0     0  789.43432    0  150  760.00000  789.43432  3.87%     -    0s
+     0     0  789.30329    0  161  760.00000  789.30329  3.86%     -    0s
+     0     0  789.26911    0  169  760.00000  789.26911  3.85%     -    0s
+     0     0  789.26911    0  170  760.00000  789.26911  3.85%     -    0s
+H    0     0                     768.0000000  787.94370  2.60%     -    0s
+     0     0  787.94370    0  169  768.00000  787.94370  2.60%     -    0s
+     0     0  787.94370    0  150  768.00000  787.94370  2.60%     -    0s
+     0     0  787.94018    0  152  768.00000  787.94018  2.60%     -    0s
+     0     0  787.94018    0  148  768.00000  787.94018  2.60%     -    0s
+H    0     0                     772.0000000  787.93944  2.06%     -    0s
+     0     0  787.93944    0  166  772.00000  787.93944  2.06%     -    0s
+     0     0  787.89176    0  161  772.00000  787.89176  2.06%     -    0s
+     0     0  787.89176    0  158  772.00000  787.89176  2.06%     -    0s
+     0     0  787.80552    0  159  772.00000  787.80552  2.05%     -    0s
+     0     0  787.79600    0  180  772.00000  787.79600  2.05%     -    0s
+     0     0  787.79600    0  172  772.00000  787.79600  2.05%     -    0s
+     0     0  787.79600    0  177  772.00000  787.79600  2.05%     -    0s
+     0     0  787.79600    0  166  772.00000  787.79600  2.05%     -    0s
+     0     0  787.72210    0  149  772.00000  787.72210  2.04%     -    0s
+     0     0  787.69495    0  155  772.00000  787.69495  2.03%     -    0s
+     0     0  787.69495    0  156  772.00000  787.69495  2.03%     -    0s
+     0     0  787.68143    0  152  772.00000  787.68143  2.03%     -    0s
+     0     0  787.68143    0  163  772.00000  787.68143  2.03%     -    0s
+     0     0  787.66858    0  161  772.00000  787.66858  2.03%     -    0s
+     0     0  787.66858    0  172  772.00000  787.66858  2.03%     -    0s
+     0     0  787.66299    0  142  772.00000  787.66299  2.03%     -    0s
+     0     0  787.66299    0  130  772.00000  787.66299  2.03%     -    0s
+     0     2  787.66299    0  129  772.00000  787.66299  2.03%     -    0s
+H 1150   304                     776.0000000  784.00000  1.03%  29.8    0s
+
+Cutting planes:
+  Gomory: 24
+  Cover: 106
+  Clique: 2
+  MIR: 25
+  StrongCG: 1
+  GUB cover: 27
+  Inf proof: 5
+  Zero half: 14
+  Mod-K: 1
+  RLT: 18
+  Relax-and-lift: 1
+  BQP: 2
+
+Explored 2098 nodes (64861 simplex iterations) in 0.74 seconds (0.83 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 7: 776 772 768 ... 680
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.760000000000e+02, best bound 7.760000000000e+02, gap 0.0000%

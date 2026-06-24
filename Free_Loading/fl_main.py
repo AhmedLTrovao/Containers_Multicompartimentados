@@ -3,9 +3,9 @@ from fl_read_data import fl_read_data
 from fl_solver import fl_solver
 from fl_compile_results import fl_compile_results
 
-arquivo_instancias = r"C:\Users\ahmed\Containers_Multicompartimentados\Free_Loading\DATA_1_m05b2d2\DATA_1_n20m05b2d2.dat"
+arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Free_Loading\DATA_1_m05b2d1\DATA_1_n20m05b2d1.dat"
 
-pasta_saida = "resultados DATA_1_n20m05b2d2"
+pasta_saida = "resultados DATA_1_n20m05b2d1"
 os.makedirs(pasta_saida, exist_ok=True)
 
 instancias = fl_read_data(arquivo_instancias)

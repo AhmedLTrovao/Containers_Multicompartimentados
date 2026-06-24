@@ -1,0 +1,58 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 11:43:15 2026
+
+Set parameter LogFile to value "resultados DATA_1_n30m05b2d1 estabilidade e loadbaring\instancia_8_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 21873 rows, 6136 columns and 1599220 nonzeros
+Model fingerprint: 0x4831292b
+Variable types: 20 continuous, 6116 integer (6116 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e+02, 2e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 21175.000000
+Presolve removed 6665 rows and 2776 columns (presolve time = 5s)...
+Presolve removed 7557 rows and 2840 columns (presolve time = 10s)...
+Presolve removed 7761 rows and 2844 columns (presolve time = 15s)...
+Presolve removed 8281 rows and 3056 columns (presolve time = 20s)...
+Presolve removed 9221 rows and 3192 columns (presolve time = 25s)...
+Presolve removed 9342 rows and 3212 columns (presolve time = 30s)...
+Presolve removed 8470 rows and 2400 columns
+Presolve time: 30.44s
+Presolved: 13403 rows, 3736 columns, 539728 nonzeros
+Variable types: 0 continuous, 3736 integer (3608 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.2357600e+05   2.121231e+05   0.000000e+00     32s
+    2110    3.6449996e+04   1.305610e+06   0.000000e+00     35s
+    4467    2.7908719e+04   5.278380e+04   0.000000e+00     40s
+    6066    2.6865715e+04   1.026002e+05   0.000000e+00     45s
+    7996    2.6569078e+04   1.077965e+03   0.000000e+00     50s
+    8296    2.6550000e+04   0.000000e+00   0.000000e+00     51s
+
+Root relaxation: objective 2.655000e+04, 8296 iterations, 19.75 seconds (4.40 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                    26550.000000 26550.0000  0.00%     -   51s
+     0     0 26550.0000    0   54 26550.0000 26550.0000  0.00%     -   51s
+
+Explored 1 nodes (8401 simplex iterations) in 51.94 seconds (12.45 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 26550 21175 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.655000000000e+04, best bound 2.655000000000e+04, gap 0.0000%

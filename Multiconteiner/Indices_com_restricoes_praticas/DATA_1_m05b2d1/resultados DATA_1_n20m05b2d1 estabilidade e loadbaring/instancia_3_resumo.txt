@@ -1,0 +1,6 @@
+Status da solucao: 2
+Objetivo final : 0.600000
+Numero de caixas : 46
+Gap de otimalidade: 0.000000%
+Tempo de execucao: 0.631000 segundos
+Numero de nos explorados: 1.0

@@ -1088,3 +1088,76 @@ Solution count 2: 900 -0
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 9.000000000000e+02, best bound 9.000000000000e+02, gap 0.0000%
+
+Gurobi 12.0.2 (win64) logging started Mon Jun 22 19:49:11 2026
+
+Set parameter LogFile to value "resultados teste_basico\instancia_4_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 56 rows, 25 columns and 142 nonzeros
+Model fingerprint: 0xe74c09b2
+Variable types: 1 continuous, 24 integer (24 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+01]
+Found heuristic solution: objective -0.0000000
+Presolve removed 34 rows and 1 columns
+Presolve time: 0.00s
+Presolved: 22 rows, 24 columns, 84 nonzeros
+Variable types: 0 continuous, 24 integer (24 binary)
+Found heuristic solution: objective 900.0000000
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 900 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.000000000000e+02, best bound 9.000000000000e+02, gap 0.0000%
+
+Gurobi 12.0.2 (win64) logging started Mon Jun 22 19:49:22 2026
+
+Set parameter LogFile to value "resultados teste_basico\instancia_4_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 30 rows, 25 columns and 92 nonzeros
+Model fingerprint: 0x2acf47e3
+Variable types: 1 continuous, 24 integer (24 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+02, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Found heuristic solution: objective 900.0000000
+Presolve removed 8 rows and 1 columns
+Presolve time: 0.00s
+Presolved: 22 rows, 24 columns, 84 nonzeros
+Variable types: 0 continuous, 24 integer (24 binary)
+
+Root relaxation: cutoff, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 1: 900 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.000000000000e+02, best bound 9.000000000000e+02, gap 0.0000%

@@ -1,9 +1,9 @@
 Instância;Status;Ocupação (%);Gap (%);Tempo (s);Nós Explorados
-instancia_1;2;100,0;0,0;0,005;1
-instancia_2;2;82,8125;0,0;0,339;1
-instancia_3;2;100,0;0,0;0,003;1
-instancia_4;2;90,0;0,0;0,002;1
+instancia_1;2;100,0;0,0;0,003;1
+instancia_2;2;87,5;0,0;0,598;967
+instancia_3;2;100,0;0,0;0,002;1
+instancia_4;2;90,0;0,0;0,001;1
 instancia_5;2;80,0;0,0;0,001;0
-instancia_6;2;36,0;0,0;0,001;0
-instancia_7;2;100,0;0,0;0,002;0
-instancia_8;2;100,0;0,0;0,002;1
+instancia_6;2;36,0;0,0;0,002;0
+instancia_7;2;100,0;0,0;0,001;0
+instancia_8;2;100,0;0,0;0,003;1

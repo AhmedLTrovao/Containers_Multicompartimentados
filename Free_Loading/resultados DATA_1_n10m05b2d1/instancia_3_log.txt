@@ -1,0 +1,116 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 12:47:21 2026
+
+Set parameter LogFile to value "resultados DATA_1_n10m05b2d1\instancia_3_log.txt"
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 377364 rows, 646816 columns and 1398264 nonzeros
+Model fingerprint: 0x7a8fd822
+Variable types: 984 continuous, 645832 integer (645832 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [4e-03, 5e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Found heuristic solution: objective 0.0090000
+Presolve removed 0 rows and 323736 columns (presolve time = 5s)...
+Presolve removed 0 rows and 323736 columns (presolve time = 10s)...
+Presolve removed 0 rows and 323736 columns
+Presolve time: 11.20s
+Presolved: 377364 rows, 323080 columns, 1398264 nonzeros
+Variable types: 984 continuous, 322096 integer (322096 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.4670000e+00   1.600000e+01   0.000000e+00     14s
+      20    2.4670000e+00   0.000000e+00   0.000000e+00     14s
+      20    2.4670000e+00   0.000000e+00   0.000000e+00     14s
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+  107256 PPushes remaining with PInf 0.0000000e+00                15s
+       0 PPushes remaining with PInf 0.0000000e+00                15s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 0.0000000e+00     15s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+  107279    2.4670000e+00   0.000000e+00   0.000000e+00     15s
+
+Root relaxation: objective 2.467000e+00, 107279 iterations, 1.89 seconds (0.95 work units)
+Total elapsed time = 15.02s (DegenMoves)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    2.46700    0 107256    0.00900    2.46700      -     -   25s
+H    0     0                       0.0900000    2.46700  2641%     -   31s
+H    0     0                       0.1500000    2.46700  1545%     -   34s
+     0     0    2.46700    0 102570    0.15000    2.46700  1545%     -  155s
+H    0     0                       0.4030000    2.46700   512%     -  161s
+H    0     0                       0.4070000    2.46700   506%     -  161s
+H    0     0                       0.4130000    2.46700   497%     -  161s
+H    0     0                       0.4250000    2.46700   480%     -  161s
+     0     0    2.46700    0 97350    0.42500    2.46700   480%     -  183s
+     0     0    2.46700    0  906    0.42500    2.46700   480%     -  400s
+     0     0    2.46700    0 3528    0.42500    2.46700   480%     -  432s
+     0     0    2.46700    0  839    0.42500    2.46700   480%     -  498s
+     0     0    2.46700    0 4318    0.42500    2.46700   480%     -  536s
+     0     0    2.46700    0  844    0.42500    2.46700   480%     -  601s
+     0     0    2.46700    0 3650    0.42500    2.46700   480%     -  630s
+     0     0    2.46700    0  823    0.42500    2.46700   480%     -  667s
+     0     0    2.46700    0 4523    0.42500    2.46700   480%     -  694s
+     0     0    2.46700    0  783    0.42500    2.46700   480%     -  732s
+     0     0    2.46700    0 2839    0.42500    2.46700   480%     -  742s
+     0     0    2.46700    0  778    0.42500    2.46700   480%     -  786s
+     0     0    2.46700    0  774    0.42500    2.46700   480%     -  809s
+H    0     0                       0.7110000    2.46700   247%     -  849s
+H    0     0                       0.7240000    2.46700   241%     -  857s
+H    0     0                       0.7330000    2.46700   237%     -  857s
+H    0     0                       0.7420000    2.46700   232%     -  863s
+H    0     0                       0.7500000    2.46700   229%     -  917s
+     0     2    2.46700    0  762    0.75000    2.46700   229%     -  936s
+     1     3    2.46700    1 7503    0.75000    2.46700   229% 55138  957s
+     2     6    2.46700    2 10777    0.75000    2.46700   229% 38401  985s
+     5    12    2.46700    3 11892    0.75000    2.46700   229% 30912 1016s
+    11    24    2.46700    4 13535    0.75000    2.46700   229% 27229 1082s
+    23    35    2.46700    5 10011    0.75000    2.46700   229% 25946 1134s
+    34    52    2.46700    6 9163    0.75000    2.46700   229% 22362 1278s
+H   35    52                       0.7650000    2.46700   222% 21723 1278s
+H   37    52                       0.7740000    2.46700   219% 21108 1278s
+H   43    52                       0.7820000    2.46700   215% 19564 1278s
+    51   105    2.46700    9 8408    0.78200    2.46700   215% 17574 1453s
+
+Cutting planes:
+  Learned: 13
+  Cover: 21630
+  Implied bound: 3699
+  Clique: 4059
+  MIR: 1119
+  StrongCG: 1
+  Flow cover: 14439
+  RLT: 23241
+  Relax-and-lift: 3133
+  BQP: 26
+  PSD: 6902
+H  104   127                       0.7910000    2.46700   212% 21106 2171s
+H  107   115                       0.7970000    2.46700   210% 20523 2171s
+
+Explored 104 nodes (3242141 simplex iterations) in 2173.17 seconds (1550.07 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 0.782 
+
+Solve interrupted (error code 10001)
+Best objective 7.820000000000e-01, best bound 2.467000000000e+00, gap 215.4731%

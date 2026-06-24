@@ -1,0 +1,55 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 10:09:45 2026
+
+Set parameter LogFile to value "resultados DATA_1_n20m05b2d1 estabilidade e loadbaring\instancia_8_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 27853 rows, 8200 columns and 2195860 nonzeros
+Model fingerprint: 0xbde00c36
+Variable types: 20 continuous, 8180 integer (8180 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e+01, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+02]
+Found heuristic solution: objective 7616.0000000
+Presolve removed 10894 rows and 3839 columns (presolve time = 5s)...
+Presolve removed 10367 rows and 3119 columns
+Presolve time: 6.89s
+Presolved: 17486 rows, 5081 columns, 589270 nonzeros
+Variable types: 0 continuous, 5081 integer (5080 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    8.7509333e+04   8.970651e+04   0.000000e+00      7s
+    4737    1.3447505e+04   6.371493e+05   0.000000e+00     10s
+    8933    9.4531032e+03   6.475376e+05   0.000000e+00     15s
+   13885    8.2089873e+03   3.537660e+05   0.000000e+00     20s
+   19959    8.0156445e+03   1.004778e+04   0.000000e+00     25s
+   26709    8.0004016e+03   2.309789e+03   0.000000e+00     30s
+   27132    8.0000000e+03   0.000000e+00   0.000000e+00     31s
+
+Root relaxation: objective 8.000000e+03, 27132 iterations, 23.43 seconds (23.98 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 8000.00000    0   10 7616.00000 8000.00000  5.04%     -   30s
+H    0     0                    8000.0000000 8000.00000  0.00%     -   30s
+     0     0 8000.00000    0   10 8000.00000 8000.00000  0.00%     -   30s
+
+Explored 1 nodes (27487 simplex iterations) in 30.93 seconds (33.87 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 8000 7616 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.000000000000e+03, best bound 8.000000000000e+03, gap 0.0000%

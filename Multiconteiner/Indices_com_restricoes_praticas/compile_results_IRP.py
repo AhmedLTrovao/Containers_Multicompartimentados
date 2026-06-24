@@ -58,6 +58,9 @@ def compilar_resultados(pasta_resultados):
             # Busca: Número de nós explorados: X
             nos_m = re.search(r"N[úu]mero de n[óo]s explorados\s*:\s*(\d+)", content, re.IGNORECASE)
 
+            # Procura por expressões como "Numero de caixas", "Total de caixas", "Nº Caixas", etc.
+            caixas_m = re.search(r"(?:N[úu]mero de caixas|Total de caixas|N[º°] Caixas)\s*:\s*(\d+)", content, re.IGNORECASE)
+
             # Caso a instância não tenha encontrado nenhuma solução viável
             inviavel = "Nenhuma solução viável encontrada" in content
 
@@ -65,6 +68,7 @@ def compilar_resultados(pasta_resultados):
                 "Instância": arquivo.replace("_resumo.txt", ""),
                 "Status": int(status_m.group(1)) if status_m else "N/A",
                 "Ocupação (%)": TO_F(obj_m) * 100.0 if not inviavel else 0.0,
+                "Nº Caixas": int(caixas_m.group(1)) if caixas_m and not inviavel else 0,
                 "Gap (%)": TO_F(gap_m) if not inviavel else "N/A",
                 "Tempo (s)": TO_F(tempo_m),
                 "Nós Explorados": int(nos_m.group(1)) if nos_m else 0

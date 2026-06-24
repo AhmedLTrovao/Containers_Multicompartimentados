@@ -8,12 +8,12 @@ from compile_results_IRP import compilar_resultados
 if __name__ == "__main__":
     # 1. Configurações de Caminhos
     # Troque pelo caminho real onde salvou o seu arquivo de instâncias numéricas
-    #arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices_com_restricoes_praticas\DATA_1_m05b2d1\DATA_1_n30m05b2d1.dat"
-    arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices_com_restricoes_praticas\teste_basico.txt"
+    arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices_com_restricoes_praticas\DATA_1_m05b2d1\DATA_1_n30m05b2d1.dat"
+    #arquivo_instancias = r"C:\Users\progo\Containers_Multicompartimentados\Multiconteiner\Indices_com_restricoes_praticas\teste_basico.txt"
     
     # Pasta onde todos os resultados (txt, _resumo, _log) serão salvos
-    #pasta_saida = "resultados DATA_1_n30m05b2d1"
-    pasta_saida = "resultados teste_basico"
+    pasta_saida = "resultados DATA_1_n30m05b2d1"
+    #pasta_saida = "resultados teste_basico"
     os.makedirs(pasta_saida, exist_ok=True)
 
     start_time_geral = time.time()
@@ -39,9 +39,10 @@ if __name__ == "__main__":
                 clientes=clientes, 
                 arquivo_saida=caminho_arquivo_saida,
                 tempo_limite=3600,
-                stabv=True,         # Estabilidade Vertical ativada
+                stabv=False,         # Estabilidade Vertical ativada
                 stabh=False,         # Estabilidade Horizontal ativada
-                loadbearing=False    # Capacidade de carga/esmagamento ativada
+                loadbearing=False,    # Capacidade de carga/esmagamento ativada
+                multidrop=False         # Multidrop ativado
             )
         except Exception as e:
             print(f"Erro crítico ao resolver instância {id_inst}: {e}")

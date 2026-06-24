@@ -21,7 +21,8 @@ def gerar_coordenadas_normais(dimensao_maxima, dimensoes_caixas):
         coordenadas_finais.insert(0, 0)
     return sorted(coordenadas_finais)
 
-def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=3600, stabv=True, stabh=False, loadbearing=False):
+def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=3600, 
+                      stabv=True, stabh=False, loadbearing=False, multidrop=True): 
     model = gp.Model("MultiCompartment_Lateral_Multidrop")
     
     # =========================================================================
@@ -154,34 +155,38 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
     # =========================================================================
     # 5. Restrições de Multidrop Lateral Padrão (Base Fasano)
     # =========================================================================
-    for k, (L_k, W_k, H_k) in enumerate(compartimentos):        
-        for idx_c, c in enumerate(lista_id_clientes):
-            
-            # Fronteiras físicas das variáveis de controle
-            model.addConstr(L_vars[k, c] >= O_X[k])
-            model.addConstr(L_vars[k, c] <= O_X[k] + L_k)
-            
-            # Encadeamento sequencial dos clientes
-            if idx_c > 0:
-                c_anterior = lista_id_clientes[idx_c - 1]
-                model.addConstr(L_vars[k, c_anterior] <= L_vars[k, c])
-            
-            for i in demanda[c].keys():
-                li = tipos_caixas[i]["dims"][0]
-                delta_val = deltas[c][i]
+    if multidrop:
+        print("Gerando restrições de descarregamento sequencial (Multidrop)...")
+        for k, (L_k, W_k, H_k) in enumerate(compartimentos):        
+            for idx_c, c in enumerate(lista_id_clientes):
                 
-                vars_caixa = [(p, q, r) for (k_, c_, i_, p, q, r) in x if k_ == k and c_ == c and i_ == i]
+                # Fronteiras físicas das variáveis de controle
+                model.addConstr(L_vars[k, c] >= O_X[k])
+                model.addConstr(L_vars[k, c] <= O_X[k] + L_k)
                 
-                for (p, q, r) in vars_caixa:
-                    var_x = x[k, c, i, p, q, r]
-
-                    # Restrição 12.34: Garante que as caixas fiquem abaixo do limite do cliente atual
-                    model.addConstr((p + li) * var_x <= L_vars[k, c] + delta_val)
+                # Encadeamento sequencial dos clientes
+                if idx_c > 0:
+                    c_anterior = lista_id_clientes[idx_c - 1]
+                    model.addConstr(L_vars[k, c_anterior] <= L_vars[k, c])
+                
+                for i in demanda[c].keys():
+                    li = tipos_caixas[i]["dims"][0]
+                    delta_val = deltas[c][i]
                     
-                    # Restrição 12.35: Confina as caixas atrás do limite do cliente anterior
-                    if idx_c > 0:
-                        c_anterior = lista_id_clientes[idx_c - 1]
-                        model.addConstr(L_vars[k, c_anterior] <= p * var_x + M * (1 - var_x))
+                    vars_caixa = [(p, q, r) for (k_, c_, i_, p, q, r) in x if k_ == k and c_ == c and i_ == i]
+                    
+                    for (p, q, r) in vars_caixa:
+                        var_x = x[k, c, i, p, q, r]
+
+                        # Restrição 12.34: Garante que as caixas fiquem abaixo do limite do cliente atual
+                        model.addConstr((p + li) * var_x <= L_vars[k, c] + delta_val)
+                        
+                        # Restrição 12.35: Confina as caixas atrás do limite do cliente anterior
+                        if idx_c > 0:
+                            c_anterior = lista_id_clientes[idx_c - 1]
+                            model.addConstr(L_vars[k, c_anterior] <= p * var_x + M * (1 - var_x))
+    else:
+        print("Multidrop DESATIVADO. Itens liberados para posicionamento livre entre clientes.")
     
     # =========================================================================
     # 6. Restrições de Engenharia (Estabilidade e Carga)
@@ -294,10 +299,14 @@ def resolver_instancia(compartimentos, clientes, arquivo_saida, tempo_limite=360
     # =========================================================================
     resumo_arquivo = arquivo_saida.replace(".txt", "_resumo.txt")
     volume_total = sum([l*w*h for (l,w,h) in compartimentos])
+
     with open(resumo_arquivo, "w") as f:
         f.write(f"Status da solucao: {model.Status}\n")
         if model.SolCount > 0:
+            total_caixas_alocadas = sum(1 for (k, c, i, p, q, r) in x if x[k, c, i, p, q, r].X > 0.5)
+
             f.write(f"Objetivo final : {model.ObjVal/volume_total:.6f}\n")
+            f.write(f"Numero de caixas : {total_caixas_alocadas}\n")
             f.write(f"Gap de otimalidade: {model.MIPGap*100:.6f}%\n")
             f.write(f"Tempo de execucao: {model.Runtime:.6f} segundos\n")
             f.write(f"Numero de nos explorados: {model.NodeCount}\n")

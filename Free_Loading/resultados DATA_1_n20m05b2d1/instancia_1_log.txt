@@ -1,0 +1,128 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 19:53:05 2026
+
+Set parameter LogFile to value "resultados DATA_1_n20m05b2d1\instancia_1_log.txt"
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 303261 rows, 519792 columns and 1123374 nonzeros
+Model fingerprint: 0xba3db80b
+Variable types: 882 continuous, 518910 integer (518910 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e-03, 3e-02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Found heuristic solution: objective 0.0300000
+Presolve removed 0 rows and 260190 columns (presolve time = 5s)...
+Presolve removed 0 rows and 260190 columns (presolve time = 10s)...
+Presolve removed 0 rows and 260190 columns
+Presolve time: 14.06s
+Presolved: 303261 rows, 259602 columns, 1123374 nonzeros
+Variable types: 882 continuous, 258720 integer (258720 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.1170000e+00   2.600000e+01   0.000000e+00     20s
+      20    2.1170000e+00   0.000000e+00   0.000000e+00     20s
+      20    2.1170000e+00   0.000000e+00   0.000000e+00     20s
+
+Use crossover to convert LP symmetric solution to basic solution...
+
+Root crossover log...
+
+       0 DPushes remaining with DInf 0.0000000e+00                21s
+
+   86142 PPushes remaining with PInf 0.0000000e+00                21s
+       0 PPushes remaining with PInf 0.0000000e+00                21s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 0.0000000e+00     21s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   86165    2.1170000e+00   0.000000e+00   0.000000e+00     22s
+
+Root relaxation: objective 2.117000e+00, 86165 iterations, 5.07 seconds (0.75 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    2.11700    0 86142    0.03000    2.11700  6957%     -   47s
+H    0     0                       0.4250000    2.11700   398%     -   47s
+H    0     0                       0.4280000    2.11700   395%     -   48s
+H    0     0                       0.4300000    2.11700   392%     -   49s
+H    0     0                       0.4320000    2.11700   390%     -   49s
+H    0     0                       0.4395000    2.11700   382%     -   49s
+     0     0    2.11700    0 76572    0.43950    2.11700   382%     -   83s
+     0     0    2.11700    0 56334    0.43950    2.11700   382%     -  109s
+     0     0    2.11700    0  570    0.43950    2.11700   382%     -  242s
+H    0     0                       0.4695000    2.11700   351%     -  243s
+     0     0    2.11700    0 1484    0.46950    2.11700   351%     -  252s
+     0     0    2.11700    0  581    0.46950    2.11700   351%     -  310s
+     0     0    2.11700    0 4914    0.46950    2.11700   351%     -  341s
+     0     0    2.11700    0  602    0.46950    2.11700   351%     -  380s
+H    0     0                       0.4715000    2.11700   349%     -  381s
+H    0     0                       0.4785000    2.11700   342%     -  381s
+     0     0    2.11700    0 4167    0.47850    2.11700   342%     -  398s
+     0     0    2.11700    0  620    0.47850    2.11700   342%     -  431s
+H    0     0                       0.4845000    2.11700   337%     -  433s
+     0     0    2.11700    0 4468    0.48450    2.11700   337%     -  465s
+     0     0    2.11700    0  575    0.48450    2.11700   337%     -  508s
+     0     0    2.11700    0  570    0.48450    2.11700   337%     -  518s
+H    0     0                       0.7510000    2.11700   182%     -  521s
+H    0     0                       0.7520000    2.11700   182%     -  559s
+H    0     0                       0.7727500    2.11700   174%     -  565s
+H    0     0                       0.7747500    2.11700   173%     -  565s
+H    0     0                       0.7832500    2.11700   170%     -  565s
+H    0     0                       0.7842500    2.11700   170%     -  565s
+     0     2    2.11700    0  548    0.78425    2.11700   170%     -  575s
+     1     4    2.11700    1 1284    0.78425    2.11700   170% 23199  582s
+     3     8    2.11700    2 6570    0.78425    2.11700   170% 12029  606s
+     7    16    2.11700    3 6181    0.78425    2.11700   170% 14631  713s
+    15    28    2.11700    4 6526    0.78425    2.11700   170% 14973  811s
+H   27    65                       0.7862500    2.11700   169% 13762  904s
+H   29    65                       0.7922500    2.11700   167% 13280  904s
+H   31    65                       0.7962500    2.11700   166% 12792  905s
+H   52    65                       0.8002500    2.11700   165%  8784  905s
+H   61    65                       0.8027500    2.11700   164%  8018  905s
+    64   106    2.11700    6 6654    0.80275    2.11700   164%  7892 1249s
+H  105   130                       0.8047500    2.11700   163% 12168 2108s
+H  111   130                       0.8107500    2.11700   161% 12555 2108s
+H  125   130                       0.8147500    2.11700   160% 12250 2108s
+   129   523    2.11700   10 2732    0.81475    2.11700   160% 13141 2762s
+H  153   523                       0.8187500    2.11700   159% 11910 2763s
+H  382   523                       0.8377500    2.11700   153%  8845 2764s
+   524  1163    2.11700   31 2449    0.83775    2.11700   153%  8036 3464s
+H  537  1163                       0.8397500    2.11700   152%  7863 3465s
+H  873  1163                       0.8407500    2.11700   152%  6741 3466s
+H 1097  1163                       0.8427500    2.11700   151%  6302 3467s
+  1196  1211    2.11700   60 2107    0.84275    2.11700   151%  6078 3601s
+H 1198  1211                       0.8447500    2.11700   151%  6068 3601s
+
+Cutting planes:
+  Learned: 16
+  Cover: 6900
+  Implied bound: 2017
+  Clique: 52
+  MIR: 906
+  Flow cover: 10466
+  RLT: 5638
+  Relax-and-lift: 4559
+  BQP: 100
+  PSD: 2996
+
+Explored 1244 nodes (7978910 simplex iterations) in 3603.52 seconds (1301.90 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 10: 0.84475 0.84275 0.84075 ... 0.80275
+
+Time limit reached
+Best objective 8.447500000000e-01, best bound 2.117000000000e+00, gap 150.6067%

@@ -1,0 +1,56 @@
+
+Gurobi 12.0.2 (win64) logging started Tue Jun 23 09:57:11 2026
+
+Set parameter LogFile to value "resultados DATA_1_n10m05b2d1 estabilidade e loadbaring\instancia_2_log.txt"
+Set parameter TimeLimit to value 3600
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i7-12700, instruction set [SSE2|AVX|AVX2]
+Thread count: 12 physical cores, 20 logical processors, using up to 20 threads
+
+Non-default parameters:
+TimeLimit  3600
+
+Optimize a model with 3997 rows, 1336 columns and 85084 nonzeros
+Model fingerprint: 0x1d8d1a22
+Variable types: 16 continuous, 1320 integer (1320 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [6e+00, 4e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 708.0000000
+Presolve removed 1773 rows and 620 columns
+Presolve time: 0.26s
+Presolved: 2224 rows, 716 columns, 32065 nonzeros
+Variable types: 0 continuous, 716 integer (716 binary)
+
+Root relaxation: objective 7.680000e+02, 1367 iterations, 0.04 seconds (0.07 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  768.00000    0   68  708.00000  768.00000  8.47%     -    0s
+H    0     0                     744.0000000  768.00000  3.23%     -    0s
+H    0     0                     756.0000000  768.00000  1.59%     -    0s
+     0     0  768.00000    0   98  756.00000  768.00000  1.59%     -    0s
+H    0     0                     768.0000000  768.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 28
+  Cover: 23
+  Implied bound: 3
+  Clique: 5
+  MIR: 7
+  GUB cover: 2
+  Zero half: 6
+  RLT: 4
+  Relax-and-lift: 5
+
+Explored 1 nodes (2464 simplex iterations) in 0.46 seconds (0.71 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 4: 768 756 744 708 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.680000000000e+02, best bound 7.680000000000e+02, gap 0.0000%
